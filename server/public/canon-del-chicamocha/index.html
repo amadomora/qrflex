@@ -39,7 +39,60 @@
     }
   </script>
   <style>
-    :root, [data-theme="dark"] {
+    :root, [data-theme="light"] {
+      --bg-main: #f8fafc;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --subcard-bg: #ffffff;
+      --subcard-border: #e2e8f0;
+      --nav-bg: rgba(255, 255, 255, 0.96);
+      --nav-border: #e2e8f0;
+      --hero-bg: linear-gradient(180deg, #ecfdf5 0%, #f1fbf6 50%, #f8fafc 100%);
+      --hero-title: #064e3b;
+      --hero-tagline: #047857;
+      --player-bg: #ffffff;
+      --player-border: #10b981;
+      --player-text: #0f172a;
+      --player-subtext: #475569;
+      --player-timer: #059669;
+      --viewer-bg: #ffffff;
+      --viewer-header: #ffffff;
+      --viewer-border: #e2e8f0;
+      --viewer-text: #0f172a;
+      --viewer-subtext: #64748b;
+      --viewer-bottom: #ffffff;
+      --guane-bg: #ffffff;
+      --guane-border: #fcd34d;
+      --guane-subcard: #ffffff;
+      --guane-subcard-border: #fde68a;
+      --info-card-bg: #ffffff;
+      --info-border: #10b981;
+      --info-border-subtle: #e2e8f0;
+      --info-text: #0f172a;
+      --info-subcard: #ffffff;
+      --info-banner: linear-gradient(135deg, #059669 0%, #047857 100%);
+      --info-banner-text: #ffffff;
+      --qr-bg: #ffffff;
+      --qr-border: #10b981;
+      --btn-theme-bg: #f1f5f9;
+      --btn-theme-border: #cbd5e1;
+      --btn-theme-color: #0f172a;
+      --badge-bg: #ecfdf5;
+      --badge-text: #047857;
+      --badge-border: #a7f3d0;
+      --icon-amber-bg: #fef3c7;
+      --icon-amber-text: #b45309;
+      --icon-emerald-bg: #d1fae5;
+      --icon-emerald-text: #047857;
+      --icon-cyan-bg: #cffafe;
+      --icon-cyan-text: #0e7490;
+      --icon-blue-bg: #dbeafe;
+      --icon-blue-text: #1d4ed8;
+    }
+
+    [data-theme="dark"] {
       --bg-main: #020617;
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
@@ -47,50 +100,49 @@
       --card-border: #1e293b;
       --subcard-bg: #1e293b;
       --subcard-border: #334155;
-      --nav-bg: rgba(15, 23, 42, 0.92);
+      --nav-bg: rgba(15, 23, 42, 0.95);
       --nav-border: rgba(6, 78, 59, 0.4);
       --hero-bg: linear-gradient(180deg, rgba(2, 44, 34, 0.8) 0%, #0f172a 60%, #020617 100%);
       --hero-title: #ffffff;
       --hero-tagline: rgba(167, 243, 208, 0.9);
+      --player-bg: #0f172a;
+      --player-border: #10b981;
+      --player-text: #ffffff;
+      --player-subtext: #94a3b8;
+      --player-timer: #34d399;
+      --viewer-bg: #0f172a;
+      --viewer-header: #020617;
+      --viewer-border: #1e293b;
+      --viewer-text: #ffffff;
+      --viewer-subtext: #94a3b8;
+      --viewer-bottom: #090e17;
+      --guane-bg: #0f172a;
+      --guane-border: rgba(120, 53, 15, 0.4);
+      --guane-subcard: #1c1917;
+      --guane-subcard-border: #44403c;
       --info-card-bg: #0b1f13;
       --info-border: #1c5230;
       --info-border-subtle: #234b35;
       --info-text: #f1f5f9;
       --info-subcard: #122b1c;
       --info-banner: linear-gradient(135deg, #1d4630 0%, #123020 100%);
-      --guane-bg: linear-gradient(135deg, rgba(69, 26, 3, 0.35) 0%, #0f172a 100%);
-      --guane-border: rgba(120, 53, 15, 0.35);
-      --qr-bg: linear-gradient(135deg, #022c22 0%, #0f172a 60%, #020617 100%);
+      --info-banner-text: #ffffff;
+      --qr-bg: #0f172a;
+      --qr-border: #059669;
       --btn-theme-bg: #1e293b;
       --btn-theme-border: #334155;
       --btn-theme-color: #fbbf24;
-    }
-
-    [data-theme="light"] {
-      --bg-main: #fbf9f5;
-      --text-main: #1e293b;
-      --text-muted: #475569;
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --subcard-bg: #f8fafc;
-      --subcard-border: #e2e8f0;
-      --nav-bg: rgba(255, 255, 255, 0.95);
-      --nav-border: #e2e8f0;
-      --hero-bg: linear-gradient(180deg, #ecfdf5 0%, #f0fdf4 60%, #fbf9f5 100%);
-      --hero-title: #064e3b;
-      --hero-tagline: #065f46;
-      --info-card-bg: #faf6ed;
-      --info-border: #234b35;
-      --info-border-subtle: #dcd3be;
-      --info-text: #263e30;
-      --info-subcard: #fdfbf6;
-      --info-banner: linear-gradient(135deg, #1d4630 0%, #123020 100%);
-      --guane-bg: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
-      --guane-border: #fde68a;
-      --qr-bg: linear-gradient(135deg, #ecfdf5 0%, #ffffff 60%, #f0fdf4 100%);
-      --btn-theme-bg: #f1f5f9;
-      --btn-theme-border: #cbd5e1;
-      --btn-theme-color: #0f172a;
+      --badge-bg: rgba(5, 150, 105, 0.2);
+      --badge-text: #34d399;
+      --badge-border: rgba(16, 185, 129, 0.3);
+      --icon-amber-bg: rgba(245, 158, 11, 0.2);
+      --icon-amber-text: #fbbf24;
+      --icon-emerald-bg: rgba(16, 185, 129, 0.2);
+      --icon-emerald-text: #34d399;
+      --icon-cyan-bg: rgba(6, 182, 212, 0.2);
+      --icon-cyan-text: #22d3ee;
+      --icon-blue-bg: rgba(59, 130, 246, 0.2);
+      --icon-blue-text: #60a5fa;
     }
 
     body {
@@ -109,6 +161,7 @@
     .themed-subcard {
       background-color: var(--subcard-bg) !important;
       border-color: var(--subcard-border) !important;
+      color: var(--text-main) !important;
       transition: background-color 0.25s ease, border-color 0.25s ease;
     }
 
@@ -159,7 +212,7 @@
     .wave-active .bar-5 { animation: wavePulse 0.8s infinite ease-in-out 0.15s; }
   </style>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white pb-20">
+<body class="font-sans antialiased selection:bg-emerald-500 selection:text-white pb-20">
 
   <!-- ======================================================== -->
   <!-- 1. TOP NAVBAR HEADER -->
@@ -203,7 +256,7 @@
         </div>
 
         <!-- QR Signage Shortcut -->
-        <a href="#seccion-qr" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-950 text-emerald-300 border border-emerald-700/60 hover:bg-emerald-900 transition">
+        <a href="#seccion-qr" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold border transition" style="background: var(--btn-theme-bg); border-color: var(--btn-theme-border); color: var(--text-main);">
           <span>📲</span> <span id="nav-qr-text">Código QR</span>
         </a>
 
@@ -286,7 +339,7 @@
         <button onclick="toggleAudioGuide()" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-950/60 flex items-center gap-2 transition active:scale-95">
           <span>🎧</span> <span id="btn-play-audio-lbl">Escuchar Audioguía Oficial</span>
         </button>
-        <a href="#seccion-geologia" class="px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+        <a href="#seccion-geologia" class="px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm border transition" style="background: var(--btn-theme-bg); border-color: var(--btn-theme-border); color: var(--text-main);">
           <span id="btn-jump-details">Geología, Flora & Guanes ↓</span>
         </a>
       </div>
@@ -298,18 +351,18 @@
   <!-- 3. COMPACT TRILINGUAL SMART AUDIO PLAYER -->
   <!-- ======================================================== -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-4 relative z-20">
-    <div class="bg-gradient-to-r from-emerald-950 via-slate-900 to-emerald-950 p-4 rounded-2xl border border-emerald-700/60 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="p-4 rounded-2xl border-2 shadow-xl flex flex-col md:flex-row items-center justify-between gap-4 transition-colors duration-200" style="background: var(--player-bg); border-color: var(--player-border); color: var(--player-text);">
       
       <div class="flex items-center gap-3.5 w-full md:w-auto">
-        <button onclick="toggleAudioGuide()" id="player-main-btn" class="w-12 h-12 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center font-black text-xl shadow-md transition active:scale-95 flex-shrink-0" title="Reproducir / Pausar">
+        <button onclick="toggleAudioGuide()" id="player-main-btn" class="w-12 h-12 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center font-black text-xl shadow-md transition active:scale-95 shrink-0" title="Reproducir / Pausar">
           ▶
         </button>
         <div>
           <div class="flex items-center gap-2">
-            <span class="text-xs font-black text-white" id="player-title">Audioguía Inteligente Santander Digital</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 uppercase" id="player-badge">Web Speech API</span>
+            <span class="text-xs font-black" style="color: var(--player-text);" id="player-title">Audioguía Inteligente Santander Digital</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold border uppercase" style="background: var(--badge-bg); color: var(--badge-text); border-color: var(--badge-border);" id="player-badge">Web Speech API</span>
           </div>
-          <p class="text-[11px] text-slate-300" id="player-subtitle">Voz oficial trilingüe con narración histórica y geográfica</p>
+          <p class="text-[11px]" style="color: var(--player-subtext);" id="player-subtitle">Voz oficial trilingüe con narración histórica y geográfica</p>
         </div>
       </div>
 
@@ -324,11 +377,11 @@
         </div>
 
         <div class="text-right">
-          <span class="font-mono text-xs font-bold text-emerald-400" id="player-timer">00:00 / 01:45</span>
-          <p class="text-[10px] text-slate-400" id="player-lang-indicator">Locución: Español 🇨🇴</p>
+          <span class="font-mono text-xs font-bold" style="color: var(--player-timer);" id="player-timer">00:00 / 01:45</span>
+          <p class="text-[10px]" style="color: var(--player-subtext);" id="player-lang-indicator">Locución: Español 🇨🇴</p>
         </div>
 
-        <button onclick="toggleTranscriptModal()" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition" id="btn-transcript">
+        <button onclick="toggleTranscriptModal()" class="px-3 py-1.5 rounded-lg text-xs font-semibold border transition" style="background: var(--subcard-bg); border-color: var(--subcard-border); color: var(--text-main);" id="btn-transcript">
           📜 Transcripción
         </button>
       </div>
@@ -336,10 +389,10 @@
     </div>
 
     <!-- Collapsible Transcript Box -->
-    <div id="transcript-box" class="hidden mt-3 p-4 bg-slate-900 rounded-xl border border-emerald-900/40 text-xs text-slate-300 leading-relaxed max-h-48 overflow-y-auto">
-      <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800">
-        <span class="font-bold text-emerald-400" id="transcript-title">Transcripción Oficial de la Audioguía</span>
-        <button onclick="toggleTranscriptModal()" class="text-slate-400 hover:text-white">✕ Cerrar</button>
+    <div id="transcript-box" class="hidden mt-3 p-4 rounded-xl border text-xs leading-relaxed max-h-48 overflow-y-auto transition-colors duration-200" style="background: var(--card-bg); border-color: var(--card-border); color: var(--text-main);">
+      <div class="flex items-center justify-between pb-2 mb-2 border-b" style="border-color: var(--card-border);">
+        <span class="font-bold text-emerald-600" id="transcript-title">Transcripción Oficial de la Audioguía</span>
+        <button onclick="toggleTranscriptModal()" class="opacity-70 hover:opacity-100">✕ Cerrar</button>
       </div>
       <p id="transcript-body"></p>
     </div>
@@ -349,28 +402,28 @@
   <!-- 4. TOUR VIRTUAL 360° EMBEBIDO DIRECTAMENTE -->
   <!-- ======================================================== -->
   <section id="tour-virtual-360" class="max-w-7xl mx-auto px-4 sm:px-6 pt-12">
-    <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col">
+    <div class="rounded-3xl border-2 shadow-2xl overflow-hidden flex flex-col transition-colors duration-200" style="background: var(--viewer-bg); border-color: var(--viewer-border);">
       
       <!-- Visor Header Bar -->
-      <div class="bg-gradient-to-r from-slate-950 via-emerald-950 to-slate-950 px-5 py-3.5 flex items-center justify-between border-b border-emerald-900/60 z-10">
+      <div class="px-5 py-3.5 flex items-center justify-between border-b z-10" style="background: var(--viewer-header); border-color: var(--viewer-border); color: var(--viewer-text);">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-blue-600/90 flex items-center justify-center text-xl shadow-inner border border-blue-400/40">
+          <div class="w-10 h-10 rounded-2xl bg-blue-600 flex items-center justify-center text-xl shadow-md text-white">
             🧭
           </div>
           <div>
             <div class="flex items-center gap-2 flex-wrap">
-              <span class="text-sm font-black text-white tracking-wide" id="v360-header-title">Tour Virtual 360° • Cañón del Chicamocha y PANACHI</span>
-              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500 text-blue-950 uppercase">krpano WebGL</span>
+              <span class="text-sm font-black tracking-wide" style="color: var(--viewer-text);" id="v360-header-title">Tour Virtual 360° • Cañón del Chicamocha y PANACHI</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-900 border border-blue-200 uppercase">krpano WebGL</span>
             </div>
-            <p class="text-[11px] text-slate-300" id="v360-header-sub">Navegación aérea 360°, miradores del abismo y teleférico sobre el cañón</p>
+            <p class="text-[11px]" style="color: var(--viewer-subtext);" id="v360-header-sub">Navegación aérea 360°, miradores del abismo y teleférico sobre el cañón</p>
           </div>
         </div>
 
         <div class="flex items-center gap-2">
-          <a href="https://parquesdesantander.com/visor/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1 transition">
+          <a href="https://parquesdesantander.com/visor/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl text-xs font-semibold border flex items-center gap-1 transition" style="background: var(--subcard-bg); border-color: var(--subcard-border); color: var(--text-main);">
             <span>↗️</span> <span class="hidden sm:inline">Pestaña Completa</span>
           </a>
-          <button onclick="toggle360Fullscreen()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-600 text-white transition flex items-center gap-1">
+          <button onclick="toggle360Fullscreen()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white transition flex items-center gap-1 shadow-sm">
             <span>⛶</span> <span class="hidden sm:inline">Maximizar</span>
           </button>
         </div>
@@ -378,7 +431,7 @@
 
       <!-- Iframe Container -->
       <div id="container-360-embed" class="relative w-full h-[450px] sm:h-[580px] bg-black">
-        <div id="v360-loading-hint" class="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 text-slate-400 gap-3 z-0 pointer-events-none">
+        <div id="v360-loading-hint" class="absolute inset-0 flex flex-col items-center justify-center gap-3 z-0 pointer-events-none transition-colors" style="background: var(--viewer-bg); color: var(--viewer-subtext);">
           <div class="w-10 h-10 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
           <p class="text-xs font-medium">Iniciando experiencia 360° inmersiva de Santander...</p>
         </div>
@@ -392,12 +445,12 @@
       </div>
 
       <!-- Visor Bottom Strip with Info -->
-      <div class="bg-slate-950 px-5 py-3 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+      <div class="px-5 py-3 border-t flex flex-wrap items-center justify-between gap-3 text-xs" style="background: var(--viewer-bottom); border-color: var(--viewer-border); color: var(--viewer-subtext);">
         <div class="flex items-center gap-2">
           <span>💡</span>
           <span id="v360-instructions">Haz clic y arrastra con el ratón o desliza con el dedo para girar 360°. Usa la rueda para hacer zoom.</span>
         </div>
-        <div class="flex items-center gap-2 font-mono text-[11px] text-emerald-400">
+        <div class="font-mono text-[11px] text-emerald-600 font-bold">
           <span>📍 Coordenadas: 6.788° N, 73.003° W</span>
         </div>
       </div>
@@ -451,7 +504,7 @@
         
         <!-- Tarjeta 1: Ubicación & Mapa Vectorial (7 cols) -->
         <div class="themed-info-subcard md:col-span-7 rounded-2xl border-2 p-4 sm:p-5 shadow-sm flex flex-col justify-between">
-          <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
+          <div class="-mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3 shadow-sm transition-colors" style="background: var(--info-banner); color: var(--info-banner-text);">
             <span>📍</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">UBICACIÓN</h3>
           </div>
@@ -500,7 +553,7 @@
 
         <!-- Tarjeta 2: Características del Territorio (5 cols) -->
         <div class="themed-info-subcard md:col-span-5 rounded-2xl border-2 p-4 sm:p-5 shadow-sm flex flex-col justify-between">
-          <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
+          <div class="-mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3 shadow-sm transition-colors" style="background: var(--info-banner); color: var(--info-banner-text);">
             <span>⛰️</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">CARACTERÍSTICAS DEL TERRITORIO</h3>
           </div>
@@ -541,7 +594,7 @@
         
         <!-- Historia y Origen (6 cols) -->
         <div class="themed-info-subcard md:col-span-6 rounded-2xl border-2 p-4 sm:p-5 shadow-sm">
-          <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
+          <div class="-mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3 shadow-sm transition-colors" style="background: var(--info-banner); color: var(--info-banner-text);">
             <span>🐚</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">HISTORIA Y ORIGEN</h3>
           </div>
@@ -559,7 +612,7 @@
 
         <!-- Fauna y Flora (6 cols) -->
         <div class="themed-info-subcard md:col-span-6 rounded-2xl border-2 p-4 sm:p-5 shadow-sm">
-          <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
+          <div class="-mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3 shadow-sm transition-colors" style="background: var(--info-banner); color: var(--info-banner-text);">
             <span>🌿</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">FAUNA Y FLORA</h3>
           </div>
@@ -591,7 +644,7 @@
       <!-- Fila 3: Municipios Principales -->
       <div class="py-2">
         <div class="themed-info-subcard rounded-2xl border-2 p-4 sm:p-5 shadow-sm">
-          <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
+          <div class="-mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3 shadow-sm transition-colors" style="background: var(--info-banner); color: var(--info-banner-text);">
             <span>🏛️</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">MUNICIPIOS PRINCIPALES</h3>
           </div>
@@ -612,7 +665,7 @@
       <!-- Fila 4: Sitios Turísticos de Interés Clave (4 Fotos Circulares) -->
       <div class="py-3">
         <div class="themed-info-subcard rounded-2xl border-2 p-4 sm:p-5 shadow-sm">
-          <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-4">
+          <div class="-mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-4 shadow-sm transition-colors" style="background: var(--info-banner); color: var(--info-banner-text);">
             <span>📸</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">SITIOS TURÍSTICOS DE INTERÉS</h3>
           </div>
@@ -627,7 +680,7 @@
             </div>
 
             <div class="text-center group flex flex-col items-center">
-              <div class="w-28 h-28 rounded-full border-4 border-emerald-600 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-sky-800 flex items-center justify-center">
+              <div class="w-28 h-28 rounded-full border-4 border-emerald-500 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-white">
                 <span class="text-3xl">🪂</span>
               </div>
               <h4 class="font-bold text-xs leading-tight mb-1" style="color: var(--hero-title);">La Mesa de Los Santos</h4>
@@ -635,7 +688,7 @@
             </div>
 
             <div class="text-center group flex flex-col items-center">
-              <div class="w-28 h-28 rounded-full border-4 border-emerald-600 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-amber-800 flex items-center justify-center">
+              <div class="w-28 h-28 rounded-full border-4 border-emerald-500 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white">
                 <span class="text-3xl">🥾</span>
               </div>
               <h4 class="font-bold text-xs leading-tight mb-1" style="color: var(--hero-title);">Camino Real Jordán - Los Santos</h4>
@@ -643,7 +696,7 @@
             </div>
 
             <div class="text-center group flex flex-col items-center">
-              <div class="w-28 h-28 rounded-full border-4 border-emerald-600 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-emerald-900 flex items-center justify-center">
+              <div class="w-28 h-28 rounded-full border-4 border-emerald-500 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white">
                 <span class="text-3xl">🏛️</span>
               </div>
               <h4 class="font-bold text-xs leading-tight mb-1" style="color: var(--hero-title);">Pueblos Coloniales Cercanos</h4>
@@ -657,7 +710,7 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5 py-3">
         
         <div class="themed-info-subcard md:col-span-4 rounded-2xl border-2 p-4 shadow-sm flex flex-col justify-between">
-          <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 px-4 py-2 rounded-t-xl flex items-center gap-2 mb-3">
+          <div class="-mx-4 -mt-4 px-4 py-2 rounded-t-xl flex items-center gap-2 mb-3 shadow-sm transition-colors" style="background: var(--info-banner); color: var(--info-banner-text);">
             <span>🚗</span>
             <h3 class="text-xs font-black uppercase tracking-wider">DISTANCIAS</h3>
           </div>
@@ -676,7 +729,7 @@
         </div>
 
         <div class="themed-info-subcard md:col-span-8 rounded-2xl border-2 p-4 shadow-sm flex flex-col justify-between">
-          <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 px-4 py-2 rounded-t-xl flex items-center gap-2 mb-3">
+          <div class="-mx-4 -mt-4 px-4 py-2 rounded-t-xl flex items-center gap-2 mb-3 shadow-sm transition-colors" style="background: var(--info-banner); color: var(--info-banner-text);">
             <span>✈️</span>
             <h3 class="text-xs font-black uppercase tracking-wider">CÓMO LLEGAR</h3>
           </div>
@@ -705,7 +758,7 @@
       </div>
 
       <!-- Banner de Cierre -->
-      <footer class="text-center py-5 px-4 bg-gradient-to-r from-[#173a25] via-[#215234] to-[#173a25] text-white mt-4 rounded-xl border-2 border-emerald-600/40">
+      <footer class="text-center py-5 px-4 mt-4 rounded-xl border-2 shadow-sm transition-colors" style="background: var(--info-banner); border-color: var(--player-border); color: var(--info-banner-text);">
         <h3 class="text-xl sm:text-2xl font-bold tracking-wide">
           ¡El Chicamocha te espera!
         </h3>
@@ -735,7 +788,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="themed-card p-5 rounded-2xl border shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-500 flex items-center justify-center text-lg font-bold mb-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg font-bold mb-3 shadow-sm transition-colors" style="background: var(--icon-amber-bg); color: var(--icon-amber-text);">
             🏺
           </div>
           <h3 class="text-sm font-bold mb-1.5" style="color: var(--hero-title);" id="guane-card1-t">Cultura y Cosmovisión</h3>
@@ -745,7 +798,7 @@
         </div>
 
         <div class="themed-card p-5 rounded-2xl border shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-500 flex items-center justify-center text-lg font-bold mb-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg font-bold mb-3 shadow-sm transition-colors" style="background: var(--icon-amber-bg); color: var(--icon-amber-text);">
             🥾
           </div>
           <h3 class="text-sm font-bold mb-1.5" style="color: var(--hero-title);" id="guane-card2-t">El Camino Real de Lengerke</h3>
@@ -755,7 +808,7 @@
         </div>
 
         <div class="themed-card p-5 rounded-2xl border shadow-sm">
-          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-500 flex items-center justify-center text-lg font-bold mb-3">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg font-bold mb-3 shadow-sm transition-colors" style="background: var(--icon-amber-bg); color: var(--icon-amber-text);">
             ⚔️
           </div>
           <h3 class="text-sm font-bold mb-1.5" style="color: var(--hero-title);" id="guane-card3-t">Resistencia y Legado</h3>
@@ -785,29 +838,29 @@
       
       <!-- Flora Column -->
       <div class="themed-card p-6 rounded-3xl border shadow-xl space-y-4">
-        <div class="flex items-center gap-3 pb-3 border-b border-emerald-900/20">
-          <div class="w-9 h-9 rounded-xl bg-emerald-600/20 text-emerald-500 flex items-center justify-center text-xl">
+        <div class="flex items-center gap-3 pb-3 border-b border-emerald-500/20">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-sm transition-colors" style="background: var(--icon-emerald-bg); color: var(--icon-emerald-text);">
             🌱
           </div>
           <div>
             <h3 class="text-base font-bold" style="color: var(--hero-title);" id="flora-title">Flora Endémica</h3>
-            <p class="text-[11px] text-emerald-500" id="flora-sub">Adaptaciones biológicas a la aridez</p>
+            <p class="text-[11px] font-semibold text-emerald-600" id="flora-sub">Adaptaciones biológicas a la aridez</p>
           </div>
         </div>
 
         <div class="space-y-3 text-xs">
           <div class="themed-subcard p-3.5 rounded-xl border">
-            <p class="font-bold text-emerald-500">🌳 Ceiba Barrigona (Cavanillesia chicamochae)</p>
+            <p class="font-bold text-emerald-600">🌳 Ceiba Barrigona (Cavanillesia chicamochae)</p>
             <p class="text-[11px] opacity-80 mt-1">El árbol insignia del cañón. Su tronco en forma de botella almacena toneladas de agua para soportar meses de sequía. Crece aferrado a acantilados casi verticales.</p>
           </div>
 
           <div class="themed-subcard p-3.5 rounded-xl border">
-            <p class="font-bold text-emerald-500">🌿 Zamia encephalartoides (Fósil Viviente)</p>
+            <p class="font-bold text-emerald-600">🌿 Zamia encephalartoides (Fósil Viviente)</p>
             <p class="text-[11px] opacity-80 mt-1">Una cícada de la era Jurásica que convivió con los dinosaurios. Especie protegida de crecimiento ultra lento exclusiva de Santander.</p>
           </div>
 
           <div class="themed-subcard p-3.5 rounded-xl border">
-            <p class="font-bold text-emerald-500">🌵 Cactáceas & Cacao Indio</p>
+            <p class="font-bold text-emerald-600">🌵 Cactáceas & Cacao Indio</p>
             <p class="text-[11px] opacity-80 mt-1">Bosques de cardones columnares, pitahayas silvestres y tunas que proveen alimento a aves y pequeños reptiles.</p>
           </div>
         </div>
@@ -815,29 +868,29 @@
 
       <!-- Fauna Column -->
       <div class="themed-card p-6 rounded-3xl border shadow-xl space-y-4">
-        <div class="flex items-center gap-3 pb-3 border-b border-emerald-900/20">
-          <div class="w-9 h-9 rounded-xl bg-cyan-600/20 text-cyan-500 flex items-center justify-center text-xl">
+        <div class="flex items-center gap-3 pb-3 border-b border-cyan-500/20">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-sm transition-colors" style="background: var(--icon-cyan-bg); color: var(--icon-cyan-text);">
             🐾
           </div>
           <div>
             <h3 class="text-base font-bold" style="color: var(--hero-title);" id="fauna-title">Fauna Silvestre</h3>
-            <p class="text-[11px] text-cyan-500" id="fauna-sub">Aves raras, felinos y reptiles</p>
+            <p class="text-[11px] font-semibold text-cyan-600" id="fauna-sub">Aves raras, felinos y reptiles</p>
           </div>
         </div>
 
         <div class="space-y-3 text-xs">
           <div class="themed-subcard p-3.5 rounded-xl border">
-            <p class="font-bold text-cyan-500">🐦 Cucarachero de Nicéforo (Thryophilus nicefori)</p>
+            <p class="font-bold text-cyan-600">🐦 Cucarachero de Nicéforo (Thryophilus nicefori)</p>
             <p class="text-[11px] opacity-80 mt-1">Una de las aves más raras del planeta, en peligro crítico de extinción. Su canto característico acompaña los amaneceres del cañón.</p>
           </div>
 
           <div class="themed-subcard p-3.5 rounded-xl border">
-            <p class="font-bold text-cyan-500">🐆 Tigrillo & Ocelote (Leopardus pardalis)</p>
+            <p class="font-bold text-cyan-600">🐆 Tigrillo & Ocelote (Leopardus pardalis)</p>
             <p class="text-[11px] opacity-80 mt-1">Felino sigiloso que habita en las quebradas y cañadas protegidas. Caza iguanas, roedores y serpientes en las horas nocturnas.</p>
           </div>
 
           <div class="themed-subcard p-3.5 rounded-xl border">
-            <p class="font-bold text-cyan-500">🐒 Mono Aullador & Iguana del Chicamocha</p>
+            <p class="font-bold text-cyan-600">🐒 Mono Aullador & Iguana del Chicamocha</p>
             <p class="text-[11px] opacity-80 mt-1">Poblaciones de monos aulladores rojos (*Alouatta seniculus*) en los bosques riparios junto con iguanas de gran tamaño adaptadas al sol abrasador.</p>
           </div>
         </div>
@@ -854,29 +907,31 @@
       
       <!-- Gastronomía Autóctona -->
       <div class="themed-card p-6 sm:p-8 rounded-3xl border space-y-4 shadow-sm">
-        <div class="flex items-center gap-3 pb-3 border-b border-emerald-900/20">
-          <span class="text-2xl">🍲</span>
+        <div class="flex items-center gap-3 pb-3 border-b border-amber-500/20">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-sm transition-colors" style="background: var(--icon-amber-bg); color: var(--icon-amber-text);">
+            🍲
+          </div>
           <div>
             <h3 class="text-lg font-bold" style="color: var(--hero-title);" id="gastro-title">Gastronomía Autóctona de Santander</h3>
-            <p class="text-xs text-amber-500" id="gastro-sub">Sabores centenarios con identidad campesina</p>
+            <p class="text-xs font-semibold text-amber-600" id="gastro-sub">Sabores centenarios con identidad campesina</p>
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
           <div class="themed-subcard p-3 rounded-xl border">
-            <p class="font-bold mb-0.5" style="color: var(--hero-title);">🐐 Cabrito & Pepitoria</p>
+            <p class="font-bold mb-0.5 text-amber-700">🐐 Cabrito & Pepitoria</p>
             <p class="text-[11px] opacity-80">Cabrito asado o frito acompañado de pepitoria de arroz con sangre y vísceras especiadas.</p>
           </div>
           <div class="themed-subcard p-3 rounded-xl border">
-            <p class="font-bold mb-0.5" style="color: var(--hero-title);">🥩 Carne Oreada</p>
+            <p class="font-bold mb-0.5 text-amber-700">🥩 Carne Oreada</p>
             <p class="text-[11px] opacity-80">Carne de res marinada en panela, naranja agria y comino, secada al sol de los Andes.</p>
           </div>
           <div class="themed-subcard p-3 rounded-xl border">
-            <p class="font-bold mb-0.5" style="color: var(--hero-title);">🌽 Arepa Santandereana</p>
+            <p class="font-bold mb-0.5 text-amber-700">🌽 Arepa Santandereana</p>
             <p class="text-[11px] opacity-80">Maíz pelao con lejía cocido y molido con chicharrón crocante y asado en tiesto.</p>
           </div>
           <div class="themed-subcard p-3 rounded-xl border">
-            <p class="font-bold mb-0.5" style="color: var(--hero-title);">🐜 Hormigas Culonas</p>
+            <p class="font-bold mb-0.5 text-amber-700">🐜 Hormigas Culonas</p>
             <p class="text-[11px] opacity-80">Herencia milenaria Guane tostada con sal. Delicadeza afrodisíaca de temporada.</p>
           </div>
         </div>
@@ -884,31 +939,33 @@
 
       <!-- Rutas y Cómo Llegar -->
       <div class="themed-card p-6 sm:p-8 rounded-3xl border space-y-4 shadow-sm">
-        <div class="flex items-center gap-3 pb-3 border-b border-emerald-900/20">
-          <span class="text-2xl">🚗</span>
+        <div class="flex items-center gap-3 pb-3 border-b border-blue-500/20">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-xl shadow-sm transition-colors" style="background: var(--icon-blue-bg); color: var(--icon-blue-text);">
+            🚗
+          </div>
           <div>
             <h3 class="text-lg font-bold" style="color: var(--hero-title);" id="routes-title">Cómo Llegar & Recomendaciones Viales</h3>
-            <p class="text-xs text-emerald-500" id="routes-sub">Distancias, tiempos y consejos para viajeros</p>
+            <p class="text-xs font-semibold text-blue-600" id="routes-sub">Distancias, tiempos y consejos para viajeros</p>
           </div>
         </div>
 
         <ul class="space-y-2.5 text-xs" id="routes-list">
           <li class="themed-subcard p-3 rounded-xl border flex items-start gap-2">
-            <span class="text-emerald-500 font-bold">1.</span>
+            <span class="text-emerald-600 font-bold">1.</span>
             <span><strong>Desde Bucaramanga:</strong> 54 km (aprox. 50-60 min) tomando la Vía Nacional 45A hacia San Gil/Bogotá. Descenso y ascenso por Pescadero.</span>
           </li>
           <li class="themed-subcard p-3 rounded-xl border flex items-start gap-2">
-            <span class="text-emerald-500 font-bold">2.</span>
+            <span class="text-emerald-600 font-bold">2.</span>
             <span><strong>Desde Bogotá:</strong> 340 km (aprox. 6 a 7 horas) vía Tunja - Barbosa - San Gil - Aratoca hasta el mirador de PANACHI.</span>
           </li>
           <li class="themed-subcard p-3 rounded-xl border flex items-start gap-2">
-            <span class="text-emerald-500 font-bold">3.</span>
+            <span class="text-emerald-600 font-bold">3.</span>
             <span><strong>Vía Aérea:</strong> Vuelo a Bucaramanga (Aeropuerto Internacional Palonegro - BGA) + vehículo de alquiler o transporte intermunicipal.</span>
           </li>
         </ul>
 
-        <div class="p-3 rounded-xl border text-[11px]" style="background: var(--guane-bg); border-color: var(--guane-border);">
-          ⚠️ <strong>Consejo del Viajero:</strong> El descenso hacia el Río Chicamocha en Pescadero presenta curvas pronunciadas. Utiliza caja de cambios (freno de motor) y lleva agua para hidratarte.
+        <div class="p-3 rounded-xl border text-[11px] shadow-sm" style="background: var(--subcard-bg); border-color: var(--guane-border); color: var(--text-main);">
+          ⚠️ <strong class="text-amber-700">Consejo del Viajero:</strong> El descenso hacia el Río Chicamocha en Pescadero presenta curvas pronunciadas. Utiliza caja de cambios (freno de motor) y lleva agua para hidratarte.
         </div>
       </div>
 
@@ -1143,8 +1200,10 @@
         if (btn) {
           if (l === lang) {
             btn.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition bg-emerald-600 text-white shadow";
+            btn.style.color = "#ffffff";
           } else {
-            btn.className = "px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white";
+            btn.className = "px-2.5 py-1 rounded-lg text-xs font-medium transition opacity-80 hover:opacity-100";
+            btn.style.color = "var(--text-main)";
           }
         }
       });
@@ -1264,7 +1323,7 @@
     // ==========================================
     // SISTEMA DE CAMBIO DE TEMA (CLARO / OSCURO)
     // ==========================================
-    let currentTheme = localStorage.getItem('santander_theme') || 'dark';
+    let currentTheme = localStorage.getItem('santander_theme') || 'light';
 
     function applyTheme(theme) {
       currentTheme = theme;
