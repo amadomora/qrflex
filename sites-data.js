@@ -1,0 +1,366 @@
+/**
+ * Registro multilingüe de atractivos turísticos de Santander para el Frontend
+ * Curaduría: turismo-santander
+ */
+window.sitesRegistry = {
+  // 1. CAÑÓN DEL CHICAMOCHA
+  "canon-del-chicamocha": {
+    slug: "canon-del-chicamocha",
+    category: "canyon",
+    es: {
+      navTitle: "Cañón del Chicamocha",
+      heroTitle: "Cañón del Chicamocha",
+      heroTagline: "Naturaleza • Historia • Aventura — Un destino que te conecta con la grandeza de Colombia",
+      audioguideTitle: "Audioguía Inteligente",
+      audioguideStatus: "Escucha en tu idioma (1:45 min)",
+      pillText: "🇨🇴 Español",
+      metric1Label: "Longitud",
+      metric1Val: "227 km",
+      metric2Label: "Profundidad",
+      metric2Val: "~2.000 m",
+      metric3Label: "Superficie",
+      metric3Val: "+108.000 ha",
+      locationTitle: "Ubicación & Territorio",
+      locationDesc: "Se encuentra en la Cordillera Oriental de los Andes, principalmente en el departamento de Santander (con inicio en Boyacá). Se extiende entre Aratoca, Cepitá, Los Santos, Piedecuesta y Jordán.",
+      climateLabel: "☀️ Clima: Cálido, árido (11°C noches hasta 32°C día)",
+      historyTitle: "Historia & Origen Geológico",
+      historyDesc: "Se formó hace aprox. 46 millones de años por movimientos tectónicos y erosión fluvial. Antigua cuenca lacustre con fósiles marinos. Territorio ancestral de los Guanes, Laches, Yariguíes y Muiscas. En 2009 fue preseleccionado como una de las maravillas naturales del mundo.",
+      attractionsTitle: "Sitios Turísticos de Interés Clave",
+      biodiversityTitle: "Fauna y Flora Emblemática",
+      faunaTitle: "🐾 Fauna:",
+      faunaDesc: "Monos aulladores, tigrillos, osos hormigueros, armadillos, zarigüeyas, iguanas y cucarachero nicéforo.",
+      floraTitle: "🌱 Flora:",
+      floraDesc: "Palma Zamia encephalartoides, Cacao indio, Castañete y Árbol barrigón.",
+      gettingThereTitle: "Distancias & Cómo Llegar",
+      gettingThereList: [
+        "• <strong>Desde Bucaramanga:</strong> 54 km (aprox. 50 min en carro o bus vía San Gil/Piedecuesta).",
+        "• <strong>Desde Bogotá:</strong> 340 km por carretera (5-6 h en carro o 8-9 h en bus).",
+        "• <strong>Vía Aérea + Tierra:</strong> Vuelo a Aeropuerto Palonegro (BGA en Lebrija) + transfer terrestre (<4 horas)."
+      ],
+      footerFlagsTitle: "Idiomas disponibles con cambio instantáneo:",
+      attractions: [
+        { name: "Parque Nacional del Chicamocha (PANACHI)", desc: "Miradores panorámicos, teleférico de 6.3 km que cruza el cañón, monumento a la santandereanidad y deportes extremos." },
+        { name: "La Mesa de Los Santos", desc: "Zona de sabana alta, clima templado, ecoturismo, parapente, miradores y exquisita gastronomía típica santandereana." },
+        { name: "Camino Real de Jordán a Los Santos", desc: "Ruta histórica de herencia indígena y colonial, ideal para senderismo extremo descendiendo y ascendiendo el cañón." },
+        { name: "Pueblos Coloniales Cercanos", desc: "Barichara (el pueblo más lindo de Colombia), Guane con su museo paleontológico, Villanueva y Zapatoca." }
+      ]
+    },
+    en: {
+      navTitle: "Chicamocha Canyon",
+      heroTitle: "Chicamocha Canyon",
+      heroTagline: "Nature • History • Adventure — A destination connecting you with Colombia's grandeur",
+      audioguideTitle: "Smart Audio Guide",
+      audioguideStatus: "Listen in English (1:45 min)",
+      pillText: "🇺🇸 English",
+      metric1Label: "Length",
+      metric1Val: "227 km (141 mi)",
+      metric2Label: "Depth",
+      metric2Val: "~2,000 m (6,560 ft)",
+      metric3Label: "Area",
+      metric3Val: "+108,000 ha",
+      locationTitle: "Location & Territory",
+      locationDesc: "Located in the Eastern Andes Mountain Range, mainly across the department of Santander (originating in Boyacá). Extends across Aratoca, Cepitá, Los Santos, Piedecuesta, and Jordán.",
+      climateLabel: "☀️ Climate: Warm, arid & dry (11°C at night to 32°C during the day)",
+      historyTitle: "History & Geological Origin",
+      historyDesc: "Formed approximately 46 million years ago during the Tertiary period by tectonic movements and river erosion. Ancient lake basin containing marine fossils. Ancestral homeland of indigenous Guanes, Laches, Yariguies, and Muiscas. Shortlisted in 2009 as one of the New 7 Wonders of Nature.",
+      attractionsTitle: "Key Tourist Attractions",
+      biodiversityTitle: "Flora & Fauna (Biodiversity)",
+      faunaTitle: "🐾 Wildlife:",
+      faunaDesc: "Howler monkeys, ocelots, anteaters, armadillos, opossums, iguanas, and the Niceforo's wren.",
+      floraTitle: "🌱 Flora:",
+      floraDesc: "Zamia encephalartoides palm, wild cocoa, Castañete, and the iconic Barrigón bottle tree.",
+      gettingThereTitle: "Distances & How to Get There",
+      gettingThereList: [
+        "• <strong>From Bucaramanga:</strong> 54 km (approx. 50 min by car or bus via San Gil/Piedecuesta).",
+        "• <strong>From Bogotá:</strong> 340 km by road (5-6 hours by car or 8-9 hours by coach).",
+        "• <strong>Air + Land:</strong> Fly to Palonegro International Airport (BGA in Lebrija) + scenic ground transfer (<4 hours total)."
+      ],
+      footerFlagsTitle: "Available languages with instant switching:",
+      attractions: [
+        { name: "Chicamocha National Park (PANACHI)", desc: "Panoramic viewpoints, a 6.3 km aerial tramway crossing the entire canyon, cultural monuments, and extreme sports." },
+        { name: "La Mesa de Los Santos", desc: "High plateau with pleasant climate, ecotourism, tandem paragliding, viewpoints, and traditional regional cuisine." },
+        { name: "Camino Real (Jordán to Los Santos)", desc: "Historic stone-paved trail of indigenous and colonial heritage, perfect for extreme hiking down and across the canyon." },
+        { name: "Nearby Colonial Towns", desc: "Barichara (acclaimed as Colombia's prettiest town), Guane with its fossil museum, Villanueva, and Zapatoca." }
+      ]
+    },
+    fr: {
+      navTitle: "Canyon du Chicamocha",
+      heroTitle: "Canyon du Chicamocha",
+      heroTagline: "Nature • Histoire • Aventure — Une destination qui vous connecte à la grandeur de la Colombie",
+      audioguideTitle: "Audioguide Intelligent",
+      audioguideStatus: "Écoutez en français (1:45 min)",
+      pillText: "🇫🇷 Français",
+      metric1Label: "Longueur",
+      metric1Val: "227 km",
+      metric2Label: "Profondeur",
+      metric2Val: "~2.000 m",
+      metric3Label: "Superficie",
+      metric3Val: "+108.000 ha",
+      locationTitle: "Emplacement & Territoire",
+      locationDesc: "Situé dans la cordillère orientale des Andes, principalement dans le département de Santander (prenant sa source en Boyacá). Il s'étend entre Aratoca, Cepitá, Los Santos, Piedecuesta et Jordán.",
+      climateLabel: "☀️ Climat: Chaud, aride et sec (de 11°C la nuit à 32°C le jour)",
+      historyTitle: "Histoire & Origine Géologique",
+      historyDesc: "Formé il y a environ 46 millions d'années par des mouvements tectoniques et l'érosion fluviale. Ancien bassin lacustre abritant des fossiles marins. Territoire ancestral des peuples indigènes Guanes, Laches, Yariguíes et Muiscas. Présélectionné en 2009 parmi les merveilles naturelles du monde.",
+      attractionsTitle: "Sites d'Intérêt Touristique",
+      biodiversityTitle: "Faune et Flore Remarquables",
+      faunaTitle: "🐾 Faune:",
+      faunaDesc: "Singes hurleurs, ocelots, tamanoirs, tatous, opossums, iguanes et troglodytes de Nicéforo.",
+      floraTitle: "🌱 Flore:",
+      floraDesc: "Palmier Zamia encephalartoides, Cacao sauvage, Castañete et l'Arbre Ventru (Barrigón).",
+      gettingThereTitle: "Distances & Comment Venir",
+      gettingThereList: [
+        "• <strong>Depuis Bucaramanga:</strong> 54 km (environ 50 min en voiture ou bus via San Gil).",
+        "• <strong>Depuis Bogotá:</strong> 340 km par route (5 à 6 h en voiture ou 8 à 9 h en bus).",
+        "• <strong>Voie Aérienne + Terre:</strong> Vol vers l'Aéroport International Palonegro (BGA) + transfert terrestre (<4 h total)."
+      ],
+      footerFlagsTitle: "Langues disponibles avec changement instantané :",
+      attractions: [
+        { name: "Parc National du Chicamocha (PANACHI)", desc: "Belvédères panoramiques spectaculaires, téléphérique de 6,3 km traversant le gouffre, monuments historiques et sports extrêmes." },
+        { name: "La Mesa de Los Santos", desc: "Plateau d'altitude au climat agréable, écotourisme, parapente au-dessus du canyon et gastronomie traditionnelle réputée." },
+        { name: "Chemin Royal de Jordán à Los Santos", desc: "Sentier pavé historique d'héritage indigène et colonial, idéal pour les randonnées exigeantes au cœur du canyon." },
+        { name: "Villages Coloniaux Voisins", desc: "Barichara (considéré comme le plus beau village de Colombie), Guane et son musée paléontologique, Villanueva et Zapatoca." }
+      ]
+    }
+  },
+
+  // 2. BARICHARA COLONIAL
+  "barichara-colonial": {
+    slug: "barichara-colonial",
+    category: "heritage",
+    es: {
+      navTitle: "Barichara Colonial",
+      heroTitle: "Barichara Colonial",
+      heroTagline: "Piedra • Historia • Tranquilidad — El pueblo más lindo de Colombia",
+      audioguideTitle: "Audioguía Histórica Barichara",
+      audioguideStatus: "Escucha en tu idioma (2:10 min)",
+      pillText: "🇨🇴 Español",
+      metric1Label: "Altitud",
+      metric1Val: "1.336 msnm",
+      metric2Label: "Patrimonio",
+      metric2Val: "Nacional (1978)",
+      metric3Label: "Fundación",
+      metric3Val: "Año 1705",
+      locationTitle: "Ubicación & Entorno Colonial",
+      locationDesc: "Ubicado en la Provincia de Guanentá en Santander, sobre una meseta con vista al cañón del río Suárez. A sólo 22 km de San Gil y 118 km de Bucaramanga.",
+      climateLabel: "☀️ Clima: Templado y seco (18°C noches a 26°C día)",
+      historyTitle: "Historia & Arquitectura en Piedra",
+      historyDesc: "Fundado en 1705 tras la aparición milagrosa de la Virgen de la Roca esculpida en una losa. Obra cumbre del urbanismo colonial con construcciones en tapia pisada, bahareque y tejas de barro. Cuna de los maestros talladores de piedra arenisca amarilla.",
+      attractionsTitle: "Joyas y Monumentos Coloniales",
+      biodiversityTitle: "Fauna y Flora de la Serranía",
+      faunaTitle: "🐾 Aves y Fauna:",
+      faunaDesc: "Toches amarillos, carpinteros habados, colibríes ermitaños e iguanas de piedra.",
+      floraTitle: "🌱 Flora Representativa:",
+      floraDesc: "Guayacanes amarillos, Ceibas milenarias, cactus candelabro y cultivos de fique.",
+      gettingThereTitle: "Cómo Llegar a Barichara",
+      gettingThereList: [
+        "• <strong>Desde San Gil:</strong> 22 km (aprox. 30 min en autobús regular cada 20 min o taxi).",
+        "• <strong>Desde Bucaramanga:</strong> 118 km (aprox. 2.5 a 3 horas en automóvil vía San Gil).",
+        "• <strong>Desde Bogotá:</strong> 320 km por autopista (5.5 a 6 horas vía Tunja - Barbosa - San Gil)."
+      ],
+      footerFlagsTitle: "Idiomas disponibles con cambio instantáneo:",
+      attractions: [
+        { name: "Catedral de la Inmaculada Concepción", desc: "Templo monumental en piedra ocre tallada a mano en 1838, con diez majestuosas columnas monolíticas." },
+        { name: "Camino Real a Guane (Lengerke)", desc: "Sendero ancestral empedrado de 5.5 km entre fósiles y cactus que une a Barichara con la villa de Guane." },
+        { name: "Mirador Salto del Mico", desc: "Balcón de roca natural con panorámica infinita hacia el cañón del río Suárez y la cordillera de los Yariguíes." },
+        { name: "Taller del Fique y Bioconstrucción", desc: "Centro artesanal donde se produce papel ecológico a partir de fibras del agave y pinturas con tierras minerales." }
+      ]
+    },
+    en: {
+      navTitle: "Colonial Barichara",
+      heroTitle: "Colonial Barichara",
+      heroTagline: "Stone • History • Serenity — Colombia's prettiest heritage town",
+      audioguideTitle: "Barichara Heritage Audio Guide",
+      audioguideStatus: "Listen in English (2:10 min)",
+      pillText: "🇺🇸 English",
+      metric1Label: "Altitude",
+      metric1Val: "1,336 m (4,383 ft)",
+      metric2Label: "Heritage",
+      metric2Val: "National (1978)",
+      metric3Label: "Founded",
+      metric3Val: "Year 1705",
+      locationTitle: "Location & Andean Setting",
+      locationDesc: "Located in the Guanentá Province of Santander, atop a plateau overlooking the dramatic Suárez River canyon, 22 km from San Gil and 118 km from Bucaramanga.",
+      climateLabel: "☀️ Climate: Pleasant and sunny (18°C / 64°F to 26°C / 79°F)",
+      historyTitle: "History & Rammed-Earth Architecture",
+      historyDesc: "Founded in 1705 after the miraculous apparition of the Virgin Mary engraved on stone. Latin America's finest preserved colonial town built with hand-tamped earth (tapia pisada), cobblestones, and golden sandstone.",
+      attractionsTitle: "Heritage Sites & Highlights",
+      biodiversityTitle: "Highland Birds & Native Flora",
+      faunaTitle: "🐾 Native Wildlife:",
+      faunaDesc: "Yellow orioles (Toches), woodpeckers, hermit hummingbirds, and rock lizards.",
+      floraTitle: "🌱 Highland Flora:",
+      floraDesc: "Golden trumpet trees (Guayacán), ancient Ceibas, wild orchids, and native fique agave.",
+      gettingThereTitle: "How to Get to Barichara",
+      gettingThereList: [
+        "• <strong>From San Gil:</strong> 22 km (approx. 30 min by frequent local bus or scenic taxi).",
+        "• <strong>From Bucaramanga:</strong> 118 km (approx. 2.5 to 3 hours by car or regional coach via San Gil).",
+        "• <strong>From Bogotá:</strong> 320 km via Tunja and Barbosa (approx. 6 hours scenic highway drive)."
+      ],
+      footerFlagsTitle: "Available languages with instant switching:",
+      attractions: [
+        { name: "Cathedral of the Immaculate Conception", desc: "Hand-hewn from golden limestone in 1838, celebrated for its 10 massive monolithic columns." },
+        { name: "Royal Trail to Guane (Camino Real)", desc: "5.5 km stone-paved downhill heritage trek dating to indigenous and German pioneer Geo von Lengerke." },
+        { name: "Salto del Mico Viewpoint", desc: "Breathtaking natural rock ledge protruding high above the Suárez River gorge." },
+        { name: "Fique Paper Artisan Mill", desc: "Traditional craft workshop converting desert agave fibers into fine acid-free paper." }
+      ]
+    },
+    fr: {
+      navTitle: "Barichara Colonial",
+      heroTitle: "Barichara Colonial",
+      heroTagline: "Pierre • Histoire • Sérénité — Le plus beau village de Colombie",
+      audioguideTitle: "Audioguide Patrimoine Barichara",
+      audioguideStatus: "Écoutez en français (2:10 min)",
+      pillText: "🇫🇷 Français",
+      metric1Label: "Altitude",
+      metric1Val: "1.336 m",
+      metric2Label: "Patrimoine",
+      metric2Val: "National (1978)",
+      metric3Label: "Fondation",
+      metric3Val: "Année 1705",
+      locationTitle: "Situation & Cadre Andalou",
+      locationDesc: "Niché sur un plateau dominant le canyon du río Suárez dans la province de Guanentá, à 22 km de San Gil et 118 km de Bucaramanga.",
+      climateLabel: "☀️ Climat: Agréable et ensoleillé (de 18°C la nuit à 26°C le jour)",
+      historyTitle: "Histoire & Architecture en Pisé",
+      historyDesc: "Fondé en 1705 suite à l'apparition miraculeuse de la Vierge gravée dans un bloc de roche. Joyau de l'architecture coloniale hispanique en pisé (tapia pisada), rues pavées de pierre ocre et ateliers d'artisans tailleurs.",
+      attractionsTitle: "Trésors et Édifices Coloniaux",
+      biodiversityTitle: "Oiseaux et Végétation Andine",
+      faunaTitle: "🐾 Faune Andine:",
+      faunaDesc: "Orioles jaunes (Toches), pics arboricoles, colibris et iguanes de roche.",
+      floraTitle: "🌱 Végétation:",
+      floraDesc: "Guayacans dorés, Ceibas majestueux, cactus candélabres et plantations d'agave fique.",
+      gettingThereTitle: "Comment Venir à Barichara",
+      gettingThereList: [
+        "• <strong>Depuis San Gil:</strong> 22 km (environ 30 min en autocar régional régulier ou taxi).",
+        "• <strong>Depuis Bucaramanga:</strong> 118 km (environ 2h30 à 3h en voiture par San Gil).",
+        "• <strong>Depuis Bogotá:</strong> 320 km par la route nationale (environ 6h via Tunja et San Gil)."
+      ],
+      footerFlagsTitle: "Langues disponibles avec changement instantané :",
+      attractions: [
+        { name: "Cathédrale de l'Immaculée Conception", desc: "Sanctuaire magistral en pierre jaune taillée en 1838 avec dix colonnes monolithes." },
+        { name: "Chemin Royal vers Guane", desc: "Sentier de randonnée historique pavé de 5,5 km serpentant au flanc du canyon." },
+        { name: "Belvédère du Salto del Mico", desc: "Corniche rocheuse spectaculaire suspendue au-dessus du canyon du río Suárez." },
+        { name: "Manufacture Artisanale de Fique", desc: "Atelier traditionnel fabriquant du papier d'art à base de fibres végétales d'agave." }
+      ]
+    }
+  },
+
+  // 3. PANACHI (PARQUE NACIONAL DEL CHICAMOCHA)
+  "panachi-parque-nacional": {
+    slug: "panachi-parque-nacional",
+    category: "park",
+    es: {
+      navTitle: "PANACHI (Parque Nacional)",
+      heroTitle: "PANACHI - Parque Nacional del Chicamocha",
+      heroTagline: "Aventura • Cultura • Santandereanidad — El corazón turístico del cañón",
+      audioguideTitle: "Audioguía PANACHI Aventura",
+      audioguideStatus: "Escucha en tu idioma (2:00 min)",
+      pillText: "🇨🇴 Español",
+      metric1Label: "Teleférico",
+      metric1Val: "6.3 km",
+      metric2Label: "Superficie",
+      metric2Val: "264 Hectáreas",
+      metric3Label: "Inauguración",
+      metric3Val: "Año 2006",
+      locationTitle: "Ubicación & Acceso en el Cañón",
+      locationDesc: "Ubicado en el km 54 de la vía Bucaramanga - San Gil, en jurisdicción de Aratoca. Estación del teleférico conecta directamente con la Mesa de Los Santos.",
+      climateLabel: "☀️ Clima: Cálido y ventoso de día (24°C a 30°C)",
+      historyTitle: "Historia & Monumento Comunero",
+      historyDesc: "Inaugurado en diciembre de 2006 como el gran tributo a la pujanza, rebeldía e identidad del pueblo santandereano. Destaca el colosal Monumento a la Santandereanidad del maestro Luis Guillermo Vallejo.",
+      attractionsTitle: "Atracciones & Deportes Extremos",
+      biodiversityTitle: "Fauna y Flora del Parque",
+      faunaTitle: "🐾 Fauna del Cañón:",
+      faunaDesc: "Cabras de cañón trepadoras, águilas cuaresmeras, iguanas y lagartos collarejos.",
+      floraTitle: "🌱 Flora Xerofítica:",
+      floraDesc: "Cactus gigantes cardonales, Ceiba barrigona, tunas y agaves silvestres.",
+      gettingThereTitle: "Cómo Llegar a PANACHI",
+      gettingThereList: [
+        "• <strong>Desde Bucaramanga:</strong> 54 km (aprox. 50 min a 1 hora en autobús intermunicipal directo).",
+        "• <strong>Desde San Gil:</strong> 40 km hacia el norte (aprox. 45 min en vehículo o bus vía Aratoca).",
+        "• <strong>Vía Mesa de Los Santos:</strong> Acceso a la estación del teleférico Los Santos para cruzar por el aire."
+      ],
+      footerFlagsTitle: "Idiomas disponibles con cambio instantáneo:",
+      attractions: [
+        { name: "Teleférico del Chicamocha", desc: "Recorrido aéreo de 6.3 km cruzando el abismo del río Chicamocha en un vuelo panorámico de 22 minutos." },
+        { name: "Monumento a la Santandereanidad", desc: "Escultura en bronce con 35 figuras épicas sobre una hoja de tabaco de 60 metros sobre la roca." },
+        { name: "Parapente y Tirolesas Extremas", desc: "Despegue sobre el abismo a 1.500 m de altura, cable vuelos de 450 m y columpio del cañón." },
+        { name: "Parque Acuático Chicamocha", desc: "Piscinas panorámicas infinitas, río lento y toboganes rodeados de farallones desérticos." }
+      ]
+    },
+    en: {
+      navTitle: "PANACHI (National Park)",
+      heroTitle: "PANACHI - Chicamocha National Park",
+      heroTagline: "Adventure • Culture • Heritage — Suspended over the vastness of the canyon",
+      audioguideTitle: "PANACHI Adventure Audio Guide",
+      audioguideStatus: "Listen in English (2:00 min)",
+      pillText: "🇺🇸 English",
+      metric1Label: "Tramway",
+      metric1Val: "6.3 km (3.9 mi)",
+      metric2Label: "Park Area",
+      metric2Val: "264 Hectares",
+      metric3Label: "Opened",
+      metric3Val: "Year 2006",
+      locationTitle: "Location & Highway Access",
+      locationDesc: "Situated at km 54 on the main highway connecting Bucaramanga and San Gil in the municipality of Aratoca, linked by cable car to La Mesa de Los Santos.",
+      climateLabel: "☀️ Climate: Warm and breezy (24°C / 75°F to 30°C / 86°F)",
+      historyTitle: "History & Communard Pride",
+      historyDesc: "Opened in December 2006 as Colombia's premier mountain adventure hub, celebrating the 1781 Comunero revolt for independence and Andean engineering prowess.",
+      attractionsTitle: "Rides & Extreme Adventures",
+      biodiversityTitle: "Desert Canyon Wildlife",
+      faunaTitle: "🐾 Canyon Wildlife:",
+      faunaDesc: "Wild cliff-climbing canyon goats, broad-winged hawks, and native rock iguanas.",
+      floraTitle: "🌱 Canyon Flora:",
+      floraDesc: "Giant columnar cacti, Ceiba barrigona bottle trees, and wild mountain agaves.",
+      gettingThereTitle: "How to Get to PANACHI",
+      gettingThereList: [
+        "• <strong>From Bucaramanga:</strong> 54 km (approx. 50 min to 1 hour by direct highway coach).",
+        "• <strong>From San Gil:</strong> 40 km north along Highway 45A (approx. 45 min drive).",
+        "• <strong>Via Mesa de Los Santos:</strong> Board the aerial tramway from the northern plateau station."
+      ],
+      footerFlagsTitle: "Available languages with instant switching:",
+      attractions: [
+        { name: "Chicamocha Aerial Tramway", desc: "A 6.3 km world-class cable car traversing across the deep river canyon in 22 minutes." },
+        { name: "Monument to Santanderean Heritage", desc: "Massive 60-meter tobacco-leaf bronze sculpture honoring freedom fighters." },
+        { name: "Tandem Paragliding & Ziplines", desc: "World-famous thermals launching 1,500 m high, 450 m ziplines, and canyon swings." },
+        { name: "Chicamocha Water Park", desc: "Infinity pools, waterslides, and lazy river surrounded by dramatic canyon walls." }
+      ]
+    },
+    fr: {
+      navTitle: "PANACHI (Parc National)",
+      heroTitle: "PANACHI - Parc National du Chicamocha",
+      heroTagline: "Aventure • Culture • Fierté — Suspendu au-dessus du gouffre du canyon",
+      audioguideTitle: "Audioguide Aventure PANACHI",
+      audioguideStatus: "Écoutez en français (2:00 min)",
+      pillText: "🇫🇷 Français",
+      metric1Label: "Téléphérique",
+      metric1Val: "6,3 km",
+      metric2Label: "Superficie",
+      metric2Val: "264 Hectares",
+      metric3Label: "Ouverture",
+      metric3Val: "Année 2006",
+      locationTitle: "Accès & Emplacement dans le Canyon",
+      locationDesc: "Situé au km 54 de la route nationale Bucaramanga - San Gil à Aratoca, relié par téléphérique au plateau de La Mesa de Los Santos.",
+      climateLabel: "☀️ Climat: Chaud et aéré en journée (de 24°C à 30°C)",
+      historyTitle: "Histoire & Révolution des Comuneros",
+      historyDesc: "Inauguré en 2006 en hommage à la bravoure et à l'identité des pionniers de Santander. Chef-d'œuvre touristique alliant culture andine et sports à sensations.",
+      attractionsTitle: "Attractions & Sensations Fortes",
+      biodiversityTitle: "Faune et Végétation du Parc",
+      faunaTitle: "🐾 Faune Sauvage:",
+      faunaDesc: "Chèvres sauvages des parois rocheuses, faucons migrateurs et lézards du canyon.",
+      floraTitle: "🌱 Végétation Xérophile:",
+      floraDesc: "Cactus candélabres géants, arbres ventrus et agaves sauvages épineux.",
+      gettingThereTitle: "Comment Venir à PANACHI",
+      gettingThereList: [
+        "• <strong>Depuis Bucaramanga:</strong> 54 km (environ 50 min à 1 h en autocar direct).",
+        "• <strong>Depuis San Gil:</strong> 40 km au nord (environ 45 min en voiture par la route 45A).",
+        "• <strong>Par La Mesa de Los Santos:</strong> Embarquement direct à la gare haute du téléphérique."
+      ],
+      footerFlagsTitle: "Langues disponibles avec changement instantané :",
+      attractions: [
+        { name: "Téléphérique du Chicamocha", desc: "Traversée aérienne de 6,3 km au-dessus du gouffre et du río Chicamocha en 22 minutes." },
+        { name: "Monument aux Héros de Santander", desc: "Monument grandiose de 35 statues de bronze sur une feuille de tabac géante." },
+        { name: "Parapente et Tyroliennes Géantes", desc: "Envol au-dessus du vide à 1.500 m d'altitude et tyroliennes spectaculaires." },
+        { name: "Parc Aquatique du Chicamocha", desc: "Piscines panoramiques à débordement et toboggans face aux parois rocheuses." }
+      ]
+    }
+  }
+};
+
