@@ -503,7 +503,10 @@
           <span class="text-base">🛰️</span>
           <span id="geo-status">Haz clic en <strong>'Mi Ubicación en Tiempo Real'</strong> para calcular tu distancia exacta al Cañón del Chicamocha.</span>
         </div>
-        <div id="geo-nav-actions" class="hidden flex items-center gap-2 shrink-0">
+        <div id="geo-nav-actions" class="hidden flex flex-wrap items-center gap-2 shrink-0">
+          <a id="link-osm" href="https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=6.788%2C-73.003" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-emerald-700 hover:bg-emerald-600 text-white flex items-center gap-1 transition shadow-sm">
+            <span>🗺️</span> <span id="btn-nav-osm">Ruta en OpenStreetMap</span>
+          </a>
           <a id="link-gmaps" href="https://www.google.com/maps/dir/?api=1&destination=6.788,-73.003" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white flex items-center gap-1 transition">
             <span>🚗</span> <span id="btn-nav-gmaps">Google Maps</span>
           </a>
@@ -1224,6 +1227,7 @@
         geoDesc: "Explora los principales miradores, estaciones del teleférico y senderos del Cañón del Chicamocha con cálculo de distancia satelital desde tu ubicación actual.",
         btnGetLocText: 'Mi Ubicación en Tiempo Real',
         geoStatusInit: "Haz clic en <strong>'Mi Ubicación en Tiempo Real'</strong> para calcular tu distancia exacta al Cañón del Chicamocha.",
+        btnNavOsm: "Ruta en OpenStreetMap",
         btnNavGmaps: "Google Maps",
         btnNavWaze: "Waze",
         poi1Sub: "Parque y Mirador",
@@ -1386,6 +1390,7 @@
         geoDesc: "Explore key viewpoints, cable car stations, and trails across Chicamocha Canyon with real-time GPS distance calculation from your device.",
         btnGetLocText: 'My Real-Time Location',
         geoStatusInit: "Click <strong>'My Real-Time Location'</strong> to calculate your exact distance to Chicamocha Canyon.",
+        btnNavOsm: "Route on OpenStreetMap",
         btnNavGmaps: "Google Maps",
         btnNavWaze: "Waze",
         poi1Sub: "Theme Park & Viewpoint",
@@ -1548,6 +1553,7 @@
         geoDesc: "Explorez les principaux belvédères, stations de téléphérique et sentiers du Canyon du Chicamocha avec calcul de distance GPS en temps réel depuis votre position.",
         btnGetLocText: 'Ma Position en Temps Réel',
         geoStatusInit: "Cliquez sur <strong>'Ma Position en Temps Réel'</strong> pour mesurer votre distance au Canyon du Chicamocha.",
+        btnNavOsm: "Itinéraire sur OpenStreetMap",
         btnNavGmaps: "Google Maps",
         btnNavWaze: "Waze",
         poi1Sub: "Parc & Belvédère",
@@ -1746,6 +1752,7 @@
       setTxt('geo-title', d.geoTitle);
       setTxt('geo-desc', d.geoDesc);
       setTxt('btn-get-loc-text', d.btnGetLocText);
+      setTxt('btn-nav-osm', d.btnNavOsm);
       setTxt('btn-nav-gmaps', d.btnNavGmaps);
       setTxt('btn-nav-waze', d.btnNavWaze);
       setTxt('poi-1-sub', d.poi1Sub);
@@ -2024,10 +2031,25 @@
 
       map = L.map('map-chicamocha', { scrollWheelZoom: false }).setView(chicamochaCoords, 11);
       
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      // Capa Oficial de OpenStreetMap (Libre, abierta, sin límites de Google)
+      const osmLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      });
+
+      // Capa Alternativa CartoDB Voyager
+      const cartoLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; OpenStreetMap &copy; CARTO',
         maxZoom: 19
-      }).addTo(map);
+      });
+
+      osmLayer.addTo(map);
+
+      // Selector de capas (OSM y CartoDB)
+      L.control.layers({
+        "🗺️ OpenStreetMap": osmLayer,
+        "🧭 CartoDB Voyager": cartoLayer
+      }, null, { position: 'topright' }).addTo(map);
 
       // Puntos de interés clave
       const points = [
@@ -2041,7 +2063,7 @@
 
       points.forEach(pt => {
         const marker = L.marker(pt.coords).addTo(map);
-        marker.bindPopup(`<div class="p-1"><strong>${pt.icon} ${pt.name}</strong><br><span style="font-size:11px;color:#475569;">${pt.desc}</span><br><a href="https://www.google.com/maps/dir/?api=1&destination=${pt.coords[0]},${pt.coords[1]}" target="_blank" rel="noopener noreferrer" style="color:#059669;font-weight:bold;font-size:11px;display:inline-block;margin-top:4px;">Abrir en Google Maps &rarr;</a></div>`);
+        marker.bindPopup(`<div class="p-1"><strong>${pt.icon} ${pt.name}</strong><br><span style="font-size:11px;color:#475569;">${pt.desc}</span><br><div class="flex items-center gap-2 mt-2 pt-1 border-t border-slate-200"><a href="https://www.openstreetmap.org/?mlat=${pt.coords[0]}&mlon=${pt.coords[1]}#map=15/${pt.coords[0]}/${pt.coords[1]}" target="_blank" rel="noopener noreferrer" style="color:#047857;font-weight:bold;font-size:11px;">🗺️ OpenStreetMap</a><span style="color:#94a3b8;">|</span><a href="https://www.google.com/maps/dir/?api=1&destination=${pt.coords[0]},${pt.coords[1]}" target="_blank" rel="noopener noreferrer" style="color:#2563eb;font-weight:bold;font-size:11px;">🚗 Google Maps</a></div></div>`);
       });
     }
 
@@ -2080,6 +2102,8 @@
 
           if (navBtns) navBtns.classList.remove('hidden');
 
+          const linkOsm = document.getElementById('link-osm');
+          if (linkOsm) linkOsm.href = `https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${lat}%2C${lng}%3B${chicamochaCoords[0]}%2C${chicamochaCoords[1]}`;
           const linkGmaps = document.getElementById('link-gmaps');
           if (linkGmaps) linkGmaps.href = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lng}&destination=${chicamochaCoords[0]},${chicamochaCoords[1]}`;
           const linkWaze = document.getElementById('link-waze');
