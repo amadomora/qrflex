@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-meta-title">Cañón del Chicamocha • Santander Digital Oficial</title>
+  <meta name="description" id="page-meta-desc" content="Guía interactiva oficial y completa del Cañón del Chicamocha: geología milenaria, tour virtual 360°, audioguía trilingüe, ancestros Guane, biodiversidad endémica y rutas viales.">
+  <meta property="og:title" content="Cañón del Chicamocha • El Gran Cañón de Colombia">
+  <meta property="og:description" content="Explora en 360°, escucha la audioguía trilingüe y descubre la majestuosidad de Santander.">
+  <meta property="og:image" content="/images/panachi_360_aerial.jpg">
+  <meta property="og:url" content="https://santanderdigital.online/chicamocha">
+  <meta name="theme-color" content="#064e3b">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇨🇴</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            santander: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes wavePulse {
+      0%, 100% { height: 6px; }
+      50% { height: 26px; }
+    }
+    .wave-bar {
+      width: 3px;
+      border-radius: 9999px;
+      background: #10b981;
+      height: 6px;
+      transition: height 0.2s ease;
+    }
+    .wave-active .bar-1 { animation: wavePulse 0.8s infinite ease-in-out 0.1s; }
+    .wave-active .bar-2 { animation: wavePulse 0.8s infinite ease-in-out 0.3s; }
+    .wave-active .bar-3 { animation: wavePulse 0.8s infinite ease-in-out 0.2s; }
+    .wave-active .bar-4 { animation: wavePulse 0.8s infinite ease-in-out 0.4s; }
+    .wave-active .bar-5 { animation: wavePulse 0.8s infinite ease-in-out 0.15s; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-emerald-500 selection:text-white pb-20">
+
+  <!-- ======================================================== -->
+  <!-- 1. TOP NAVBAR HEADER -->
+  <!-- ======================================================== -->
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-emerald-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      
+      <!-- Brand & Link to Main Portal -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-900 flex items-center justify-center text-white font-black shadow-md border border-emerald-500/30 group-hover:scale-105 transition">
+          SD
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-sm font-black tracking-tight text-white">Santander Digital</span>
+            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase">Oficial</span>
+          </div>
+          <p class="text-[10px] text-slate-400">Portal Turístico del Cañón del Chicamocha</p>
+        </div>
+      </a>
+
+      <!-- Language Selector & Actions -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Trilingual Quick Switcher -->
+        <div class="flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700 text-xs">
+          <button onclick="changeLang('es')" id="btn-lang-es" class="px-2.5 py-1 rounded-lg text-xs font-bold transition bg-emerald-600 text-white shadow" title="Español">
+            🇨🇴 ES
+          </button>
+          <button onclick="changeLang('en')" id="btn-lang-en" class="px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white" title="English">
+            🇺🇸 EN
+          </button>
+          <button onclick="changeLang('fr')" id="btn-lang-fr" class="px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white" title="Français">
+            🇫🇷 FR
+          </button>
+        </div>
+
+        <!-- QR Signage Shortcut -->
+        <a href="#seccion-qr" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-950 text-emerald-300 border border-emerald-700/60 hover:bg-emerald-900 transition">
+          <span>📲</span> <span id="nav-qr-text">Código QR</span>
+        </a>
+
+        <!-- Back to Directory -->
+        <a href="/" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1 transition">
+          <span>←</span> <span class="hidden sm:inline" id="nav-back-text">Todos los Sitios</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================== -->
+  <!-- 2. HERO PRINCIPAL & BANNER INMERSIVO -->
+  <!-- ======================================================== -->
+  <section class="relative bg-gradient-to-b from-emerald-950/80 via-slate-900 to-slate-950 py-10 md:py-16 border-b border-emerald-900/30 overflow-hidden">
+    <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <!-- Badges -->
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5">
+          <span>⛰️</span> <span id="badge-canyon">Maravilla Natural de Colombia</span>
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1.5">
+          <span>⭐</span> <span id="badge-unesco">Preseleccionado Maravilla del Mundo 2009</span>
+        </span>
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+          📍 Cordillera Oriental • Santander
+        </span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4" id="hero-title">
+        Cañón del Chicamocha
+      </h1>
+
+      <p class="text-base sm:text-xl text-emerald-200/90 font-medium max-w-4xl mb-8 leading-relaxed" id="hero-tagline">
+        Naturaleza • Historia • Aventura — El segundo cañón más grande del planeta por profundidad y volumen visual, donde los Andes colombianos tallaron 46 millones de años de historia geológica y herencia indígena Guane.
+      </p>
+
+      <!-- Key Metrics Strip (Chips Gigantes) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-8">
+        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-emerald-400 mb-0.5" id="metric-1-lbl">Longitud Total</p>
+          <p class="text-xl sm:text-2xl font-black text-white" id="metric-1-val">227 km</p>
+          <p class="text-[10px] text-slate-400" id="metric-1-sub">Desde Boyacá hasta Sogamoso</p>
+        </div>
+
+        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-amber-400 mb-0.5" id="metric-2-lbl">Profundidad Máxima</p>
+          <p class="text-xl sm:text-2xl font-black text-white" id="metric-2-val">~2.000 m</p>
+          <p class="text-[10px] text-slate-400" id="metric-2-sub">Más profundo que Colorado</p>
+        </div>
+
+        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-cyan-400 mb-0.5" id="metric-3-lbl">Área Protegida</p>
+          <p class="text-xl sm:text-2xl font-black text-white" id="metric-3-val">+108.000 ha</p>
+          <p class="text-[10px] text-slate-400" id="metric-3-sub">Ecosistema bosque seco</p>
+        </div>
+
+        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-rose-400 mb-0.5" id="metric-4-lbl">Clima & Temp</p>
+          <p class="text-xl sm:text-2xl font-black text-white" id="metric-4-val">11°C - 34°C</p>
+          <p class="text-[10px] text-slate-400" id="metric-4-sub">Microclima semiárido cálido</p>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1 bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-purple-400 mb-0.5" id="metric-5-lbl">Altitud Variable</p>
+          <p class="text-xl sm:text-2xl font-black text-white" id="metric-5-val">500 a 2.050 m</p>
+          <p class="text-[10px] text-slate-400" id="metric-5-sub">Del lecho a la Mesa de los Santos</p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="#tour-virtual-360" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white shadow-lg shadow-blue-900/40 flex items-center gap-2 transition active:scale-95">
+          <span>🧭</span> <span id="btn-jump-360">Explorar Tour Virtual 360°</span>
+        </a>
+        <button onclick="toggleAudioGuide()" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-emerald-600 hover:bg-emerald-500 text-white shadow-lg shadow-emerald-950/60 flex items-center gap-2 transition active:scale-95">
+          <span>🎧</span> <span id="btn-play-audio-lbl">Escuchar Audioguía Oficial</span>
+        </button>
+        <a href="#seccion-geologia" class="px-4 py-2.5 rounded-xl font-semibold text-xs sm:text-sm bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+          <span id="btn-jump-details">Geología, Flora & Guanes ↓</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 3. COMPACT TRILINGUAL SMART AUDIO PLAYER -->
+  <!-- ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-4 relative z-20">
+    <div class="bg-gradient-to-r from-emerald-950 via-slate-900 to-emerald-950 p-4 rounded-2xl border border-emerald-700/60 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+      
+      <div class="flex items-center gap-3.5 w-full md:w-auto">
+        <button onclick="toggleAudioGuide()" id="player-main-btn" class="w-12 h-12 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center font-black text-xl shadow-md transition active:scale-95 flex-shrink-0" title="Reproducir / Pausar">
+          ▶
+        </button>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-black text-white" id="player-title">Audioguía Inteligente Santander Digital</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 uppercase" id="player-badge">Web Speech API</span>
+          </div>
+          <p class="text-[11px] text-slate-300" id="player-subtitle">Voz oficial trilingüe con narración histórica y geográfica</p>
+        </div>
+      </div>
+
+      <!-- Animated Soundwave & Timer -->
+      <div class="flex items-center gap-4 w-full md:w-auto justify-end">
+        <div id="soundwave-container" class="flex items-center gap-1 h-7 px-2">
+          <div class="wave-bar bar-1"></div>
+          <div class="wave-bar bar-2"></div>
+          <div class="wave-bar bar-3"></div>
+          <div class="wave-bar bar-4"></div>
+          <div class="wave-bar bar-5"></div>
+        </div>
+
+        <div class="text-right">
+          <span class="font-mono text-xs font-bold text-emerald-400" id="player-timer">00:00 / 01:45</span>
+          <p class="text-[10px] text-slate-400" id="player-lang-indicator">Locución: Español 🇨🇴</p>
+        </div>
+
+        <button onclick="toggleTranscriptModal()" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition" id="btn-transcript">
+          📜 Transcripción
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Collapsible Transcript Box -->
+    <div id="transcript-box" class="hidden mt-3 p-4 bg-slate-900 rounded-xl border border-emerald-900/40 text-xs text-slate-300 leading-relaxed max-h-48 overflow-y-auto">
+      <div class="flex items-center justify-between pb-2 mb-2 border-b border-slate-800">
+        <span class="font-bold text-emerald-400" id="transcript-title">Transcripción Oficial de la Audioguía</span>
+        <button onclick="toggleTranscriptModal()" class="text-slate-400 hover:text-white">✕ Cerrar</button>
+      </div>
+      <p id="transcript-body"></p>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 4. TOUR VIRTUAL 360° EMBEBIDO DIRECTAMENTE -->
+  <!-- ======================================================== -->
+  <section id="tour-virtual-360" class="max-w-7xl mx-auto px-4 sm:px-6 pt-12">
+    <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col">
+      
+      <!-- Visor Header Bar -->
+      <div class="bg-gradient-to-r from-slate-950 via-emerald-950 to-slate-950 px-5 py-3.5 flex items-center justify-between border-b border-emerald-900/60 z-10">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-blue-600/90 flex items-center justify-center text-xl shadow-inner border border-blue-400/40">
+            🧭
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-sm font-black text-white tracking-wide" id="v360-header-title">Tour Virtual 360° • Cañón del Chicamocha y PANACHI</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-500 text-blue-950 uppercase">krpano WebGL</span>
+            </div>
+            <p class="text-[11px] text-slate-300" id="v360-header-sub">Navegación aérea 360°, miradores del abismo y teleférico sobre el cañón</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <a href="https://parquesdesantander.com/visor/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1 transition">
+            <span>↗️</span> <span class="hidden sm:inline">Pestaña Completa</span>
+          </a>
+          <button onclick="toggle360Fullscreen()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-600 text-white transition flex items-center gap-1">
+            <span>⛶</span> <span class="hidden sm:inline">Maximizar</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Iframe Container -->
+      <div id="container-360-embed" class="relative w-full h-[450px] sm:h-[580px] bg-black">
+        <div id="v360-loading-hint" class="absolute inset-0 flex flex-col items-center justify-center bg-slate-950 text-slate-400 gap-3 z-0 pointer-events-none">
+          <div class="w-10 h-10 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin"></div>
+          <p class="text-xs font-medium">Iniciando experiencia 360° inmersiva de Santander...</p>
+        </div>
+        <iframe id="iframe-chicamocha-360"
+                src="https://parquesdesantander.com/visor/"
+                class="w-full h-full border-0 relative z-10"
+                allow="accelerometer; gyroscope; magnetometer; fullscreen"
+                allowfullscreen
+                loading="lazy">
+        </iframe>
+      </div>
+
+      <!-- Visor Bottom Strip with Info -->
+      <div class="bg-slate-950 px-5 py-3 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-400">
+        <div class="flex items-center gap-2">
+          <span>💡</span>
+          <span id="v360-instructions">Haz clic y arrastra con el ratón o desliza con el dedo para girar 360°. Usa la rueda para hacer zoom.</span>
+        </div>
+        <div class="flex items-center gap-2 font-mono text-[11px] text-emerald-400">
+          <span>📍 Coordenadas: 6.788° N, 73.003° W</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 5. SECCIÓN INTENSIVA: GEOLOGÍA, FÓSILES Y ORIGEN -->
+  <!-- ======================================================== -->
+  <section id="seccion-geologia" class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- Left Column: Rich Geological Content -->
+      <div class="lg:col-span-7 space-y-6">
+        <div>
+          <span class="text-xs uppercase font-bold text-emerald-400 tracking-wider">Ciencia de la Tierra</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-white mt-1 tracking-tight" id="geo-sec-title">
+            Geología Milenaria & Fósiles Marinos
+          </h2>
+          <p class="text-sm text-slate-300 mt-2 leading-relaxed" id="geo-sec-intro">
+            El Cañón del Chicamocha es un libro abierto de la historia geológica de América del Sur. Con una profundidad vertical que supera los 2.000 metros, expone capas sedimentarias que datan de las eras Mesozoica y Cenozoica.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+            <h3 class="text-base font-bold text-emerald-300 flex items-center gap-2" id="geo-h1">
+              <span>🌊</span> Un Antiguo Fondo Marino en los Andes
+            </h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed" id="geo-p1">
+              Hace más de 120 millones de años, gran parte del territorio santandereano estuvo sumergido bajo un mar cálido de poca profundidad. A lo largo de los farallones de Cepitá, Jordán y la Mesa de los Santos se conservan fósiles de ammonites, bivalvos marinos y huellas estratigráficas que demuestran el colosal levantamiento tectónico de la Cordillera Oriental.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+            <h3 class="text-base font-bold text-amber-300 flex items-center gap-2" id="geo-h2">
+              <span>⚡</span> Tectonismo y la Falla de Bucaramanga-Santa Marta
+            </h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed" id="geo-p2">
+              El cañón comenzó su labrado abrupto hace aprox. 46 millones de años. La interacción activa de la Falla del Chicamocha y la gran falla regional aceleró el corte vertical del Río Chicamocha (antiguo río Sogamoso), creando un cañón más profundo que el Gran Cañón del Colorado en varios sectores.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800">
+            <h3 class="text-base font-bold text-cyan-300 flex items-center gap-2" id="geo-h3">
+              <span>☀️</span> Microclima de Enclave Semiárido
+            </h3>
+            <p class="text-xs text-slate-300 mt-1.5 leading-relaxed" id="geo-p3">
+              Debido al fenómeno de sombra orográfica (*foehn*), las nubes cargadas de humedad descargan en las cordilleras exteriores, dejando el fondo del cañón en condiciones secas con insolación intensa y precipitaciones inferiores a 600 mm anuales.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Visual Infographic Asset -->
+      <div class="lg:col-span-5 space-y-4">
+        <div class="bg-slate-900 rounded-3xl border border-slate-800 overflow-hidden shadow-xl">
+          <div class="p-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+            <span class="text-xs font-bold text-white">Infografía Geológica Oficial</span>
+            <span class="text-[10px] text-emerald-400 font-mono">Alta Definición</span>
+          </div>
+          <img src="/images/chicamocha_infographic.jpg" alt="Infografía del Cañón del Chicamocha" class="w-full h-auto object-cover hover:scale-105 transition duration-500">
+          <div class="p-4 bg-slate-900/90 text-[11px] text-slate-300">
+            <p><strong>Cortes Geológicos:</strong> Formación Los Santos, Formación Jordán y basamento metamórfico con más de mil millones de años de antigüedad en el lecho del río.</p>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-br from-emerald-950 to-slate-900 p-4 rounded-2xl border border-emerald-800/40 text-xs text-emerald-100">
+          <p class="font-bold mb-1">💡 ¿Sabías que?</p>
+          <p>En 2009, el Cañón del Chicamocha fue el único atractivo continental de Colombia preseleccionado en la campaña internacional para elegir las Nuevas 7 Maravillas de la Naturaleza.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 6. SECCIÓN ANCESTRAL: LOS GUANES Y EL CAMINO REAL -->
+  <!-- ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+    <div class="bg-gradient-to-br from-amber-950/40 via-slate-900 to-slate-900 p-6 sm:p-10 rounded-3xl border border-amber-900/30 shadow-xl">
+      <div class="max-w-3xl mb-8">
+        <span class="text-xs uppercase font-bold text-amber-400 tracking-wider">Patrimonio Indígena & Colonial</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-white mt-1 tracking-tight" id="guane-sec-title">
+          Tierra Sagrada Guane & El Camino de Lengerke
+        </h2>
+        <p class="text-sm text-slate-300 mt-2 leading-relaxed" id="guane-sec-intro">
+          Antes de la conquista española, las laderas escarpadas del Chicamocha fueron dominadas por la etnia Guane, de la familia lingüística Chibcha, reconocidos por su extraordinaria resistencia física, momificación ritual y textilería en algodón.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-slate-950/70 p-5 rounded-2xl border border-amber-900/40">
+          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-300 flex items-center justify-center text-lg font-bold mb-3">
+            🏺
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1.5" id="guane-card1-t">Cultura y Cosmovisión</h3>
+          <p class="text-xs text-slate-300 leading-relaxed" id="guane-card1-d">
+            Los Guanes consideraban el río Chicamocha un conducto cósmico. Construyeron terrazas agrícolas en pendientes vertiginosas donde cultivaban maíz, yuca y algodón silvestre. Sus pinturas rupestres en cuevas aún conservan pigmentos minerales rojizos intactos.
+          </p>
+        </div>
+
+        <div class="bg-slate-950/70 p-5 rounded-2xl border border-amber-900/40">
+          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-300 flex items-center justify-center text-lg font-bold mb-3">
+            🥾
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1.5" id="guane-card2-t">El Camino Real de Lengerke</h3>
+          <p class="text-xs text-slate-300 leading-relaxed" id="guane-card2-d">
+            En el siglo XIX, el ingeniero alemán Geo von Lengerke restauró y empedró los senderos indígenas precolombinos para abrir el comercio hacia el Río Magdalena. Hoy, el tramo entre Jordán Sube y Los Santos es una de las rutas de senderismo histórico más impresionantes del continente.
+          </p>
+        </div>
+
+        <div class="bg-slate-950/70 p-5 rounded-2xl border border-amber-900/40">
+          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-300 flex items-center justify-center text-lg font-bold mb-3">
+            ⚔️
+          </div>
+          <h3 class="text-sm font-bold text-white mb-1.5" id="guane-card3-t">Resistencia y Legado</h3>
+          <p class="text-xs text-slate-300 leading-relaxed" id="guane-card3-d">
+            Liderados por el cacique Guanentá, los Guanes resistieron con tenacidad el avance hispánico. Su sangre y temple moldearon el carácter recio, trabajador e indomable del pueblo santandereano actual ("¡Santander es pasión y comunera!").
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 7. SECCIÓN BIODIVERSIDAD ENDÉMICA (FLORA & FAUNA) -->
+  <!-- ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+    <div class="text-center max-w-2xl mx-auto mb-10">
+      <span class="text-xs uppercase font-bold text-emerald-400 tracking-wider">Santuario Ecológico</span>
+      <h2 class="text-2xl sm:text-4xl font-black text-white mt-1 tracking-tight" id="bio-sec-title">
+        Biodiversidad Endémica del Enclave Seco
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-300 mt-2" id="bio-sec-intro">
+        El aislamiento biológico del cañón dio origen a especies animales y vegetales que no existen en ninguna otra parte del planeta.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Flora Column -->
+      <div class="bg-slate-900 p-6 rounded-3xl border border-emerald-900/40 shadow-xl space-y-4">
+        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+          <div class="w-9 h-9 rounded-xl bg-emerald-600/20 text-emerald-300 flex items-center justify-center text-xl">
+            🌱
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white" id="flora-title">Flora Endémica</h3>
+            <p class="text-[11px] text-emerald-400" id="flora-sub">Adaptaciones biológicas a la aridez</p>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-xs text-slate-300">
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+            <p class="font-bold text-emerald-300">🌳 Ceiba Barrigona (Cavanillesia chicamochae)</p>
+            <p class="text-[11px] text-slate-400 mt-1">El árbol insignia del cañón. Su tronco en forma de botella almacena toneladas de agua para soportar meses de sequía. Crece aferrado a acantilados casi verticales.</p>
+          </div>
+
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+            <p class="font-bold text-emerald-300">🌿 Zamia encephalartoides (Fósil Viviente)</p>
+            <p class="text-[11px] text-slate-400 mt-1">Una cícada de la era Jurásica que convivió con los dinosaurios. Especie protegida de crecimiento ultra lento exclusiva de Santander.</p>
+          </div>
+
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+            <p class="font-bold text-emerald-300">🌵 Cactáceas & Cacao Indio</p>
+            <p class="text-[11px] text-slate-400 mt-1">Bosques de cardones columnares, pitahayas silvestres y tunas que proveen alimento a aves y pequeños reptiles.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fauna Column -->
+      <div class="bg-slate-900 p-6 rounded-3xl border border-emerald-900/40 shadow-xl space-y-4">
+        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+          <div class="w-9 h-9 rounded-xl bg-cyan-600/20 text-cyan-300 flex items-center justify-center text-xl">
+            🐾
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white" id="fauna-title">Fauna Silvestre</h3>
+            <p class="text-[11px] text-cyan-400" id="fauna-sub">Aves raras, felinos y reptiles</p>
+          </div>
+        </div>
+
+        <div class="space-y-3 text-xs text-slate-300">
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+            <p class="font-bold text-cyan-300">🐦 Cucarachero de Nicéforo (Thryophilus nicefori)</p>
+            <p class="text-[11px] text-slate-400 mt-1">Una de las aves más raras del planeta, en peligro crítico de extinción. Su canto característico acompaña los amaneceres del cañón.</p>
+          </div>
+
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+            <p class="font-bold text-cyan-300">🐆 Tigrillo & Ocelote (Leopardus pardalis)</p>
+            <p class="text-[11px] text-slate-400 mt-1">Felino sigiloso que habita en las quebradas y cañadas protegidas. Caza iguanas, roedores y serpientes en las horas nocturnas.</p>
+          </div>
+
+          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
+            <p class="font-bold text-cyan-300">🐒 Mono Aullador & Iguana del Chicamocha</p>
+            <p class="text-[11px] text-slate-400 mt-1">Poblaciones de monos aulladores rojos (*Alouatta seniculus*) en los bosques riparios junto con iguanas de gran tamaño adaptadas al sol abrasador.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 8. GASTRONOMÍA & RUTAS DE ACCESO -->
+  <!-- ======================================================== -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Gastronomía Autóctona -->
+      <div class="bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-4">
+        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+          <span class="text-2xl">🍲</span>
+          <div>
+            <h3 class="text-lg font-bold text-white" id="gastro-title">Gastronomía Autóctona de Santander</h3>
+            <p class="text-xs text-amber-400" id="gastro-sub">Sabores centenarios con identidad campesina</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <p class="font-bold text-white mb-0.5">🐐 Cabrito & Pepitoria</p>
+            <p class="text-[11px] text-slate-400">Cabrito asado o frito acompañado de pepitoria de arroz con sangre y vísceras especiadas.</p>
+          </div>
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <p class="font-bold text-white mb-0.5">🥩 Carne Oreada</p>
+            <p class="text-[11px] text-slate-400">Carne de res marinada en panela, naranja agria y comino, secada al sol de los Andes.</p>
+          </div>
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <p class="font-bold text-white mb-0.5">🌽 Arepa Santandereana</p>
+            <p class="text-[11px] text-slate-400">Maíz pelao con lejía cocido y molido con chicharrón crocante y asado en tiesto.</p>
+          </div>
+          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+            <p class="font-bold text-white mb-0.5">🐜 Hormigas Culonas</p>
+            <p class="text-[11px] text-slate-400">Herencia milenaria Guane tostada con sal. Delicadeza afrodisíaca de temporada.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rutas y Cómo Llegar -->
+      <div class="bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-4">
+        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+          <span class="text-2xl">🚗</span>
+          <div>
+            <h3 class="text-lg font-bold text-white" id="routes-title">Cómo Llegar & Recomendaciones Viales</h3>
+            <p class="text-xs text-emerald-400" id="routes-sub">Distancias, tiempos y consejos para viajeros</p>
+          </div>
+        </div>
+
+        <ul class="space-y-2.5 text-xs text-slate-300" id="routes-list">
+          <li class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-start gap-2">
+            <span class="text-emerald-400 font-bold">1.</span>
+            <span><strong>Desde Bucaramanga:</strong> 54 km (aprox. 50-60 min) tomando la Vía Nacional 45A hacia San Gil/Bogotá. Descenso y ascenso por Pescadero.</span>
+          </li>
+          <li class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-start gap-2">
+            <span class="text-emerald-400 font-bold">2.</span>
+            <span><strong>Desde Bogotá:</strong> 340 km (aprox. 6 a 7 horas) vía Tunja - Barbosa - San Gil - Aratoca hasta el mirador de PANACHI.</span>
+          </li>
+          <li class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-start gap-2">
+            <span class="text-emerald-400 font-bold">3.</span>
+            <span><strong>Vía Aérea:</strong> Vuelo a Bucaramanga (Aeropuerto Internacional Palonegro - BGA) + vehículo de alquiler o transporte intermunicipal.</span>
+          </li>
+        </ul>
+
+        <div class="p-3 bg-amber-950/40 rounded-xl border border-amber-800/40 text-[11px] text-amber-200">
+          ⚠️ <strong>Consejo del Viajero:</strong> El descenso hacia el Río Chicamocha en Pescadero presenta curvas pronunciadas. Utiliza caja de cambios (freno de motor) y lleva agua para hidratarte.
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 9. SECCIÓN CÓDIGO QR INTELIGENTE & SEÑALÉTICA FÍSICA -->
+  <!-- ======================================================== -->
+  <section id="seccion-qr" class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+    <div class="bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-950 p-6 sm:p-10 rounded-3xl border border-emerald-600/40 shadow-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        
+        <!-- Left details -->
+        <div class="md:col-span-7 space-y-4">
+          <span class="text-xs uppercase font-bold text-emerald-400 tracking-wider">Acceso Rápido en Campo</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight" id="qr-sec-title">
+            Código QR Oficial de Esta Ficha
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" id="qr-sec-desc">
+            Este código QR dinámico enlaza directamente a esta página individual. Al ser escaneado con la cámara de cualquier teléfono móvil, detecta el idioma del visitante (Español, Inglés o Francés) y presenta toda la experiencia multimedia.
+          </p>
+
+          <div class="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between gap-3 text-xs">
+            <div class="truncate">
+              <p class="text-[10px] text-slate-400">Enlace directo permanente:</p>
+              <p class="font-mono text-emerald-300 font-bold truncate" id="direct-url-text">https://santanderdigital.online/chicamocha</p>
+            </div>
+            <button onclick="copyDirectUrl()" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex-shrink-0 transition">
+              Copiar
+            </button>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="/api/qr/render/chicamocha?format=signage" target="_blank" download="placa-chicamocha.svg" class="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-600 text-white flex items-center gap-1.5 transition">
+              <span>📥</span> Descargar Placa Vectorial (SVG)
+            </a>
+            <a href="/api/qr/render/chicamocha?format=png&width=1200" target="_blank" download="qr-300dpi-chicamocha.png" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1.5 transition">
+              <span>🖨️</span> Descargar PNG 300 DPI (Imprenta)
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Real QR Render Plaque Preview -->
+        <div class="md:col-span-5 flex justify-center">
+          <div class="bg-white p-5 rounded-3xl shadow-2xl border-4 border-emerald-500/80 text-center max-w-[280px] w-full text-slate-900">
+            <div class="mb-2">
+              <span class="text-[10px] font-black uppercase tracking-wider text-emerald-800">Santander Digital</span>
+              <h4 class="text-xs font-black text-slate-900 leading-tight">Cañón del Chicamocha</h4>
+            </div>
+
+            <!-- Dynamic QR Code Image -->
+            <div class="bg-slate-50 p-2 rounded-xl border border-slate-200 inline-block mb-3">
+              <img id="qr-live-img" src="/api/qr/render/chicamocha?format=svg" alt="QR Cañón del Chicamocha" class="w-48 h-48 mx-auto object-contain">
+            </div>
+
+            <p class="text-[10px] font-bold text-emerald-950 mb-2">Escanea con tu cámara</p>
+
+            <!-- Bottom Trilingual Flags (Standard de Señalética) -->
+            <div class="flex items-center justify-center gap-2 pt-2 border-t border-slate-200 text-xs">
+              <span title="Español">🇨🇴 ES</span>
+              <span class="text-slate-300">|</span>
+              <span title="English">🇺🇸 EN</span>
+              <span class="text-slate-300">|</span>
+              <span title="Français">🇫🇷 FR</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 10. FOOTER INSTITUCIONAL -->
+  <!-- ======================================================== -->
+  <footer class="mt-20 border-t border-slate-800 bg-slate-950 py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-xs">
+          SD
+        </div>
+        <div>
+          <p class="text-xs font-bold text-white">Santander Digital • Red Oficial de Turismo Inteligente</p>
+          <p class="text-[10px] text-slate-400">Departamento de Santander, República de Colombia &bull; 2026</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs text-slate-400">
+        <a href="/" class="hover:text-emerald-400 transition">Portal Principal</a>
+        <span>&bull;</span>
+        <a href="/panachi" class="hover:text-emerald-400 transition">PANACHI 360°</a>
+        <span>&bull;</span>
+        <a href="/barichara" class="hover:text-emerald-400 transition">Barichara Colonial</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================================================== -->
+  <!-- 11. SCRIPT DE INTERACTIVIDAD TRILINGÜE & REPRODUCTOR -->
+  <!-- ======================================================== -->
+  <script>
+    // Diccionario de Contenido Trilingüe de Alta Rigurosidad Curatorial
+    const contentData = {
+      es: {
+        pageTitle: "Cañón del Chicamocha • Santander Digital Oficial",
+        heroTitle: "Cañón del Chicamocha",
+        heroTagline: "Naturaleza • Historia • Aventura — El segundo cañón más grande del planeta por profundidad y volumen visual, donde los Andes colombianos tallaron 46 millones de años de historia geológica y herencia indígena Guane.",
+        metric1Lbl: "Longitud Total",
+        metric1Sub: "Desde Boyacá hasta Sogamoso",
+        metric2Lbl: "Profundidad Máxima",
+        metric2Sub: "Más profundo que Colorado",
+        metric3Lbl: "Área Protegida",
+        metric3Sub: "Ecosistema bosque seco",
+        metric4Lbl: "Clima & Temp",
+        metric4Sub: "Microclima semiárido cálido",
+        metric5Lbl: "Altitud Variable",
+        metric5Sub: "Del lecho a la Mesa de los Santos",
+        btnJump360: "Explorar Tour Virtual 360°",
+        btnPlayAudio: "Escuchar Audioguía Oficial",
+        playerTitle: "Audioguía Inteligente Santander Digital",
+        playerSubtitle: "Voz oficial con narración histórica y geográfica",
+        playerLang: "Locución: Español 🇨🇴",
+        transcriptTitle: "Transcripción Oficial de la Audioguía",
+        transcriptText: "Bienvenidos al majestuoso Cañón del Chicamocha, una de las obras geológicas más imponentes de América del Sur. Con una profundidad que sobrepasa los dos mil metros y una extensión de doscientos veintisiete kilómetros, este accidente andino se originó hace más de cuarenta y seis millones de años. En sus farallones rojizos habitaron los sabios indígenas Guanes, tejedores extraordinarios y señores del abismo. Hoy, el cañón te invita a vivir el cruce en teleférico más emocionante de Colombia, disfrutar del senderismo por el histórico Camino de Lengerke y saborear la gastronomía típica santandereana: cabrito, pepitoria y la famosa arepa de maíz pelao. ¡Disfruta la grandeza de Santander!",
+        v360Title: "Tour Virtual 360° • Cañón del Chicamocha y PANACHI",
+        v360Sub: "Navegación aérea 360°, miradores del abismo y teleférico sobre el cañón"
+      },
+      en: {
+        pageTitle: "Chicamocha Canyon • Official Santander Digital",
+        heroTitle: "Chicamocha Canyon",
+        heroTagline: "Nature • History • Adventure — The second deepest canyon on Earth by vertical drop and visual volume, where the Colombian Andes carved 46 million years of geological wonder and indigenous Guane legacy.",
+        metric1Lbl: "Total Length",
+        metric1Sub: "From Boyacá to Sogamoso River",
+        metric2Lbl: "Maximum Depth",
+        metric2Sub: "Deeper than the Grand Canyon",
+        metric3Lbl: "Protected Area",
+        metric3Sub: "Dry forest biodiversity zone",
+        metric4Lbl: "Climate & Temp",
+        metric4Sub: "Warm semi-arid microclimate",
+        metric5Lbl: "Elevation Range",
+        metric5Sub: "From riverbed to high plateaus",
+        btnJump360: "Explore 360° Virtual Tour",
+        btnPlayAudio: "Listen to Official Audio Guide",
+        playerTitle: "Santander Digital Smart Audio Guide",
+        playerSubtitle: "Official narration with geographical and cultural insights",
+        playerLang: "Voice: English 🇺🇸",
+        transcriptTitle: "Official Audio Guide Transcript",
+        transcriptText: "Welcome to the magnificent Chicamocha Canyon, one of the most breathtaking geological landmarks in South America. Reaching depths of over two thousand meters and extending across two hundred twenty-seven kilometers, this Andean wonder began forming over forty-six million years ago. Ancient Guane indigenous communities thrived along its steep cliffs, mastering terrace agriculture and cotton textiles. Today, the canyon welcomes adventurers to cross its vast chasm aboard one of the world's longest cable cars, hike the historic Lengerke stone trail, and savor authentic Santander cuisine. Welcome to Santander!",
+        v360Title: "360° Virtual Tour • Chicamocha Canyon & PANACHI",
+        v360Sub: "Panoramic aerial navigation, dramatic cliff viewpoints and cable car crossing"
+      },
+      fr: {
+        pageTitle: "Canyon du Chicamocha • Santander Digital Officiel",
+        heroTitle: "Canyon du Chicamocha",
+        heroTagline: "Nature • Histoire • Aventure — Le deuxième canyon le plus profond de la planète, où les Andes colombiennes ont sculpté 46 millions d'années d'histoire géologique et de patrimoine indigène Guane.",
+        metric1Lbl: "Longueur Totale",
+        metric1Sub: "De Boyacá jusqu'au fleuve Sogamoso",
+        metric2Lbl: "Profondeur Max",
+        metric2Sub: "Plus profond que le Grand Canyon",
+        metric3Lbl: "Zone Protégée",
+        metric3Sub: "Écosystème de forêt sèche andine",
+        metric4Lbl: "Climat & Temp",
+        metric4Sub: "Microclimat semi-aride chaud",
+        metric5Lbl: "Altitude Variable",
+        metric5Sub: "Du lit du fleuve aux hauts plateaux",
+        btnJump360: "Explorer le Tour Virtuel 360°",
+        btnPlayAudio: "Écouter l'Audioguide Officiel",
+        playerTitle: "Audioguide Intelligent Santander Digital",
+        playerSubtitle: "Narration officielle avec repères historiques et géographiques",
+        playerLang: "Locution: Français 🇫🇷",
+        transcriptTitle: "Transcription Officielle de l'Audioguide",
+        transcriptText: "Bienvenue dans le majestueux Canyon du Chicamocha, l'un des monuments géologiques les plus impressionnants d'Amérique du Sud. Atteignant des profondeurs vertigineuses de plus de deux mille mètres sur deux cent vingt-sept kilomètres de long, ce canyon a débuté sa formation il y a quarante-six millions d'années. Autrefois territoire sacré des indigènes Guanes, le canyon vous invite aujourd'hui à traverser ses abîmes à bord d'un téléphérique spectaculaire, à parcourir les chemins pavés de Lengerke et à découvrir la gastronomie de Santander. Bienvenue en Colombie !",
+        v360Title: "Tour Virtuel 360° • Canyon du Chicamocha & PANACHI",
+        v360Sub: "Vue aérienne à 360°, belvédères panoramiques et téléphérique"
+      }
+    };
+
+    let currentLang = 'es';
+    let isPlaying = false;
+    let synth = window.speechSynthesis;
+    let speechUtterance = null;
+    let timerInterval = null;
+    let elapsedSeconds = 0;
+
+    // Detect URL parameter ?lang=es|en|fr
+    window.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const requestedLang = urlParams.get('lang');
+      if (requestedLang && ['es', 'en', 'fr'].includes(requestedLang.toLowerCase())) {
+        changeLang(requestedLang.toLowerCase());
+      } else {
+        changeLang('es');
+      }
+    });
+
+    function changeLang(lang) {
+      currentLang = lang;
+      const data = contentData[lang] || contentData.es;
+
+      // Update Meta & Title
+      document.title = data.pageTitle;
+      document.getElementById('hero-title').textContent = data.heroTitle;
+      document.getElementById('hero-tagline').textContent = data.heroTagline;
+
+      // Metrics
+      document.getElementById('metric-1-lbl').textContent = data.metric1Lbl;
+      document.getElementById('metric-1-sub').textContent = data.metric1Sub;
+      document.getElementById('metric-2-lbl').textContent = data.metric2Lbl;
+      document.getElementById('metric-2-sub').textContent = data.metric2Sub;
+      document.getElementById('metric-3-lbl').textContent = data.metric3Lbl;
+      document.getElementById('metric-3-sub').textContent = data.metric3Sub;
+      document.getElementById('metric-4-lbl').textContent = data.metric4Lbl;
+      document.getElementById('metric-4-sub').textContent = data.metric4Sub;
+      document.getElementById('metric-5-lbl').textContent = data.metric5Lbl;
+      document.getElementById('metric-5-sub').textContent = data.metric5Sub;
+
+      // Buttons & Player
+      document.getElementById('btn-jump-360').textContent = data.btnJump360;
+      document.getElementById('btn-play-audio-lbl').textContent = data.btnPlayAudio;
+      document.getElementById('player-title').textContent = data.playerTitle;
+      document.getElementById('player-subtitle').textContent = data.playerSubtitle;
+      document.getElementById('player-lang-indicator').textContent = data.playerLang;
+      document.getElementById('transcript-title').textContent = data.transcriptTitle;
+      document.getElementById('transcript-body').textContent = data.transcriptText;
+      document.getElementById('v360-header-title').textContent = data.v360Title;
+      document.getElementById('v360-header-sub').textContent = data.v360Sub;
+
+      // Flag UI Active State
+      ['es', 'en', 'fr'].forEach(l => {
+        const btn = document.getElementById(`btn-lang-es`) ? document.getElementById(`btn-lang-${l}`) : null;
+        if (btn) {
+          if (l === lang) {
+            btn.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition bg-emerald-600 text-white shadow";
+          } else {
+            btn.className = "px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white";
+          }
+        }
+      });
+
+      // Stop speech if playing when language changes
+      if (isPlaying) {
+        stopAudio();
+      }
+    }
+
+    function toggleAudioGuide() {
+      if (isPlaying) {
+        stopAudio();
+      } else {
+        playAudio();
+      }
+    }
+
+    function playAudio() {
+      if (!('speechSynthesis' in window)) {
+        alert("Tu navegador no soporta síntesis de audio. Puedes leer la transcripción completa abajo.");
+        return;
+      }
+
+      synth.cancel();
+      const textToSpeak = contentData[currentLang].transcriptText;
+      speechUtterance = new SpeechSynthesisUtterance(textToSpeak);
+
+      // Voice settings based on language
+      if (currentLang === 'es') {
+        speechUtterance.lang = 'es-CO';
+        speechUtterance.rate = 1.0;
+      } else if (currentLang === 'en') {
+        speechUtterance.lang = 'en-US';
+        speechUtterance.rate = 1.0;
+      } else if (currentLang === 'fr') {
+        speechUtterance.lang = 'fr-FR';
+        speechUtterance.rate = 1.0;
+      }
+
+      speechUtterance.onstart = () => {
+        isPlaying = true;
+        document.getElementById('player-main-btn').textContent = '⏸';
+        document.getElementById('soundwave-container').classList.add('wave-active');
+        startTimer();
+      };
+
+      speechUtterance.onend = () => {
+        stopAudio();
+      };
+
+      speechUtterance.onerror = () => {
+        stopAudio();
+      };
+
+      synth.speak(speechUtterance);
+    }
+
+    function stopAudio() {
+      if (synth) synth.cancel();
+      isPlaying = false;
+      document.getElementById('player-main-btn').textContent = '▶';
+      document.getElementById('soundwave-container').classList.remove('wave-active');
+      stopTimer();
+    }
+
+    function startTimer() {
+      elapsedSeconds = 0;
+      updateTimerDisplay();
+      timerInterval = setInterval(() => {
+        elapsedSeconds++;
+        updateTimerDisplay();
+      }, 1000);
+    }
+
+    function stopTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      elapsedSeconds = 0;
+      document.getElementById('player-timer').textContent = "00:00 / 01:45";
+    }
+
+    function updateTimerDisplay() {
+      const mins = Math.floor(elapsedSeconds / 60).toString().padStart(2, '0');
+      const secs = (elapsedSeconds % 60).toString().padStart(2, '0');
+      document.getElementById('player-timer').textContent = `${mins}:${secs} / 01:45`;
+    }
+
+    function toggleTranscriptModal() {
+      const box = document.getElementById('transcript-box');
+      box.classList.toggle('hidden');
+    }
+
+    function toggle360Fullscreen() {
+      const container = document.getElementById('container-360-embed');
+      if (!document.fullscreenElement) {
+        if (container.requestFullscreen) {
+          container.requestFullscreen();
+        } else if (container.webkitRequestFullscreen) {
+          container.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    function copyDirectUrl() {
+      const url = "https://santanderdigital.online/chicamocha";
+      navigator.clipboard.writeText(url).then(() => {
+        alert("¡Enlace copiado con éxito!\n" + url);
+      }).catch(() => {
+        prompt("Copia este enlace directo:", url);
+      });
+    }
+  </script>
+</body>
+</html>

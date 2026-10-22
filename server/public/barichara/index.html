@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-meta-title">Barichara Colonial • El Pueblo Más Lindo de Colombia • Santander Digital</title>
+  <meta name="description" content="Guía interactiva oficial de Barichara: arquitectura en piedra amarilla y tapia pisada, Camino Real a Guane, audioguía trilingüe y talleres de picapedreros.">
+  <meta property="og:title" content="Barichara • Monumento Nacional de Colombia">
+  <meta property="og:description" content="Explora sus calles empedradas, iglesias coloniales y su conexión con el Camino Real.">
+  <meta property="og:url" content="https://santanderdigital.online/barichara">
+  <meta name="theme-color" content="#78350f">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes wavePulse { 0%, 100% { height: 6px; } 50% { height: 26px; } }
+    .wave-bar { width: 3px; border-radius: 9999px; background: #f59e0b; height: 6px; transition: height 0.2s ease; }
+    .wave-active .bar-1 { animation: wavePulse 0.8s infinite ease-in-out 0.1s; }
+    .wave-active .bar-2 { animation: wavePulse 0.8s infinite ease-in-out 0.3s; }
+    .wave-active .bar-3 { animation: wavePulse 0.8s infinite ease-in-out 0.2s; }
+    .wave-active .bar-4 { animation: wavePulse 0.8s infinite ease-in-out 0.4s; }
+    .wave-active .bar-5 { animation: wavePulse 0.8s infinite ease-in-out 0.15s; }
+  </style>
+</head>
+<body class="bg-stone-950 text-stone-100 font-sans antialiased selection:bg-amber-500 selection:text-stone-950 pb-20">
+
+  <header class="sticky top-0 z-50 bg-stone-900/90 backdrop-blur-md border-b border-amber-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-600 to-amber-900 flex items-center justify-center text-white font-black shadow-md border border-amber-500/30 group-hover:scale-105 transition">
+          SD
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-sm font-black tracking-tight text-white">Santander Digital</span>
+            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 uppercase">Oficial</span>
+          </div>
+          <p class="text-[10px] text-stone-400">Barichara • Monumento Nacional</p>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="flex items-center bg-stone-800/80 p-1 rounded-xl border border-stone-700 text-xs">
+          <button onclick="changeLang('es')" id="btn-lang-es" class="px-2.5 py-1 rounded-lg text-xs font-bold transition bg-amber-600 text-white shadow">🇨🇴 ES</button>
+          <button onclick="changeLang('en')" id="btn-lang-en" class="px-2.5 py-1 rounded-lg text-xs font-medium transition text-stone-300 hover:text-white">🇺🇸 EN</button>
+          <button onclick="changeLang('fr')" id="btn-lang-fr" class="px-2.5 py-1 rounded-lg text-xs font-medium transition text-stone-300 hover:text-white">🇫🇷 FR</button>
+        </div>
+        <a href="#seccion-qr" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-amber-950 text-amber-300 border border-amber-700/60 hover:bg-amber-900 transition">
+          <span>📲</span> <span>Código QR</span>
+        </a>
+        <a href="/" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 flex items-center gap-1 transition">
+          <span>←</span> <span class="hidden sm:inline">Todos los Sitios</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative bg-gradient-to-b from-amber-950/80 via-stone-900 to-stone-950 py-10 md:py-16 border-b border-amber-900/30 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-600/20 text-amber-300 border border-amber-500/30">🏛️ Monumento Nacional (1975)</span>
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-600/20 text-emerald-300 border border-emerald-500/30">🌿 Red Turística de Pueblos Patrimonio</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4" id="hero-title">
+        Barichara Colonial
+      </h1>
+
+      <p class="text-base sm:text-xl text-amber-200/90 font-medium max-w-4xl mb-8 leading-relaxed" id="hero-tagline">
+        Declarado el pueblo más lindo de Colombia: una joya arquitectónica labrada en piedra ocre y tapia pisada, cuna de artesanos y puerta de entrada al histórico Camino Real a Guane.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 mb-8">
+        <div class="bg-stone-900/80 p-3.5 rounded-2xl border border-amber-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-amber-400 mb-0.5">Fundación</p>
+          <p class="text-xl sm:text-2xl font-black text-white">Año 1705</p>
+          <p class="text-[10px] text-stone-400">Por Francisco Pradilla</p>
+        </div>
+        <div class="bg-stone-900/80 p-3.5 rounded-2xl border border-amber-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-amber-400 mb-0.5">Altitud</p>
+          <p class="text-xl sm:text-2xl font-black text-white">1.336 msnm</p>
+          <p class="text-[10px] text-stone-400">Clima templado 22°C</p>
+        </div>
+        <div class="bg-stone-900/80 p-3.5 rounded-2xl border border-amber-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-emerald-400 mb-0.5">Camino Real</p>
+          <p class="text-xl sm:text-2xl font-black text-white">5.5 km</p>
+          <p class="text-[10px] text-stone-400">Sendero hacia Guane</p>
+        </div>
+        <div class="bg-stone-900/80 p-3.5 rounded-2xl border border-amber-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-rose-400 mb-0.5">Arquitectura</p>
+          <p class="text-xl sm:text-2xl font-black text-white">100% Piedra</p>
+          <p class="text-[10px] text-stone-400">Tapia pisada y bahareque</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <button onclick="toggleAudioGuide()" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-amber-600 hover:bg-amber-500 text-stone-950 shadow-lg transition">
+          <span>🎧</span> <span id="btn-audio-lbl">Escuchar Audioguía Barichara</span>
+        </button>
+        <a href="#patrimonio" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-stone-800 hover:bg-stone-700 text-white border border-stone-700 transition">
+          <span>🏛️</span> <span>Descubrir Hitos Coloniales</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio Player -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-4 relative z-20">
+    <div class="bg-gradient-to-r from-amber-950 via-stone-900 to-amber-950 p-4 rounded-2xl border border-amber-700/60 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5 w-full md:w-auto">
+        <button onclick="toggleAudioGuide()" id="player-main-btn" class="w-12 h-12 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 flex items-center justify-center font-black text-xl shadow-md transition">▶</button>
+        <div>
+          <span class="text-xs font-black text-white" id="player-title">Audioguía Barichara Colonial</span>
+          <p class="text-[11px] text-stone-300" id="player-subtitle">Paseo por las calles empedradas, catedral de piedra y talleres artesanales</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 w-full md:w-auto justify-end">
+        <div id="soundwave-container" class="flex items-center gap-1 h-7 px-2">
+          <div class="wave-bar bar-1"></div>
+          <div class="wave-bar bar-2"></div>
+          <div class="wave-bar bar-3"></div>
+          <div class="wave-bar bar-4"></div>
+          <div class="wave-bar bar-5"></div>
+        </div>
+        <span class="font-mono text-xs font-bold text-amber-400" id="player-timer">00:00 / 01:40</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hitos -->
+  <section id="patrimonio" class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+    <h2 class="text-2xl sm:text-3xl font-black text-white mb-6">Tesoros Coloniales de Barichara</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-stone-300">
+      <div class="bg-stone-900 p-5 rounded-2xl border border-stone-800 space-y-2">
+        <div class="text-2xl">⛪</div>
+        <h3 class="text-sm font-bold text-white">Catedral de la Inmaculada Concepción</h3>
+        <p>Monumento imponente tallado en piedra arenisca ocre que cambia de tonalidad con la luz del atardecer. En su interior reposan diez columnas monolíticas talladas por maestros canteros locales.</p>
+      </div>
+      <div class="bg-stone-900 p-5 rounded-2xl border border-stone-800 space-y-2">
+        <div class="text-2xl">📜</div>
+        <h3 class="text-sm font-bold text-white">Taller de Papel de Fique & Fundación San Lorenzo</h3>
+        <p>Espacio artesanal atendido por mujeres cabeza de familia donde se transforma la fibra del fique en papel artesanal 100% ecológico, preservando técnicas milenarias.</p>
+      </div>
+      <div class="bg-stone-900 p-5 rounded-2xl border border-stone-800 space-y-2">
+        <div class="text-2xl">🥾</div>
+        <h3 class="text-sm font-bold text-white">Camino Real a Guane (5.5 km)</h3>
+        <p>Sendero empedrado restaurado en el siglo XIX por Geo von Lengerke. Desciende suavemente hacia el enclave arqueológico de Guane, con vistas sobrecogedoras del Cañón del Río Suárez.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QR Section -->
+  <section id="seccion-qr" class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+    <div class="bg-gradient-to-r from-amber-950 via-stone-900 to-stone-950 p-6 sm:p-10 rounded-3xl border border-amber-600/40">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-7 space-y-4">
+          <span class="text-xs uppercase font-bold text-amber-400">Código QR Oficial</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">Acceso Móvil a Barichara</h2>
+          <p class="text-xs sm:text-sm text-stone-300">Escanea con tu móvil para acceder a la ficha histórica en tu idioma.</p>
+          <p class="font-mono text-amber-300 text-xs">https://santanderdigital.online/barichara</p>
+          <div class="flex gap-3">
+            <a href="/api/qr/render/barichara?format=signage" target="_blank" download="placa-barichara.svg" class="px-4 py-2 rounded-xl text-xs font-bold bg-amber-600 hover:bg-amber-500 text-stone-950">Descargar Placa SVG</a>
+          </div>
+        </div>
+        <div class="md:col-span-5 flex justify-center">
+          <div class="bg-white p-4 rounded-3xl text-center text-stone-900 max-w-[240px]">
+            <p class="text-[10px] font-bold text-amber-900">Barichara • Santander</p>
+            <img src="/api/qr/render/barichara?format=svg" alt="QR Barichara" class="w-40 h-40 mx-auto">
+            <div class="flex justify-center gap-1 text-[11px] pt-2 border-t border-stone-200 mt-2 font-bold">
+              <span>🇨🇴 ES</span>|<span>🇺🇸 EN</span>|<span>🇫🇷 FR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mt-20 border-t border-stone-800 bg-stone-950 py-8 text-center text-xs text-stone-500">
+    Santander Digital &bull; Barichara Colonial Patrimonio Nacional &bull; 2026
+  </footer>
+
+  <script>
+    const baricharaTexts = {
+      es: {
+        title: "Barichara Colonial",
+        tagline: "Declarado el pueblo más lindo de Colombia: una joya arquitectónica labrada en piedra ocre y tapia pisada, cuna de artesanos y puerta de entrada al histórico Camino Real a Guane.",
+        speech: "Bienvenidos a Barichara, Monumento Nacional y el pueblo más hermoso de Colombia. Recorre sus calles empedradas, admira la imponente Catedral de la Inmaculada Concepción y descubre la magia del Camino Real hacia Guane. ¡Disfruta la serenidad de Santander!"
+      },
+      en: {
+        title: "Colonial Barichara",
+        tagline: "Acclaimed as Colombia's prettiest town: an architectural jewel hand-carved in yellow sandstone and rammed earth, birthplace of master stonemasons and gateway to the historic Camino Real.",
+        speech: "Welcome to Barichara, National Heritage Monument and widely acclaimed as Colombia's most beautiful village. Walk along its tranquil cobblestone streets, admire the grand Cathedral, and embark upon the historic Camino Real stone trail to Guane."
+      },
+      fr: {
+        title: "Barichara Coloniale",
+        tagline: "Considéré comme le plus beau village de Colombie : un joyau architectural façonné dans la pierre ocre, berceau d'artisans tailleurs de pierre et point de départ du Camino Real.",
+        speech: "Bienvenue à Barichara, Monument National et joyau architectural de la Colombie. Arpentez ses ruelles pavées, admirez la majestueuse cathédrale de pierre jaune et empruntez le mythique Camino Real jusqu'au village de Guane."
+      }
+    };
+
+    let currentLang = 'es';
+    let isPlaying = false;
+    let synth = window.speechSynthesis;
+
+    function changeLang(lang) {
+      currentLang = lang;
+      const data = baricharaTexts[lang] || baricharaTexts.es;
+      document.getElementById('hero-title').textContent = data.title;
+      document.getElementById('hero-tagline').textContent = data.tagline;
+      ['es', 'en', 'fr'].forEach(l => {
+        const btn = document.getElementById(`btn-lang-${l}`);
+        if (btn) btn.className = (l === lang) ? "px-2.5 py-1 rounded-lg text-xs font-bold transition bg-amber-600 text-white shadow" : "px-2.5 py-1 rounded-lg text-xs font-medium transition text-stone-300 hover:text-white";
+      });
+      if (isPlaying && synth) synth.cancel();
+      isPlaying = false;
+      document.getElementById('player-main-btn').textContent = '▶';
+    }
+
+    function toggleAudioGuide() {
+      if (!('speechSynthesis' in window)) return;
+      if (isPlaying) {
+        synth.cancel();
+        isPlaying = false;
+        document.getElementById('player-main-btn').textContent = '▶';
+        document.getElementById('soundwave-container').classList.remove('wave-active');
+      } else {
+        const text = baricharaTexts[currentLang].speech;
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = currentLang === 'es' ? 'es-CO' : (currentLang === 'en' ? 'en-US' : 'fr-FR');
+        u.onstart = () => {
+          isPlaying = true;
+          document.getElementById('player-main-btn').textContent = '⏸';
+          document.getElementById('soundwave-container').classList.add('wave-active');
+        };
+        u.onend = () => {
+          isPlaying = false;
+          document.getElementById('player-main-btn').textContent = '▶';
+          document.getElementById('soundwave-container').classList.remove('wave-active');
+        };
+        synth.speak(u);
+      }
+    }
+  </script>
+</body>
+</html>

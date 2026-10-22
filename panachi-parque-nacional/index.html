@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-meta-title">PANACHI • Parque Nacional del Chicamocha • Santander Digital Oficial</title>
+  <meta name="description" content="Guía oficial de PANACHI: teleférico de 6.3 km, Monumento a la Santandereanidad, tour virtual 360°, audioguía trilingüe y deportes extremos.">
+  <meta property="og:title" content="PANACHI • Parque Nacional del Chicamocha">
+  <meta property="og:description" content="Descubre el teleférico más espectacular de Colombia y el Monumento a la Santandereanidad.">
+  <meta property="og:image" content="/images/panachi_360_aerial.jpg">
+  <meta property="og:url" content="https://santanderdigital.online/panachi">
+  <meta name="theme-color" content="#064e3b">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚠</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes wavePulse { 0%, 100% { height: 6px; } 50% { height: 26px; } }
+    .wave-bar { width: 3px; border-radius: 9999px; background: #3b82f6; height: 6px; transition: height 0.2s ease; }
+    .wave-active .bar-1 { animation: wavePulse 0.8s infinite ease-in-out 0.1s; }
+    .wave-active .bar-2 { animation: wavePulse 0.8s infinite ease-in-out 0.3s; }
+    .wave-active .bar-3 { animation: wavePulse 0.8s infinite ease-in-out 0.2s; }
+    .wave-active .bar-4 { animation: wavePulse 0.8s infinite ease-in-out 0.4s; }
+    .wave-active .bar-5 { animation: wavePulse 0.8s infinite ease-in-out 0.15s; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white pb-20">
+
+  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-blue-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-900 flex items-center justify-center text-white font-black shadow-md border border-blue-500/30 group-hover:scale-105 transition">
+          SD
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-sm font-black tracking-tight text-white">Santander Digital</span>
+            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 uppercase">Oficial</span>
+          </div>
+          <p class="text-[10px] text-slate-400">Parque Nacional del Chicamocha (PANACHI)</p>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700 text-xs">
+          <button onclick="changeLang('es')" id="btn-lang-es" class="px-2.5 py-1 rounded-lg text-xs font-bold transition bg-blue-600 text-white shadow">🇨🇴 ES</button>
+          <button onclick="changeLang('en')" id="btn-lang-en" class="px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white">🇺🇸 EN</button>
+          <button onclick="changeLang('fr')" id="btn-lang-fr" class="px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white">🇫🇷 FR</button>
+        </div>
+        <a href="#seccion-qr" class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-blue-950 text-blue-300 border border-blue-700/60 hover:bg-blue-900 transition">
+          <span>📲</span> <span>Código QR</span>
+        </a>
+        <a href="/" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1 transition">
+          <span>←</span> <span class="hidden sm:inline">Todos los Sitios</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="relative bg-gradient-to-b from-blue-950/80 via-slate-900 to-slate-950 py-10 md:py-16 border-b border-blue-900/30 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-600/20 text-blue-300 border border-blue-500/30">🚠 Parque Temático y Ecoturismo</span>
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30">🗿 Monumento a la Santandereanidad</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4" id="hero-title">
+        Parque Nacional del Chicamocha (PANACHI)
+      </h1>
+
+      <p class="text-base sm:text-xl text-blue-200/90 font-medium max-w-4xl mb-8 leading-relaxed" id="hero-tagline">
+        El corazón turístico de Santander: cruza el cañón en un teleférico de 6.3 km, vibra con los deportes extremos y conéctate con la gesta comunera en la cima del cañón.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-4 mb-8">
+        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-blue-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-blue-400 mb-0.5">Teleférico Longitud</p>
+          <p class="text-xl sm:text-2xl font-black text-white">6.3 km</p>
+          <p class="text-[10px] text-slate-400">Cruce aéreo del abismo</p>
+        </div>
+        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-blue-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-amber-400 mb-0.5">Cabinas en Ruta</p>
+          <p class="text-xl sm:text-2xl font-black text-white">39 cabinas</p>
+          <p class="text-[10px] text-slate-400">Capacidad 8 pasajeros c/u</p>
+        </div>
+        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-blue-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-emerald-400 mb-0.5">Altitud Mirador</p>
+          <p class="text-xl sm:text-2xl font-black text-white">1.450 msnm</p>
+          <p class="text-[10px] text-slate-400">Vista panorámica 360°</p>
+        </div>
+        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-blue-800/40 shadow">
+          <p class="text-[11px] uppercase font-bold text-rose-400 mb-0.5">Atracciones</p>
+          <p class="text-xl sm:text-2xl font-black text-white">+18 zonas</p>
+          <p class="text-[10px] text-slate-400">Parque acuático, tirolesa</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3">
+        <a href="#tour-virtual-360" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-blue-600 hover:bg-blue-500 text-white shadow-lg transition">
+          <span>🧭</span> <span>Explorar Visor 360°</span>
+        </a>
+        <button onclick="toggleAudioGuide()" class="px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 transition">
+          <span>🎧</span> <span id="btn-audio-lbl">Escuchar Audioguía PANACHI</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Audio Player -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-4 relative z-20">
+    <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-blue-950 p-4 rounded-2xl border border-blue-700/60 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5 w-full md:w-auto">
+        <button onclick="toggleAudioGuide()" id="player-main-btn" class="w-12 h-12 rounded-xl bg-blue-500 hover:bg-blue-400 text-slate-950 flex items-center justify-center font-black text-xl shadow-md transition">▶</button>
+        <div>
+          <span class="text-xs font-black text-white" id="player-title">Audioguía PANACHI & Teleférico</span>
+          <p class="text-[11px] text-slate-300" id="player-subtitle">Historia del parque, monumento comunero y cruce del cañón</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4 w-full md:w-auto justify-end">
+        <div id="soundwave-container" class="flex items-center gap-1 h-7 px-2">
+          <div class="wave-bar bar-1"></div>
+          <div class="wave-bar bar-2"></div>
+          <div class="wave-bar bar-3"></div>
+          <div class="wave-bar bar-4"></div>
+          <div class="wave-bar bar-5"></div>
+        </div>
+        <span class="font-mono text-xs font-bold text-blue-400" id="player-timer">00:00 / 01:30</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 360 Embed -->
+  <section id="tour-virtual-360" class="max-w-7xl mx-auto px-4 sm:px-6 pt-12">
+    <div class="bg-slate-900 rounded-3xl border border-slate-800 shadow-2xl overflow-hidden flex flex-col">
+      <div class="bg-slate-950 px-5 py-3.5 flex items-center justify-between border-b border-blue-900/60">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-lg">🧭</div>
+          <span class="text-sm font-bold text-white">Visor 360° Aéreo PANACHI</span>
+        </div>
+        <a href="https://parquesdesantander.com/visor/" target="_blank" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 text-slate-200">↗️ Pantalla Completa</a>
+      </div>
+      <div class="relative w-full h-[450px] sm:h-[550px] bg-black">
+        <iframe src="https://parquesdesantander.com/visor/" class="w-full h-full border-0" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hitos y Atracciones -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+    <h2 class="text-2xl sm:text-3xl font-black text-white mb-6">Atracciones Emblemáticas de PANACHI</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs text-slate-300">
+      <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 space-y-2">
+        <div class="text-2xl">🚠</div>
+        <h3 class="text-sm font-bold text-white">El Teleférico Bicentenario</h3>
+        <p>Uno de los teleféricos más largos del mundo en su categoría sin torres intermedias en el vano central. Conecta la estación PANACHI con la estación Mesa de Los Santos en un recorrido escénico de 22 minutos que desciende hasta el Río Chicamocha y asciende a la meseta.</p>
+      </div>
+      <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 space-y-2">
+        <div class="text-2xl">🗿</div>
+        <h3 class="text-sm font-bold text-white">Monumento a la Santandereanidad</h3>
+        <p>Escultura monumental en forma de hoja de tabaco sobre la cual se yerguen 35 figuras en bronce que conmemoran la Revolución de los Comuneros de 1781 y a heroínas como Manuela Beltrán y José Antonio Galán.</p>
+      </div>
+      <div class="bg-slate-900 p-5 rounded-2xl border border-slate-800 space-y-2">
+        <div class="text-2xl">🏊</div>
+        <h3 class="text-sm font-bold text-white">Parque Acuático del Cañón</h3>
+        <p>Complejo de piscinas de aguas cristalinas, toboganes y río lento con vista panorámica a los abismos del cañón. Clima ideal con sol permanente durante todo el año.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- QR Section -->
+  <section id="seccion-qr" class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
+    <div class="bg-gradient-to-r from-blue-950 via-slate-900 to-slate-950 p-6 sm:p-10 rounded-3xl border border-blue-600/40">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-7 space-y-4">
+          <span class="text-xs uppercase font-bold text-blue-400">Código QR Oficial</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white">Acceso Móvil a PANACHI</h2>
+          <p class="text-xs sm:text-sm text-slate-300">Escanea para abrir la ficha individual en el teléfono en tu idioma preferido.</p>
+          <p class="font-mono text-blue-300 text-xs">https://santanderdigital.online/panachi</p>
+          <div class="flex gap-3">
+            <a href="/api/qr/render/panachi?format=signage" target="_blank" download="placa-panachi.svg" class="px-4 py-2 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white">Descargar Placa SVG</a>
+          </div>
+        </div>
+        <div class="md:col-span-5 flex justify-center">
+          <div class="bg-white p-4 rounded-3xl text-center text-slate-900 max-w-[240px]">
+            <p class="text-[10px] font-bold text-blue-900">PANACHI • Santander</p>
+            <img src="/api/qr/render/panachi?format=svg" alt="QR PANACHI" class="w-40 h-40 mx-auto">
+            <div class="flex justify-center gap-1 text-[11px] pt-2 border-t border-slate-200 mt-2 font-bold">
+              <span>🇨🇴 ES</span>|<span>🇺🇸 EN</span>|<span>🇫🇷 FR</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mt-20 border-t border-slate-800 bg-slate-950 py-8 text-center text-xs text-slate-500">
+    Santander Digital &bull; Parque Nacional del Chicamocha &bull; 2026
+  </footer>
+
+  <script>
+    const panachiTexts = {
+      es: {
+        title: "Parque Nacional del Chicamocha (PANACHI)",
+        tagline: "El corazón turístico de Santander: cruza el cañón en un teleférico de 6.3 km, vibra con los deportes extremos y conéctate con la gesta comunera en la cima del cañón.",
+        speech: "Bienvenidos al Parque Nacional del Chicamocha, PANACHI. Disfruta de un recorrido aéreo inolvidable cruzando el cañón en nuestro teleférico de seis punto tres kilómetros. Descubre el Monumento a la Santandereanidad y admira una de las vistas más sobrecogedoras de los Andes colombianos."
+      },
+      en: {
+        title: "Chicamocha National Park (PANACHI)",
+        tagline: "The beating heart of Santander tourism: glide across the canyon on a 6.3 km aerial tramway, enjoy extreme sports, and immerse yourself in historic Colombian rebellion heritage.",
+        speech: "Welcome to Chicamocha National Park, PANACHI. Experience an unforgettable flight across the abyss aboard our six-point-three kilometer cable car. Visit the Monument to Santandereanidad and take in one of the most magnificent vistas in South America."
+      },
+      fr: {
+        title: "Parc National du Chicamocha (PANACHI)",
+        tagline: "Le cœur touristique de Santander : traversez le canyon à bord d'un téléphérique de 6,3 km et découvrez le monument historique au sommet des falaises.",
+        speech: "Bienvenue au Parc National du Chicamocha, PANACHI. Vivez un survol spectaculaire de l'abîme à bord de notre téléphérique de six kilomètres. Admirez le Monument à la Santandereanidad et contemplez l'un des panoramas les plus spectaculaires des Andes."
+      }
+    };
+
+    let currentLang = 'es';
+    let isPlaying = false;
+    let synth = window.speechSynthesis;
+
+    function changeLang(lang) {
+      currentLang = lang;
+      const data = panachiTexts[lang] || panachiTexts.es;
+      document.getElementById('hero-title').textContent = data.title;
+      document.getElementById('hero-tagline').textContent = data.tagline;
+      ['es', 'en', 'fr'].forEach(l => {
+        const btn = document.getElementById(`btn-lang-${l}`);
+        if (btn) btn.className = (l === lang) ? "px-2.5 py-1 rounded-lg text-xs font-bold transition bg-blue-600 text-white shadow" : "px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white";
+      });
+      if (isPlaying && synth) synth.cancel();
+      isPlaying = false;
+      document.getElementById('player-main-btn').textContent = '▶';
+    }
+
+    function toggleAudioGuide() {
+      if (!('speechSynthesis' in window)) return;
+      if (isPlaying) {
+        synth.cancel();
+        isPlaying = false;
+        document.getElementById('player-main-btn').textContent = '▶';
+        document.getElementById('soundwave-container').classList.remove('wave-active');
+      } else {
+        const text = panachiTexts[currentLang].speech;
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = currentLang === 'es' ? 'es-CO' : (currentLang === 'en' ? 'en-US' : 'fr-FR');
+        u.onstart = () => {
+          isPlaying = true;
+          document.getElementById('player-main-btn').textContent = '⏸';
+          document.getElementById('soundwave-container').classList.add('wave-active');
+        };
+        u.onend = () => {
+          isPlaying = false;
+          document.getElementById('player-main-btn').textContent = '▶';
+          document.getElementById('soundwave-container').classList.remove('wave-active');
+        };
+        synth.speak(u);
+      }
+    }
+  </script>
+</body>
+</html>

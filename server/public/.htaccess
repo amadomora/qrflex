@@ -1,0 +1,28 @@
+# ==============================================================================
+# Santander Digital / QRFlex - Configuración de Reescritura de URLs Apache
+# ==============================================================================
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # 1. Reglas limpias para páginas individuales de atractivos turísticos
+    RewriteRule ^chicamocha/?$ chicamocha/index.html [L]
+    RewriteRule ^canon-del-chicamocha/?$ chicamocha/index.html [L]
+    RewriteRule ^panachi/?$ panachi/index.html [L]
+    RewriteRule ^panachi-parque-nacional/?$ panachi/index.html [L]
+    RewriteRule ^barichara/?$ barichara/index.html [L]
+    RewriteRule ^barichara-colonial/?$ barichara/index.html [L]
+
+    # 2. Servir archivos y directorios físicos existentes
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # 3. Fallback al portal principal
+    RewriteRule ^ index.html [L]
+</IfModule>
+
+# Tipos MIME para SVG y fuentes
+<IfModule mod_mime.c>
+    AddType image/svg+xml .svg .svgz
+</IfModule>

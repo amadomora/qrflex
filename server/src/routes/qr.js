@@ -44,10 +44,17 @@ router.get('/:slug', (req, res) => {
   // 2. Registrar métrica de escaneo en la base de datos
   db.recordScan(slug, detectedLang);
 
-  // 3. Determinar URL del Frontend destino
-  // Si estamos bajo Apache, redirige al frontend servido con el parámetro de idioma
-  const host = req.get('host') || 'localhost';
-  const targetUrl = `/site/${slug}?lang=${detectedLang}`;
+  // 3. Determinar URL del Frontend destino hacia la página individual dedicada
+  const cleanPageMap = {
+    'chicamocha': '/chicamocha',
+    'canon-del-chicamocha': '/chicamocha',
+    'panachi': '/panachi',
+    'panachi-parque-nacional': '/panachi',
+    'barichara': '/barichara',
+    'barichara-colonial': '/barichara'
+  };
+  const pagePath = cleanPageMap[slug.toLowerCase()] || `/${slug}`;
+  const targetUrl = `${pagePath}?lang=${detectedLang}`;
 
   // Si la petición espera JSON (ej: prueba desde app móvil o fetch)
   if (req.headers.accept && req.headers.accept.includes('application/json')) {

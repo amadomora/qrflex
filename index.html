@@ -200,7 +200,10 @@
 
             <div class="absolute bottom-3 left-4 right-4 text-white">
               <span class="text-[11px] text-emerald-300 font-bold uppercase tracking-wider block">Santander • Boyacá</span>
-              <h3 class="text-xl font-black leading-tight drop-shadow">Cañón del Chicamocha</h3>
+              <a href="/chicamocha" class="hover:underline flex items-center justify-between group">
+                <h3 class="text-xl font-black leading-tight drop-shadow">Cañón del Chicamocha</h3>
+                <span class="text-xs bg-emerald-600/90 group-hover:bg-emerald-500 px-2 py-0.5 rounded-lg transition">↗</span>
+              </a>
             </div>
           </div>
 
@@ -268,7 +271,10 @@
 
             <div class="absolute bottom-3 left-4 right-4 text-white">
               <span class="text-[11px] text-amber-300 font-bold uppercase tracking-wider block">Provincia de Guanentá</span>
-              <h3 class="text-xl font-black leading-tight drop-shadow">Barichara Colonial</h3>
+              <a href="/barichara" class="hover:underline flex items-center justify-between group">
+                <h3 class="text-xl font-black leading-tight drop-shadow">Barichara Colonial</h3>
+                <span class="text-xs bg-amber-600/90 group-hover:bg-amber-500 px-2 py-0.5 rounded-lg transition">↗</span>
+              </a>
             </div>
           </div>
 
@@ -336,7 +342,10 @@
 
             <div class="absolute bottom-3 left-4 right-4 text-white">
               <span class="text-[11px] text-blue-300 font-bold uppercase tracking-wider block">Aratoca • Mesa de Los Santos</span>
-              <h3 class="text-xl font-black leading-tight drop-shadow">PANACHI</h3>
+              <a href="/panachi" class="hover:underline flex items-center justify-between group">
+                <h3 class="text-xl font-black leading-tight drop-shadow">PANACHI</h3>
+                <span class="text-xs bg-blue-600/90 group-hover:bg-blue-500 px-2 py-0.5 rounded-lg transition">↗</span>
+              </a>
             </div>
           </div>
 
@@ -1805,9 +1814,14 @@
               <h3 class="text-xl md:text-2xl font-black tracking-tight" id="modal-site-title">Título del Destino</h3>
               <p class="text-xs text-slate-300 italic mt-1 line-clamp-2" id="modal-site-tagline">"Lema del destino"</p>
             </div>
-            <button onclick="closePortalDetail()" class="w-9 h-9 rounded-full bg-slate-800/80 hover:bg-red-900/90 text-white flex items-center justify-center font-bold text-sm transition shrink-0">
-              ✕
-            </button>
+            <div class="flex items-center gap-2 shrink-0">
+              <a id="modal-site-dedicated-link" href="/chicamocha" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white flex items-center gap-1 shadow transition" title="Abrir página dedicada">
+                <span>🔗</span> <span class="hidden sm:inline">Página Completa</span> ↗
+              </a>
+              <button onclick="closePortalDetail()" class="w-9 h-9 rounded-full bg-slate-800/80 hover:bg-red-900/90 text-white flex items-center justify-center font-bold text-sm transition">
+                ✕
+              </button>
+            </div>
           </div>
         </div>
 
@@ -2705,6 +2719,16 @@
       
       const titleEl = document.getElementById('modal-site-title');
       if (titleEl) titleEl.textContent = data.heroTitle;
+
+      const slugMap = {
+        'canon-del-chicamocha': '/chicamocha',
+        'panachi-parque-nacional': '/panachi',
+        'barichara-colonial': '/barichara'
+      };
+      const dedicatedLink = document.getElementById('modal-site-dedicated-link');
+      if (dedicatedLink) {
+        dedicatedLink.href = (slugMap[slug] || `/${slug}`) + `?lang=${modalAudioLang}`;
+      }
 
       const tagEl = document.getElementById('modal-site-tagline');
       if (tagEl) tagEl.textContent = `"${data.heroTagline}"`;

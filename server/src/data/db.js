@@ -41,7 +41,15 @@ class Database {
   }
 
   getBySlug(slug) {
-    return this.sites.find(s => s.slug.toLowerCase() === slug.toLowerCase());
+    if (!slug) return null;
+    const s = slug.toLowerCase();
+    const aliasMap = {
+      'chicamocha': 'canon-del-chicamocha',
+      'panachi': 'panachi-parque-nacional',
+      'barichara': 'barichara-colonial'
+    };
+    const targetSlug = aliasMap[s] || s;
+    return this.sites.find(site => site.slug.toLowerCase() === targetSlug);
   }
 
   getById(id) {
