@@ -26,3 +26,4 @@
 <IfModule mod_mime.c>
     AddType image/svg+xml .svg .svgz
 </IfModule>
+

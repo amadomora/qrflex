@@ -11,7 +11,14 @@
   <meta property="og:url" content="https://santanderdigital.online/chicamocha">
   <meta name="theme-color" content="#064e3b">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇨🇴</text></svg>">
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS Local + Fallbacks -->
+  <link rel="stylesheet" href="/css/tailwind.min.css">
+  <script src="/js/tailwindcss.min.js"></script>
+  <script>
+    if (typeof tailwind === 'undefined') {
+      document.write('<script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"><\/script>');
+    }
+  </script>
   <script>
     tailwind.config = {
       theme: {
