@@ -17,6 +17,26 @@
     if (typeof tailwind === 'undefined') {
       document.write('<script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"><\/script>');
     }
+
+    let currentTheme = localStorage.getItem('santander_theme') || 'dark';
+    function applyTheme(theme) {
+      currentTheme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('santander_theme', theme);
+      const icon = document.getElementById('theme-icon');
+      if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      if (theme === 'light') {
+        document.body.classList.remove('bg-slate-950', 'text-slate-100');
+        document.body.classList.add('bg-[#fbf9f5]', 'text-slate-800');
+      } else {
+        document.body.classList.remove('bg-[#fbf9f5]', 'text-slate-800');
+        document.body.classList.add('bg-slate-950', 'text-slate-100');
+      }
+    }
+    function toggleTheme() {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    }
+    applyTheme(currentTheme);
   </script>
   <style>
     @keyframes wavePulse { 0%, 100% { height: 6px; } 50% { height: 26px; } }
@@ -46,6 +66,10 @@
       </a>
 
       <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Theme Toggle -->
+        <button onclick="toggleTheme()" id="btn-theme-toggle" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-slate-700 flex items-center justify-center text-sm shadow-sm transition active:scale-95" title="Cambiar Tema">
+          <span id="theme-icon">☀️</span>
+        </button>
         <div class="flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700 text-xs">
           <button onclick="changeLang('es')" id="btn-lang-es" class="px-2.5 py-1 rounded-lg text-xs font-bold transition bg-blue-600 text-white shadow">🇨🇴 ES</button>
           <button onclick="changeLang('en')" id="btn-lang-en" class="px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white">🇺🇸 EN</button>
@@ -262,6 +286,26 @@
         synth.speak(u);
       }
     }
+
+    let currentTheme = localStorage.getItem('santander_theme') || 'dark';
+    function applyTheme(theme) {
+      currentTheme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('santander_theme', theme);
+      const icon = document.getElementById('theme-icon');
+      if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      if (theme === 'light') {
+        document.body.classList.remove('bg-slate-950', 'text-slate-100');
+        document.body.classList.add('bg-[#fbf9f5]', 'text-slate-800');
+      } else {
+        document.body.classList.remove('bg-[#fbf9f5]', 'text-slate-800');
+        document.body.classList.add('bg-slate-950', 'text-slate-100');
+      }
+    }
+    function toggleTheme() {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    }
+    applyTheme(currentTheme);
   </script>
 </body>
 </html>

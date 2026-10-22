@@ -54,8 +54,13 @@
       </a>
 
       <!-- Public Navigation & Actions -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3">
         
+        <!-- Theme Switcher -->
+        <button onclick="toggleGlobalTheme()" id="global-theme-toggle" class="w-8 h-8 rounded-xl bg-emerald-900/80 hover:bg-emerald-800 text-amber-300 border border-emerald-700/60 shadow flex items-center justify-center text-sm transition active:scale-95" title="Cambiar Tema (Claro / Oscuro)">
+          <span id="global-theme-icon">☀️</span>
+        </button>
+
         <!-- Trilingual Quick Switcher -->
         <div class="flex items-center bg-emerald-900/80 p-1 rounded-xl border border-emerald-700 text-xs">
           <button onclick="setPortalLanguage('es')" id="nav-flag-es" class="px-2 py-1 rounded-md text-xs font-bold transition bg-emerald-600 text-white shadow" title="Español">
@@ -3434,8 +3439,28 @@
       }
     }
 
+    // Theme Toggle Global
+    let globalTheme = localStorage.getItem('santander_theme') || 'light';
+    function applyGlobalTheme(theme) {
+      globalTheme = theme;
+      localStorage.setItem('santander_theme', theme);
+      const icon = document.getElementById('global-theme-icon');
+      if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      if (theme === 'dark') {
+        document.body.classList.remove('bg-slate-50', 'text-slate-800');
+        document.body.classList.add('bg-slate-950', 'text-slate-100');
+      } else {
+        document.body.classList.remove('bg-slate-950', 'text-slate-100');
+        document.body.classList.add('bg-slate-50', 'text-slate-800');
+      }
+    }
+    function toggleGlobalTheme() {
+      applyGlobalTheme(globalTheme === 'dark' ? 'light' : 'dark');
+    }
+
     // Initialize on page load
     window.addEventListener('DOMContentLoaded', () => {
+      applyGlobalTheme(globalTheme);
       setLanguage('es');
       selectSite('canon-del-chicamocha');
       const savedSession = localStorage.getItem('santander_admin_session');

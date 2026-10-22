@@ -39,6 +39,108 @@
     }
   </script>
   <style>
+    :root, [data-theme="dark"] {
+      --bg-main: #020617;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --card-bg: #0f172a;
+      --card-border: #1e293b;
+      --subcard-bg: #1e293b;
+      --subcard-border: #334155;
+      --nav-bg: rgba(15, 23, 42, 0.92);
+      --nav-border: rgba(6, 78, 59, 0.4);
+      --hero-bg: linear-gradient(180deg, rgba(2, 44, 34, 0.8) 0%, #0f172a 60%, #020617 100%);
+      --hero-title: #ffffff;
+      --hero-tagline: rgba(167, 243, 208, 0.9);
+      --info-card-bg: #0b1f13;
+      --info-border: #1c5230;
+      --info-border-subtle: #234b35;
+      --info-text: #f1f5f9;
+      --info-subcard: #122b1c;
+      --info-banner: linear-gradient(135deg, #1d4630 0%, #123020 100%);
+      --guane-bg: linear-gradient(135deg, rgba(69, 26, 3, 0.35) 0%, #0f172a 100%);
+      --guane-border: rgba(120, 53, 15, 0.35);
+      --qr-bg: linear-gradient(135deg, #022c22 0%, #0f172a 60%, #020617 100%);
+      --btn-theme-bg: #1e293b;
+      --btn-theme-border: #334155;
+      --btn-theme-color: #fbbf24;
+    }
+
+    [data-theme="light"] {
+      --bg-main: #fbf9f5;
+      --text-main: #1e293b;
+      --text-muted: #475569;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --subcard-bg: #f8fafc;
+      --subcard-border: #e2e8f0;
+      --nav-bg: rgba(255, 255, 255, 0.95);
+      --nav-border: #e2e8f0;
+      --hero-bg: linear-gradient(180deg, #ecfdf5 0%, #f0fdf4 60%, #fbf9f5 100%);
+      --hero-title: #064e3b;
+      --hero-tagline: #065f46;
+      --info-card-bg: #faf6ed;
+      --info-border: #234b35;
+      --info-border-subtle: #dcd3be;
+      --info-text: #263e30;
+      --info-subcard: #fdfbf6;
+      --info-banner: linear-gradient(135deg, #1d4630 0%, #123020 100%);
+      --guane-bg: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      --guane-border: #fde68a;
+      --qr-bg: linear-gradient(135deg, #ecfdf5 0%, #ffffff 60%, #f0fdf4 100%);
+      --btn-theme-bg: #f1f5f9;
+      --btn-theme-border: #cbd5e1;
+      --btn-theme-color: #0f172a;
+    }
+
+    body {
+      background-color: var(--bg-main) !important;
+      color: var(--text-main) !important;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .themed-card {
+      background-color: var(--card-bg) !important;
+      border-color: var(--card-border) !important;
+      color: var(--text-main) !important;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .themed-subcard {
+      background-color: var(--subcard-bg) !important;
+      border-color: var(--subcard-border) !important;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .themed-info-container {
+      background-color: var(--info-card-bg) !important;
+      border-color: var(--info-border) !important;
+      color: var(--info-text) !important;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .themed-info-subcard {
+      background-color: var(--info-subcard) !important;
+      border-color: var(--info-border-subtle) !important;
+      color: var(--info-text) !important;
+      transition: background-color 0.25s ease, border-color 0.25s ease;
+    }
+
+    .themed-hero {
+      background: var(--hero-bg) !important;
+      transition: background 0.25s ease;
+    }
+
+    .themed-hero-title {
+      color: var(--hero-title) !important;
+      transition: color 0.25s ease;
+    }
+
+    .themed-hero-tagline {
+      color: var(--hero-tagline) !important;
+      transition: color 0.25s ease;
+    }
+
     @keyframes wavePulse {
       0%, 100% { height: 6px; }
       50% { height: 26px; }
@@ -62,7 +164,7 @@
   <!-- ======================================================== -->
   <!-- 1. TOP NAVBAR HEADER -->
   <!-- ======================================================== -->
-  <header class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-emerald-900/40">
+  <header class="sticky top-0 z-50 backdrop-blur-md transition-colors duration-300 border-b" style="background: var(--nav-bg); border-color: var(--nav-border);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
       
       <!-- Brand & Link to Main Portal -->
@@ -72,24 +174,30 @@
         </div>
         <div>
           <div class="flex items-center gap-1.5">
-            <span class="text-sm font-black tracking-tight text-white">Santander Digital</span>
-            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase">Oficial</span>
+            <span class="text-sm font-black tracking-tight" style="color: var(--text-main);">Santander Digital</span>
+            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-500 border border-emerald-500/30 uppercase">Oficial</span>
           </div>
-          <p class="text-[10px] text-slate-400">Portal Turístico del Cañón del Chicamocha</p>
+          <p class="text-[10px] opacity-70" style="color: var(--text-muted);">Portal Turístico del Cañón del Chicamocha</p>
         </div>
       </a>
 
       <!-- Language Selector & Actions -->
       <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Theme Switcher (Claro / Oscuro) -->
+        <button onclick="toggleTheme()" id="btn-theme-toggle" class="w-8 h-8 rounded-xl flex items-center justify-center text-sm shadow-sm transition active:scale-95" style="background: var(--btn-theme-bg); border: 1px solid var(--btn-theme-border); color: var(--btn-theme-color);" title="Cambiar Tema (Claro / Oscuro)" aria-label="Cambiar tema">
+          <span id="theme-icon">☀️</span>
+        </button>
+
         <!-- Trilingual Quick Switcher -->
-        <div class="flex items-center bg-slate-800/80 p-1 rounded-xl border border-slate-700 text-xs">
+        <div class="flex items-center p-1 rounded-xl border text-xs" style="background: var(--btn-theme-bg); border-color: var(--btn-theme-border);">
           <button onclick="changeLang('es')" id="btn-lang-es" class="px-2.5 py-1 rounded-lg text-xs font-bold transition bg-emerald-600 text-white shadow" title="Español">
             🇨🇴 ES
           </button>
-          <button onclick="changeLang('en')" id="btn-lang-en" class="px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white" title="English">
+          <button onclick="changeLang('en')" id="btn-lang-en" class="px-2.5 py-1 rounded-lg text-xs font-medium transition opacity-80 hover:opacity-100" style="color: var(--text-main);" title="English">
             🇺🇸 EN
           </button>
-          <button onclick="changeLang('fr')" id="btn-lang-fr" class="px-2.5 py-1 rounded-lg text-xs font-medium transition text-slate-300 hover:text-white" title="Français">
+          <button onclick="changeLang('fr')" id="btn-lang-fr" class="px-2.5 py-1 rounded-lg text-xs font-medium transition opacity-80 hover:opacity-100" style="color: var(--text-main);" title="Français">
             🇫🇷 FR
           </button>
         </div>
@@ -100,7 +208,7 @@
         </a>
 
         <!-- Back to Directory -->
-        <a href="/" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1 transition">
+        <a href="/" class="px-3 py-1.5 rounded-xl text-xs font-semibold border flex items-center gap-1 transition" style="background: var(--btn-theme-bg); border-color: var(--btn-theme-border); color: var(--text-main);">
           <span>←</span> <span class="hidden sm:inline" id="nav-back-text">Todos los Sitios</span>
         </a>
       </div>
@@ -110,63 +218,63 @@
   <!-- ======================================================== -->
   <!-- 2. HERO PRINCIPAL & BANNER INMERSIVO -->
   <!-- ======================================================== -->
-  <section class="relative bg-gradient-to-b from-emerald-950/80 via-slate-900 to-slate-950 py-10 md:py-16 border-b border-emerald-900/30 overflow-hidden">
+  <section class="themed-hero relative py-10 md:py-16 border-b overflow-hidden" style="border-color: var(--card-border);">
     <div class="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]"></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
       
       <!-- Badges -->
       <div class="flex flex-wrap items-center gap-2 mb-4">
-        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-600/20 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-emerald-600/20 text-emerald-500 border border-emerald-500/30 flex items-center gap-1.5">
           <span>⛰️</span> <span id="badge-canyon">Maravilla Natural de Colombia</span>
         </span>
-        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 flex items-center gap-1.5">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-500 border border-amber-500/30 flex items-center gap-1.5">
           <span>⭐</span> <span id="badge-unesco">Preseleccionado Maravilla del Mundo 2009</span>
         </span>
-        <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-300 border border-blue-500/30">
+        <span class="px-3 py-1 rounded-full text-xs font-bold bg-blue-500/20 text-blue-500 border border-blue-500/30">
           📍 Cordillera Oriental • Santander
         </span>
       </div>
 
       <!-- Main Title -->
-      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-4" id="hero-title">
+      <h1 class="themed-hero-title text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-4" id="hero-title">
         Cañón del Chicamocha
       </h1>
 
-      <p class="text-base sm:text-xl text-emerald-200/90 font-medium max-w-4xl mb-8 leading-relaxed" id="hero-tagline">
+      <p class="themed-hero-tagline text-base sm:text-xl font-medium max-w-4xl mb-8 leading-relaxed" id="hero-tagline">
         Naturaleza • Historia • Aventura — El segundo cañón más grande del planeta por profundidad y volumen visual, donde los Andes colombianos tallaron 46 millones de años de historia geológica y herencia indígena Guane.
       </p>
 
       <!-- Key Metrics Strip (Chips Gigantes) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-8">
-        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
-          <p class="text-[11px] uppercase font-bold text-emerald-400 mb-0.5" id="metric-1-lbl">Longitud Total</p>
-          <p class="text-xl sm:text-2xl font-black text-white" id="metric-1-val">227 km</p>
-          <p class="text-[10px] text-slate-400" id="metric-1-sub">Desde Boyacá hasta Sogamoso</p>
+        <div class="themed-card p-3.5 rounded-2xl border shadow">
+          <p class="text-[11px] uppercase font-bold text-emerald-500 mb-0.5" id="metric-1-lbl">Longitud Total</p>
+          <p class="text-xl sm:text-2xl font-black" id="metric-1-val">227 km</p>
+          <p class="text-[10px] opacity-70" id="metric-1-sub">Desde Boyacá hasta Sogamoso</p>
         </div>
 
-        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
-          <p class="text-[11px] uppercase font-bold text-amber-400 mb-0.5" id="metric-2-lbl">Profundidad Máxima</p>
-          <p class="text-xl sm:text-2xl font-black text-white" id="metric-2-val">~2.000 m</p>
-          <p class="text-[10px] text-slate-400" id="metric-2-sub">Más profundo que Colorado</p>
+        <div class="themed-card p-3.5 rounded-2xl border shadow">
+          <p class="text-[11px] uppercase font-bold text-amber-500 mb-0.5" id="metric-2-lbl">Profundidad Máxima</p>
+          <p class="text-xl sm:text-2xl font-black" id="metric-2-val">~2.000 m</p>
+          <p class="text-[10px] opacity-70" id="metric-2-sub">Más profundo que Colorado</p>
         </div>
 
-        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
-          <p class="text-[11px] uppercase font-bold text-cyan-400 mb-0.5" id="metric-3-lbl">Área Protegida</p>
-          <p class="text-xl sm:text-2xl font-black text-white" id="metric-3-val">+108.000 ha</p>
-          <p class="text-[10px] text-slate-400" id="metric-3-sub">Ecosistema bosque seco</p>
+        <div class="themed-card p-3.5 rounded-2xl border shadow">
+          <p class="text-[11px] uppercase font-bold text-cyan-500 mb-0.5" id="metric-3-lbl">Área Protegida</p>
+          <p class="text-xl sm:text-2xl font-black" id="metric-3-val">+108.000 ha</p>
+          <p class="text-[10px] opacity-70" id="metric-3-sub">Ecosistema bosque seco</p>
         </div>
 
-        <div class="bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
-          <p class="text-[11px] uppercase font-bold text-rose-400 mb-0.5" id="metric-4-lbl">Clima & Temp</p>
-          <p class="text-xl sm:text-2xl font-black text-white" id="metric-4-val">11°C - 34°C</p>
-          <p class="text-[10px] text-slate-400" id="metric-4-sub">Microclima semiárido cálido</p>
+        <div class="themed-card p-3.5 rounded-2xl border shadow">
+          <p class="text-[11px] uppercase font-bold text-rose-500 mb-0.5" id="metric-4-lbl">Clima & Temp</p>
+          <p class="text-xl sm:text-2xl font-black" id="metric-4-val">11°C - 34°C</p>
+          <p class="text-[10px] opacity-70" id="metric-4-sub">Microclima semiárido cálido</p>
         </div>
 
-        <div class="col-span-2 sm:col-span-1 bg-slate-900/80 p-3.5 rounded-2xl border border-emerald-800/40 shadow">
-          <p class="text-[11px] uppercase font-bold text-purple-400 mb-0.5" id="metric-5-lbl">Altitud Variable</p>
-          <p class="text-xl sm:text-2xl font-black text-white" id="metric-5-val">500 a 2.050 m</p>
-          <p class="text-[10px] text-slate-400" id="metric-5-sub">Del lecho a la Mesa de los Santos</p>
+        <div class="col-span-2 sm:col-span-1 themed-card p-3.5 rounded-2xl border shadow">
+          <p class="text-[11px] uppercase font-bold text-purple-500 mb-0.5" id="metric-5-lbl">Altitud Variable</p>
+          <p class="text-xl sm:text-2xl font-black" id="metric-5-val">500 a 2.050 m</p>
+          <p class="text-[10px] opacity-70" id="metric-5-sub">Del lecho a la Mesa de los Santos</p>
         </div>
       </div>
 
@@ -302,30 +410,30 @@
   <!-- ======================================================== -->
   <section id="seccion-geologia" class="max-w-7xl mx-auto px-2 sm:px-6 pt-12">
     
-    <div class="bg-[#faf6ed] text-slate-800 rounded-3xl shadow-2xl border-4 border-[#234b35] overflow-hidden relative p-3 sm:p-8">
+    <div class="themed-info-container rounded-3xl shadow-2xl border-4 overflow-hidden relative p-3 sm:p-8 transition-colors duration-300">
       
       <!-- Botanical Border Line -->
-      <div class="absolute inset-1.5 border border-[#8da593]/40 rounded-[22px] pointer-events-none"></div>
+      <div class="absolute inset-1.5 border border-emerald-600/30 rounded-[22px] pointer-events-none"></div>
 
       <!-- Header de la Infografía -->
       <header class="text-center pt-4 pb-6 px-2 sm:px-6 relative">
         <div class="flex items-center justify-center gap-3 mb-2">
-          <svg class="w-7 h-7 text-[#28573d] transform -scale-x-100" viewBox="0 0 24 24" fill="currentColor">
+          <svg class="w-7 h-7 text-emerald-600 transform -scale-x-100" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
-          <div class="h-[1.5px] w-12 sm:w-20 bg-[#28573d]"></div>
-          <span class="text-xs font-black tracking-[0.25em] uppercase text-[#28573d]">SANTANDER • COLOMBIA</span>
-          <div class="h-[1.5px] w-12 sm:w-20 bg-[#28573d]"></div>
-          <svg class="w-7 h-7 text-[#28573d]" viewBox="0 0 24 24" fill="currentColor">
+          <div class="h-[1.5px] w-12 sm:w-20 bg-emerald-600"></div>
+          <span class="text-xs font-black tracking-[0.25em] uppercase text-emerald-500">SANTANDER • COLOMBIA</span>
+          <div class="h-[1.5px] w-12 sm:w-20 bg-emerald-600"></div>
+          <svg class="w-7 h-7 text-emerald-600" viewBox="0 0 24 24" fill="currentColor">
             <path d="M17,8C8,10 5.9,16.17 3.82,21.34L5.71,22L6.66,19.7C7.14,19.87 7.64,20 8,20C19,20 22,3 22,3C21,5 14,5.25 9,6.25C4,7.25 2,11.5 2,13.5C2,15.5 3.75,17.25 3.75,17.25C7,8 17,8 17,8Z"/>
           </svg>
         </div>
 
-        <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-[#163624] leading-tight">
+        <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight" style="color: var(--hero-title);">
           CAÑÓN DEL CHICAMOCHA
         </h2>
 
-        <div class="flex items-center justify-center gap-2 my-2 text-xs font-bold tracking-[0.25em] uppercase text-[#1d4630]">
+        <div class="flex items-center justify-center gap-2 my-2 text-xs font-bold tracking-[0.25em] uppercase text-emerald-500">
           <span>NATURALEZA</span>
           <span>•</span>
           <span>HISTORIA</span>
@@ -333,7 +441,7 @@
           <span>AVENTURA</span>
         </div>
 
-        <p class="text-lg sm:text-2xl text-[#2a4d36] font-bold italic mt-1 font-serif">
+        <p class="text-lg sm:text-2xl font-bold italic mt-1 font-serif text-emerald-600">
           "Un destino que te conecta con la grandeza de Colombia"
         </p>
       </header>
@@ -342,25 +450,25 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5 py-3">
         
         <!-- Tarjeta 1: Ubicación & Mapa Vectorial (7 cols) -->
-        <div class="md:col-span-7 bg-[#fdfbf6] rounded-2xl border-2 border-[#234b35] p-4 sm:p-5 shadow-sm flex flex-col justify-between">
+        <div class="themed-info-subcard md:col-span-7 rounded-2xl border-2 p-4 sm:p-5 shadow-sm flex flex-col justify-between">
           <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
             <span>📍</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">UBICACIÓN</h3>
           </div>
 
-          <div class="space-y-2 text-xs text-[#263e30] leading-relaxed">
+          <div class="space-y-2 text-xs leading-relaxed opacity-90">
             <p>• Se encuentra en la <strong>Cordillera Oriental de los Andes</strong>, principalmente en el departamento de <strong>Santander</strong> (con inicio en Boyacá).</p>
             <p>• Se extiende entre los municipios de <strong>Aratoca, Cepitá, Los Santos, Piedecuesta y Jordán</strong>.</p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 pt-3 border-t border-[#dcd3be] items-center">
-            <div class="bg-[#f3ede0] p-3 rounded-xl border border-[#d8cea8] text-center">
-              <p class="text-[11px] font-bold uppercase text-[#1b3d28] mb-1">🧭 COORDENADAS APROXIMADAS</p>
-              <p class="font-mono text-xs font-bold text-[#143622]">Latitud: 6° 47' Norte</p>
-              <p class="font-mono text-xs font-bold text-[#143622]">Longitud: 73° 11' Oeste</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 pt-3 border-t border-emerald-900/20 items-center">
+            <div class="themed-card p-3 rounded-xl border text-center">
+              <p class="text-[11px] font-bold uppercase text-emerald-500 mb-1">🧭 COORDENADAS APROXIMADAS</p>
+              <p class="font-mono text-xs font-bold">Latitud: 6° 47' Norte</p>
+              <p class="font-mono text-xs font-bold">Longitud: 73° 11' Oeste</p>
             </div>
 
-            <div class="bg-[#f0ebe0] p-2.5 rounded-xl border border-[#d8cea8] flex items-center justify-center relative overflow-hidden h-28">
+            <div class="p-2.5 rounded-xl border flex items-center justify-center relative overflow-hidden h-28" style="background: var(--subcard-bg); border-color: var(--subcard-border);">
               <svg class="w-full h-full" viewBox="0 0 200 120">
                 <path d="M 40,20 Q 80,10 110,25 Q 130,50 110,80 Q 70,85 50,65 Z" fill="#2d6a4f" stroke="#1b4332" stroke-width="2">
                   <title>Departamento de Santander</title>
@@ -391,26 +499,26 @@
         </div>
 
         <!-- Tarjeta 2: Características del Territorio (5 cols) -->
-        <div class="md:col-span-5 bg-[#fdfbf6] rounded-2xl border-2 border-[#234b35] p-4 sm:p-5 shadow-sm flex flex-col justify-between">
+        <div class="themed-info-subcard md:col-span-5 rounded-2xl border-2 p-4 sm:p-5 shadow-sm flex flex-col justify-between">
           <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
             <span>⛰️</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">CARACTERÍSTICAS DEL TERRITORIO</h3>
           </div>
 
-          <div class="space-y-3 text-xs text-[#263e30]">
+          <div class="space-y-3 text-xs opacity-90">
             <div class="flex items-start gap-2.5">
               <span class="text-base">📏</span>
               <div>
-                <p class="font-bold uppercase text-[11px] text-[#1b3d28]">DIMENSIONES</p>
+                <p class="font-bold uppercase text-[11px] text-emerald-500">DIMENSIONES</p>
                 <p>• <strong>Longitud:</strong> 227 km.</p>
-                <p>• <strong>Profundidad aprox:</strong> 2.000 m <span class="text-emerald-800 font-semibold">(más profundo que el Cañón del Colorado)</span>.</p>
+                <p>• <strong>Profundidad aprox:</strong> 2.000 m <span class="font-semibold text-emerald-400">(más profundo que el Cañón del Colorado)</span>.</p>
               </div>
             </div>
 
             <div class="flex items-start gap-2.5">
               <span class="text-base">🗺️</span>
               <div>
-                <p class="font-bold uppercase text-[11px] text-[#1b3d28]">SUPERFICIE</p>
+                <p class="font-bold uppercase text-[11px] text-emerald-500">SUPERFICIE</p>
                 <p>• <strong>Más de 108.000 hectáreas</strong> protegidas.</p>
               </div>
             </div>
@@ -418,7 +526,7 @@
             <div class="flex items-start gap-2.5">
               <span class="text-base">☀️</span>
               <div>
-                <p class="font-bold uppercase text-[11px] text-[#1b3d28]">CLIMA</p>
+                <p class="font-bold uppercase text-[11px] text-emerald-500">CLIMA</p>
                 <p>• Cálido, árido y seco.</p>
                 <p>• Temperaturas: <strong>11 °C</strong> (noches) hasta <strong>30 °C – 32 °C</strong> (día), según la altitud.</p>
               </div>
@@ -432,33 +540,33 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5 py-3">
         
         <!-- Historia y Origen (6 cols) -->
-        <div class="md:col-span-6 bg-[#fdfbf6] rounded-2xl border-2 border-[#234b35] p-4 sm:p-5 shadow-sm">
+        <div class="themed-info-subcard md:col-span-6 rounded-2xl border-2 p-4 sm:p-5 shadow-sm">
           <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
             <span>🐚</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">HISTORIA Y ORIGEN</h3>
           </div>
 
-          <ul class="space-y-2 text-xs text-[#263e30] leading-relaxed">
+          <ul class="space-y-2 text-xs leading-relaxed opacity-90">
             <li>• Se formó hace aprox. <strong>46 millones de años</strong> (durante el Terciario) por movimientos tectónicos y erosión fluvial.</li>
             <li>• Antiguamente era una <strong>gran cuenca lacustre</strong>, lo que explica la presencia de fósiles marinos y cuevas.</li>
             <li>• Fue habitado por comunidades indígenas como los <strong>Guanes, Laches, Yariguíes y Muiscas</strong>.</li>
             <li>• En la colonia, su red de caminos empedrados fue usada para el comercio y comunicación (por estos caminos transitó incluso el <strong>primer piano de cola</strong> que llegó a Colombia).</li>
-            <li class="bg-[#f0e9d8] p-2.5 rounded-xl border border-[#d8cea8] font-medium text-[#1b3d28]">
+            <li class="themed-card p-2.5 rounded-xl border font-medium text-amber-500">
               ⭐ En 2009 fue <strong>preseleccionado como una de las maravillas naturales del mundo</strong>.
             </li>
           </ul>
         </div>
 
         <!-- Fauna y Flora (6 cols) -->
-        <div class="md:col-span-6 bg-[#fdfbf6] rounded-2xl border-2 border-[#234b35] p-4 sm:p-5 shadow-sm">
+        <div class="themed-info-subcard md:col-span-6 rounded-2xl border-2 p-4 sm:p-5 shadow-sm">
           <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
             <span>🌿</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">FAUNA Y FLORA</h3>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-[#263e30]">
-            <div class="bg-[#f7f2e7] p-3 rounded-xl border border-[#dcd3be] space-y-1">
-              <p class="font-bold text-[#1b3d28] uppercase text-[11px] pb-1 border-b border-[#d8cea8]">🐾 FAUNA</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            <div class="themed-card p-3 rounded-xl border space-y-1">
+              <p class="font-bold text-emerald-500 uppercase text-[11px] pb-1 border-b border-emerald-900/20">🐾 FAUNA</p>
               <p>• Monos aulladores</p>
               <p>• Tigrillos</p>
               <p>• Osos hormigueros</p>
@@ -467,8 +575,8 @@
               <p>• <strong>Aves:</strong> Cucarachero nicéforo, perdices y águilas blancas.</p>
             </div>
 
-            <div class="bg-[#f7f2e7] p-3 rounded-xl border border-[#dcd3be] space-y-1">
-              <p class="font-bold text-[#1b3d28] uppercase text-[11px] pb-1 border-b border-[#d8cea8]">🌱 FLORA</p>
+            <div class="themed-card p-3 rounded-xl border space-y-1">
+              <p class="font-bold text-emerald-500 uppercase text-[11px] pb-1 border-b border-emerald-900/20">🌱 FLORA</p>
               <p>• <strong>Árbol barrigón</strong> (Ceiba)</p>
               <p>• Palma <em>Zamia encephalartoides</em></p>
               <p>• Cacao indio</p>
@@ -482,20 +590,20 @@
 
       <!-- Fila 3: Municipios Principales -->
       <div class="py-2">
-        <div class="bg-[#fdfbf6] rounded-2xl border-2 border-[#234b35] p-4 sm:p-5 shadow-sm">
+        <div class="themed-info-subcard rounded-2xl border-2 p-4 sm:p-5 shadow-sm">
           <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-3">
             <span>🏛️</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">MUNICIPIOS PRINCIPALES</h3>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
-            <div class="bg-[#f4efe3] p-3 rounded-xl border border-[#d8cea8]">
-              <p class="font-bold text-[#1b3d28] uppercase text-[11px] mb-1">SANTANDER</p>
-              <p class="text-slate-700 leading-relaxed">Aratoca, Jordán (Jordán Sube), Los Santos, Cepitá, Piedecuesta, Villanueva, Barichara y Zapatoca (en su área de influencia).</p>
+            <div class="themed-card p-3 rounded-xl border">
+              <p class="font-bold text-emerald-500 uppercase text-[11px] mb-1">SANTANDER</p>
+              <p class="opacity-90 leading-relaxed">Aratoca, Jordán (Jordán Sube), Los Santos, Cepitá, Piedecuesta, Villanueva, Barichara y Zapatoca (en su área de influencia).</p>
             </div>
-            <div class="bg-[#f4efe3] p-3 rounded-xl border border-[#d8cea8]">
-              <p class="font-bold text-[#8c6239] uppercase text-[11px] mb-1">BOYACÁ</p>
-              <p class="text-slate-700 leading-relaxed">Su inicio se registra en inmediaciones de Soatá, Socha y Chita.</p>
+            <div class="themed-card p-3 rounded-xl border">
+              <p class="font-bold text-amber-500 uppercase text-[11px] mb-1">BOYACÁ</p>
+              <p class="opacity-90 leading-relaxed">Su inicio se registra en inmediaciones de Soatá, Socha y Chita.</p>
             </div>
           </div>
         </div>
@@ -503,7 +611,7 @@
 
       <!-- Fila 4: Sitios Turísticos de Interés Clave (4 Fotos Circulares) -->
       <div class="py-3">
-        <div class="bg-[#fdfbf6] rounded-2xl border-2 border-[#234b35] p-4 sm:p-5 shadow-sm">
+        <div class="themed-info-subcard rounded-2xl border-2 p-4 sm:p-5 shadow-sm">
           <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 sm:-mx-5 sm:-mt-5 px-4 py-2.5 rounded-t-xl flex items-center gap-2 mb-4">
             <span>📸</span>
             <h3 class="text-xs sm:text-sm font-black uppercase tracking-wider">SITIOS TURÍSTICOS DE INTERÉS</h3>
@@ -511,35 +619,35 @@
 
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="text-center group flex flex-col items-center">
-              <div class="w-28 h-28 rounded-full border-4 border-[#234b35] overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300">
+              <div class="w-28 h-28 rounded-full border-4 border-emerald-600 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300">
                 <img src="/images/panachi_360_aerial.jpg" alt="PANACHI" class="w-full h-full object-cover">
               </div>
-              <h4 class="font-bold text-xs text-[#163624] leading-tight mb-1">Parque Nacional del Chicamocha (PANACHI)</h4>
-              <p class="text-[11px] text-slate-600 leading-tight">Miradores, teleférico de 6.3 km, monumentos a la santandereanidad y deportes de aventura.</p>
+              <h4 class="font-bold text-xs leading-tight mb-1" style="color: var(--hero-title);">PANACHI</h4>
+              <p class="text-[11px] opacity-80 leading-tight">Miradores, teleférico de 6.3 km, monumentos a la santandereanidad y deportes de aventura.</p>
             </div>
 
             <div class="text-center group flex flex-col items-center">
-              <div class="w-28 h-28 rounded-full border-4 border-[#234b35] overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-sky-800 flex items-center justify-center">
+              <div class="w-28 h-28 rounded-full border-4 border-emerald-600 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-sky-800 flex items-center justify-center">
                 <span class="text-3xl">🪂</span>
               </div>
-              <h4 class="font-bold text-xs text-[#163624] leading-tight mb-1">La Mesa de Los Santos</h4>
-              <p class="text-[11px] text-slate-600 leading-tight">Zona de sabana alta, ecoturismo, deportes extremos (parapente) y gastronomía típica.</p>
+              <h4 class="font-bold text-xs leading-tight mb-1" style="color: var(--hero-title);">La Mesa de Los Santos</h4>
+              <p class="text-[11px] opacity-80 leading-tight">Zona de sabana alta, ecoturismo, deportes extremos (parapente) y gastronomía típica.</p>
             </div>
 
             <div class="text-center group flex flex-col items-center">
-              <div class="w-28 h-28 rounded-full border-4 border-[#234b35] overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-amber-800 flex items-center justify-center">
+              <div class="w-28 h-28 rounded-full border-4 border-emerald-600 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-amber-800 flex items-center justify-center">
                 <span class="text-3xl">🥾</span>
               </div>
-              <h4 class="font-bold text-xs text-[#163624] leading-tight mb-1">Camino Real Jordán a Los Santos</h4>
-              <p class="text-[11px] text-slate-600 leading-tight">Ruta histórica de herencia indígena, ideal para senderismo extremo descendiendo el cañón.</p>
+              <h4 class="font-bold text-xs leading-tight mb-1" style="color: var(--hero-title);">Camino Real Jordán - Los Santos</h4>
+              <p class="text-[11px] opacity-80 leading-tight">Ruta histórica de herencia indígena, ideal para senderismo extremo descendiendo el cañón.</p>
             </div>
 
             <div class="text-center group flex flex-col items-center">
-              <div class="w-28 h-28 rounded-full border-4 border-[#234b35] overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-emerald-900 flex items-center justify-center">
+              <div class="w-28 h-28 rounded-full border-4 border-emerald-600 overflow-hidden shadow-md mb-2 group-hover:scale-105 transition duration-300 bg-emerald-900 flex items-center justify-center">
                 <span class="text-3xl">🏛️</span>
               </div>
-              <h4 class="font-bold text-xs text-[#163624] leading-tight mb-1">Pueblos Coloniales Cercanos</h4>
-              <p class="text-[11px] text-slate-600 leading-tight">Barichara, Guane y Villanueva con museos fósiles y arquitectura en piedra.</p>
+              <h4 class="font-bold text-xs leading-tight mb-1" style="color: var(--hero-title);">Pueblos Coloniales Cercanos</h4>
+              <p class="text-[11px] opacity-80 leading-tight">Barichara, Guane y Villanueva con museos fósiles y arquitectura en piedra.</p>
             </div>
           </div>
         </div>
@@ -548,47 +656,47 @@
       <!-- Fila 5: Distancias & Cómo Llegar -->
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5 py-3">
         
-        <div class="md:col-span-4 bg-[#fdfbf6] rounded-2xl border-2 border-[#234b35] p-4 shadow-sm flex flex-col justify-between">
+        <div class="themed-info-subcard md:col-span-4 rounded-2xl border-2 p-4 shadow-sm flex flex-col justify-between">
           <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 px-4 py-2 rounded-t-xl flex items-center gap-2 mb-3">
             <span>🚗</span>
             <h3 class="text-xs font-black uppercase tracking-wider">DISTANCIAS</h3>
           </div>
-          <div class="space-y-2.5 text-xs text-slate-700">
-            <div class="bg-[#f4efe3] p-2.5 rounded-xl border border-[#d8cea8]">
-              <p class="font-bold text-[#1b3d28]">Desde Bogotá:</p>
-              <p class="text-lg font-black text-[#163624]">340 km</p>
-              <p class="text-[10px] text-slate-500">Por carretera nacional</p>
+          <div class="space-y-2.5 text-xs">
+            <div class="themed-card p-2.5 rounded-xl border">
+              <p class="font-bold text-emerald-500">Desde Bogotá:</p>
+              <p class="text-lg font-black" style="color: var(--hero-title);">340 km</p>
+              <p class="text-[10px] opacity-70">Por carretera nacional</p>
             </div>
-            <div class="bg-[#f4efe3] p-2.5 rounded-xl border border-[#d8cea8]">
-              <p class="font-bold text-[#1b3d28]">Desde Bucaramanga:</p>
-              <p class="text-lg font-black text-[#163624]">54 km</p>
-              <p class="text-[10px] text-slate-500">Zona norte del cañón / acceso a PANACHI</p>
+            <div class="themed-card p-2.5 rounded-xl border">
+              <p class="font-bold text-emerald-500">Desde Bucaramanga:</p>
+              <p class="text-lg font-black" style="color: var(--hero-title);">54 km</p>
+              <p class="text-[10px] opacity-70">Zona norte del cañón / acceso a PANACHI</p>
             </div>
           </div>
         </div>
 
-        <div class="md:col-span-8 bg-[#fdfbf6] rounded-2xl border-2 border-[#234b35] p-4 shadow-sm flex flex-col justify-between">
+        <div class="themed-info-subcard md:col-span-8 rounded-2xl border-2 p-4 shadow-sm flex flex-col justify-between">
           <div class="bg-gradient-to-r from-[#1d4630] to-[#123020] text-white -mx-4 -mt-4 px-4 py-2 rounded-t-xl flex items-center gap-2 mb-3">
             <span>✈️</span>
             <h3 class="text-xs font-black uppercase tracking-wider">CÓMO LLEGAR</h3>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs text-slate-700">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs opacity-90">
             <div class="space-y-1">
-              <p class="font-bold text-[#1b3d28] uppercase text-[11px]">Por tierra (automóvil o autobús)</p>
+              <p class="font-bold text-emerald-500 uppercase text-[11px]">Por tierra (automóvil o autobús)</p>
               <p>• <strong>Desde Bogotá:</strong> 5–6 h en carro (vía Tunja, Barbosa, San Gil, Aratoca) o 8–9 h en bus.</p>
               <p>• <strong>Desde Bucaramanga:</strong> 50 min a 1 h en carro o bus (vía San Gil/Piedecuesta).</p>
             </div>
 
             <div class="space-y-1">
-              <p class="font-bold text-[#1b3d28] uppercase text-[11px]">Vía Aérea + Tierra</p>
+              <p class="font-bold text-emerald-500 uppercase text-[11px]">Vía Aérea + Tierra</p>
               <p>• Volar desde Bogotá al <strong>Aeropuerto Internacional Palonegro (BGA)</strong> en Lebrija y desde allí transporte terrestre al cañón o PANACHI.</p>
-              <p class="font-semibold text-emerald-800">• Tiempo total estimado: menos de 4 horas.</p>
+              <p class="font-semibold text-emerald-500">• Tiempo total estimado: menos de 4 horas.</p>
             </div>
           </div>
 
-          <div class="mt-3 pt-2 border-t border-[#dcd3be] text-right">
-            <span class="text-xl sm:text-2xl text-[#2a4d36] font-bold italic font-serif">
+          <div class="mt-3 pt-2 border-t border-emerald-900/20 text-right">
+            <span class="text-xl sm:text-2xl font-bold italic font-serif text-emerald-600">
               La aventura también es parte del viaje ♡
             </span>
           </div>
@@ -597,7 +705,7 @@
       </div>
 
       <!-- Banner de Cierre -->
-      <footer class="text-center py-5 px-4 bg-gradient-to-r from-[#173a25] via-[#215234] to-[#173a25] text-white mt-4 rounded-xl border-2 border-[#234b35]">
+      <footer class="text-center py-5 px-4 bg-gradient-to-r from-[#173a25] via-[#215234] to-[#173a25] text-white mt-4 rounded-xl border-2 border-emerald-600/40">
         <h3 class="text-xl sm:text-2xl font-bold tracking-wide">
           ¡El Chicamocha te espera!
         </h3>
@@ -614,44 +722,44 @@
   <!-- 6. SECCIÓN ANCESTRAL: LOS GUANES Y EL CAMINO REAL -->
   <!-- ======================================================== -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
-    <div class="bg-gradient-to-br from-amber-950/40 via-slate-900 to-slate-900 p-6 sm:p-10 rounded-3xl border border-amber-900/30 shadow-xl">
+    <div class="p-6 sm:p-10 rounded-3xl border shadow-xl transition-colors duration-300" style="background: var(--guane-bg); border-color: var(--guane-border); color: var(--text-main);">
       <div class="max-w-3xl mb-8">
-        <span class="text-xs uppercase font-bold text-amber-400 tracking-wider">Patrimonio Indígena & Colonial</span>
-        <h2 class="text-2xl sm:text-4xl font-black text-white mt-1 tracking-tight" id="guane-sec-title">
+        <span class="text-xs uppercase font-bold text-amber-500 tracking-wider">Patrimonio Indígena & Colonial</span>
+        <h2 class="text-2xl sm:text-4xl font-black mt-1 tracking-tight" style="color: var(--hero-title);" id="guane-sec-title">
           Tierra Sagrada Guane & El Camino de Lengerke
         </h2>
-        <p class="text-sm text-slate-300 mt-2 leading-relaxed" id="guane-sec-intro">
+        <p class="text-sm mt-2 leading-relaxed opacity-90" id="guane-sec-intro">
           Antes de la conquista española, las laderas escarpadas del Chicamocha fueron dominadas por la etnia Guane, de la familia lingüística Chibcha, reconocidos por su extraordinaria resistencia física, momificación ritual y textilería en algodón.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-slate-950/70 p-5 rounded-2xl border border-amber-900/40">
-          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-300 flex items-center justify-center text-lg font-bold mb-3">
+        <div class="themed-card p-5 rounded-2xl border shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-500 flex items-center justify-center text-lg font-bold mb-3">
             🏺
           </div>
-          <h3 class="text-sm font-bold text-white mb-1.5" id="guane-card1-t">Cultura y Cosmovisión</h3>
-          <p class="text-xs text-slate-300 leading-relaxed" id="guane-card1-d">
+          <h3 class="text-sm font-bold mb-1.5" style="color: var(--hero-title);" id="guane-card1-t">Cultura y Cosmovisión</h3>
+          <p class="text-xs leading-relaxed opacity-80" id="guane-card1-d">
             Los Guanes consideraban el río Chicamocha un conducto cósmico. Construyeron terrazas agrícolas en pendientes vertiginosas donde cultivaban maíz, yuca y algodón silvestre. Sus pinturas rupestres en cuevas aún conservan pigmentos minerales rojizos intactos.
           </p>
         </div>
 
-        <div class="bg-slate-950/70 p-5 rounded-2xl border border-amber-900/40">
-          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-300 flex items-center justify-center text-lg font-bold mb-3">
+        <div class="themed-card p-5 rounded-2xl border shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-500 flex items-center justify-center text-lg font-bold mb-3">
             🥾
           </div>
-          <h3 class="text-sm font-bold text-white mb-1.5" id="guane-card2-t">El Camino Real de Lengerke</h3>
-          <p class="text-xs text-slate-300 leading-relaxed" id="guane-card2-d">
+          <h3 class="text-sm font-bold mb-1.5" style="color: var(--hero-title);" id="guane-card2-t">El Camino Real de Lengerke</h3>
+          <p class="text-xs leading-relaxed opacity-80" id="guane-card2-d">
             En el siglo XIX, el ingeniero alemán Geo von Lengerke restauró y empedró los senderos indígenas precolombinos para abrir el comercio hacia el Río Magdalena. Hoy, el tramo entre Jordán Sube y Los Santos es una de las rutas de senderismo histórico más impresionantes del continente.
           </p>
         </div>
 
-        <div class="bg-slate-950/70 p-5 rounded-2xl border border-amber-900/40">
-          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-300 flex items-center justify-center text-lg font-bold mb-3">
+        <div class="themed-card p-5 rounded-2xl border shadow-sm">
+          <div class="w-10 h-10 rounded-xl bg-amber-600/20 text-amber-500 flex items-center justify-center text-lg font-bold mb-3">
             ⚔️
           </div>
-          <h3 class="text-sm font-bold text-white mb-1.5" id="guane-card3-t">Resistencia y Legado</h3>
-          <p class="text-xs text-slate-300 leading-relaxed" id="guane-card3-d">
+          <h3 class="text-sm font-bold mb-1.5" style="color: var(--hero-title);" id="guane-card3-t">Resistencia y Legado</h3>
+          <p class="text-xs leading-relaxed opacity-80" id="guane-card3-d">
             Liderados por el cacique Guanentá, los Guanes resistieron con tenacidad el avance hispánico. Su sangre y temple moldearon el carácter recio, trabajador e indomable del pueblo santandereano actual ("¡Santander es pasión y comunera!").
           </p>
         </div>
@@ -664,11 +772,11 @@
   <!-- ======================================================== -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
     <div class="text-center max-w-2xl mx-auto mb-10">
-      <span class="text-xs uppercase font-bold text-emerald-400 tracking-wider">Santuario Ecológico</span>
-      <h2 class="text-2xl sm:text-4xl font-black text-white mt-1 tracking-tight" id="bio-sec-title">
+      <span class="text-xs uppercase font-bold text-emerald-500 tracking-wider">Santuario Ecológico</span>
+      <h2 class="text-2xl sm:text-4xl font-black mt-1 tracking-tight" style="color: var(--hero-title);" id="bio-sec-title">
         Biodiversidad Endémica del Enclave Seco
       </h2>
-      <p class="text-xs sm:text-sm text-slate-300 mt-2" id="bio-sec-intro">
+      <p class="text-xs sm:text-sm mt-2 opacity-80" id="bio-sec-intro">
         El aislamiento biológico del cañón dio origen a especies animales y vegetales que no existen en ninguna otra parte del planeta.
       </p>
     </div>
@@ -676,61 +784,61 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       
       <!-- Flora Column -->
-      <div class="bg-slate-900 p-6 rounded-3xl border border-emerald-900/40 shadow-xl space-y-4">
-        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
-          <div class="w-9 h-9 rounded-xl bg-emerald-600/20 text-emerald-300 flex items-center justify-center text-xl">
+      <div class="themed-card p-6 rounded-3xl border shadow-xl space-y-4">
+        <div class="flex items-center gap-3 pb-3 border-b border-emerald-900/20">
+          <div class="w-9 h-9 rounded-xl bg-emerald-600/20 text-emerald-500 flex items-center justify-center text-xl">
             🌱
           </div>
           <div>
-            <h3 class="text-base font-bold text-white" id="flora-title">Flora Endémica</h3>
-            <p class="text-[11px] text-emerald-400" id="flora-sub">Adaptaciones biológicas a la aridez</p>
+            <h3 class="text-base font-bold" style="color: var(--hero-title);" id="flora-title">Flora Endémica</h3>
+            <p class="text-[11px] text-emerald-500" id="flora-sub">Adaptaciones biológicas a la aridez</p>
           </div>
         </div>
 
-        <div class="space-y-3 text-xs text-slate-300">
-          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
-            <p class="font-bold text-emerald-300">🌳 Ceiba Barrigona (Cavanillesia chicamochae)</p>
-            <p class="text-[11px] text-slate-400 mt-1">El árbol insignia del cañón. Su tronco en forma de botella almacena toneladas de agua para soportar meses de sequía. Crece aferrado a acantilados casi verticales.</p>
+        <div class="space-y-3 text-xs">
+          <div class="themed-subcard p-3.5 rounded-xl border">
+            <p class="font-bold text-emerald-500">🌳 Ceiba Barrigona (Cavanillesia chicamochae)</p>
+            <p class="text-[11px] opacity-80 mt-1">El árbol insignia del cañón. Su tronco en forma de botella almacena toneladas de agua para soportar meses de sequía. Crece aferrado a acantilados casi verticales.</p>
           </div>
 
-          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
-            <p class="font-bold text-emerald-300">🌿 Zamia encephalartoides (Fósil Viviente)</p>
-            <p class="text-[11px] text-slate-400 mt-1">Una cícada de la era Jurásica que convivió con los dinosaurios. Especie protegida de crecimiento ultra lento exclusiva de Santander.</p>
+          <div class="themed-subcard p-3.5 rounded-xl border">
+            <p class="font-bold text-emerald-500">🌿 Zamia encephalartoides (Fósil Viviente)</p>
+            <p class="text-[11px] opacity-80 mt-1">Una cícada de la era Jurásica que convivió con los dinosaurios. Especie protegida de crecimiento ultra lento exclusiva de Santander.</p>
           </div>
 
-          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
-            <p class="font-bold text-emerald-300">🌵 Cactáceas & Cacao Indio</p>
-            <p class="text-[11px] text-slate-400 mt-1">Bosques de cardones columnares, pitahayas silvestres y tunas que proveen alimento a aves y pequeños reptiles.</p>
+          <div class="themed-subcard p-3.5 rounded-xl border">
+            <p class="font-bold text-emerald-500">🌵 Cactáceas & Cacao Indio</p>
+            <p class="text-[11px] opacity-80 mt-1">Bosques de cardones columnares, pitahayas silvestres y tunas que proveen alimento a aves y pequeños reptiles.</p>
           </div>
         </div>
       </div>
 
       <!-- Fauna Column -->
-      <div class="bg-slate-900 p-6 rounded-3xl border border-emerald-900/40 shadow-xl space-y-4">
-        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
-          <div class="w-9 h-9 rounded-xl bg-cyan-600/20 text-cyan-300 flex items-center justify-center text-xl">
+      <div class="themed-card p-6 rounded-3xl border shadow-xl space-y-4">
+        <div class="flex items-center gap-3 pb-3 border-b border-emerald-900/20">
+          <div class="w-9 h-9 rounded-xl bg-cyan-600/20 text-cyan-500 flex items-center justify-center text-xl">
             🐾
           </div>
           <div>
-            <h3 class="text-base font-bold text-white" id="fauna-title">Fauna Silvestre</h3>
-            <p class="text-[11px] text-cyan-400" id="fauna-sub">Aves raras, felinos y reptiles</p>
+            <h3 class="text-base font-bold" style="color: var(--hero-title);" id="fauna-title">Fauna Silvestre</h3>
+            <p class="text-[11px] text-cyan-500" id="fauna-sub">Aves raras, felinos y reptiles</p>
           </div>
         </div>
 
-        <div class="space-y-3 text-xs text-slate-300">
-          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
-            <p class="font-bold text-cyan-300">🐦 Cucarachero de Nicéforo (Thryophilus nicefori)</p>
-            <p class="text-[11px] text-slate-400 mt-1">Una de las aves más raras del planeta, en peligro crítico de extinción. Su canto característico acompaña los amaneceres del cañón.</p>
+        <div class="space-y-3 text-xs">
+          <div class="themed-subcard p-3.5 rounded-xl border">
+            <p class="font-bold text-cyan-500">🐦 Cucarachero de Nicéforo (Thryophilus nicefori)</p>
+            <p class="text-[11px] opacity-80 mt-1">Una de las aves más raras del planeta, en peligro crítico de extinción. Su canto característico acompaña los amaneceres del cañón.</p>
           </div>
 
-          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
-            <p class="font-bold text-cyan-300">🐆 Tigrillo & Ocelote (Leopardus pardalis)</p>
-            <p class="text-[11px] text-slate-400 mt-1">Felino sigiloso que habita en las quebradas y cañadas protegidas. Caza iguanas, roedores y serpientes en las horas nocturnas.</p>
+          <div class="themed-subcard p-3.5 rounded-xl border">
+            <p class="font-bold text-cyan-500">🐆 Tigrillo & Ocelote (Leopardus pardalis)</p>
+            <p class="text-[11px] opacity-80 mt-1">Felino sigiloso que habita en las quebradas y cañadas protegidas. Caza iguanas, roedores y serpientes en las horas nocturnas.</p>
           </div>
 
-          <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800">
-            <p class="font-bold text-cyan-300">🐒 Mono Aullador & Iguana del Chicamocha</p>
-            <p class="text-[11px] text-slate-400 mt-1">Poblaciones de monos aulladores rojos (*Alouatta seniculus*) en los bosques riparios junto con iguanas de gran tamaño adaptadas al sol abrasador.</p>
+          <div class="themed-subcard p-3.5 rounded-xl border">
+            <p class="font-bold text-cyan-500">🐒 Mono Aullador & Iguana del Chicamocha</p>
+            <p class="text-[11px] opacity-80 mt-1">Poblaciones de monos aulladores rojos (*Alouatta seniculus*) en los bosques riparios junto con iguanas de gran tamaño adaptadas al sol abrasador.</p>
           </div>
         </div>
       </div>
@@ -745,61 +853,61 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       
       <!-- Gastronomía Autóctona -->
-      <div class="bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-4">
-        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+      <div class="themed-card p-6 sm:p-8 rounded-3xl border space-y-4 shadow-sm">
+        <div class="flex items-center gap-3 pb-3 border-b border-emerald-900/20">
           <span class="text-2xl">🍲</span>
           <div>
-            <h3 class="text-lg font-bold text-white" id="gastro-title">Gastronomía Autóctona de Santander</h3>
-            <p class="text-xs text-amber-400" id="gastro-sub">Sabores centenarios con identidad campesina</p>
+            <h3 class="text-lg font-bold" style="color: var(--hero-title);" id="gastro-title">Gastronomía Autóctona de Santander</h3>
+            <p class="text-xs text-amber-500" id="gastro-sub">Sabores centenarios con identidad campesina</p>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-            <p class="font-bold text-white mb-0.5">🐐 Cabrito & Pepitoria</p>
-            <p class="text-[11px] text-slate-400">Cabrito asado o frito acompañado de pepitoria de arroz con sangre y vísceras especiadas.</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="themed-subcard p-3 rounded-xl border">
+            <p class="font-bold mb-0.5" style="color: var(--hero-title);">🐐 Cabrito & Pepitoria</p>
+            <p class="text-[11px] opacity-80">Cabrito asado o frito acompañado de pepitoria de arroz con sangre y vísceras especiadas.</p>
           </div>
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-            <p class="font-bold text-white mb-0.5">🥩 Carne Oreada</p>
-            <p class="text-[11px] text-slate-400">Carne de res marinada en panela, naranja agria y comino, secada al sol de los Andes.</p>
+          <div class="themed-subcard p-3 rounded-xl border">
+            <p class="font-bold mb-0.5" style="color: var(--hero-title);">🥩 Carne Oreada</p>
+            <p class="text-[11px] opacity-80">Carne de res marinada en panela, naranja agria y comino, secada al sol de los Andes.</p>
           </div>
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-            <p class="font-bold text-white mb-0.5">🌽 Arepa Santandereana</p>
-            <p class="text-[11px] text-slate-400">Maíz pelao con lejía cocido y molido con chicharrón crocante y asado en tiesto.</p>
+          <div class="themed-subcard p-3 rounded-xl border">
+            <p class="font-bold mb-0.5" style="color: var(--hero-title);">🌽 Arepa Santandereana</p>
+            <p class="text-[11px] opacity-80">Maíz pelao con lejía cocido y molido con chicharrón crocante y asado en tiesto.</p>
           </div>
-          <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
-            <p class="font-bold text-white mb-0.5">🐜 Hormigas Culonas</p>
-            <p class="text-[11px] text-slate-400">Herencia milenaria Guane tostada con sal. Delicadeza afrodisíaca de temporada.</p>
+          <div class="themed-subcard p-3 rounded-xl border">
+            <p class="font-bold mb-0.5" style="color: var(--hero-title);">🐜 Hormigas Culonas</p>
+            <p class="text-[11px] opacity-80">Herencia milenaria Guane tostada con sal. Delicadeza afrodisíaca de temporada.</p>
           </div>
         </div>
       </div>
 
       <!-- Rutas y Cómo Llegar -->
-      <div class="bg-slate-900 p-6 sm:p-8 rounded-3xl border border-slate-800 space-y-4">
-        <div class="flex items-center gap-3 pb-3 border-b border-slate-800">
+      <div class="themed-card p-6 sm:p-8 rounded-3xl border space-y-4 shadow-sm">
+        <div class="flex items-center gap-3 pb-3 border-b border-emerald-900/20">
           <span class="text-2xl">🚗</span>
           <div>
-            <h3 class="text-lg font-bold text-white" id="routes-title">Cómo Llegar & Recomendaciones Viales</h3>
-            <p class="text-xs text-emerald-400" id="routes-sub">Distancias, tiempos y consejos para viajeros</p>
+            <h3 class="text-lg font-bold" style="color: var(--hero-title);" id="routes-title">Cómo Llegar & Recomendaciones Viales</h3>
+            <p class="text-xs text-emerald-500" id="routes-sub">Distancias, tiempos y consejos para viajeros</p>
           </div>
         </div>
 
-        <ul class="space-y-2.5 text-xs text-slate-300" id="routes-list">
-          <li class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-start gap-2">
-            <span class="text-emerald-400 font-bold">1.</span>
+        <ul class="space-y-2.5 text-xs" id="routes-list">
+          <li class="themed-subcard p-3 rounded-xl border flex items-start gap-2">
+            <span class="text-emerald-500 font-bold">1.</span>
             <span><strong>Desde Bucaramanga:</strong> 54 km (aprox. 50-60 min) tomando la Vía Nacional 45A hacia San Gil/Bogotá. Descenso y ascenso por Pescadero.</span>
           </li>
-          <li class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-start gap-2">
-            <span class="text-emerald-400 font-bold">2.</span>
+          <li class="themed-subcard p-3 rounded-xl border flex items-start gap-2">
+            <span class="text-emerald-500 font-bold">2.</span>
             <span><strong>Desde Bogotá:</strong> 340 km (aprox. 6 a 7 horas) vía Tunja - Barbosa - San Gil - Aratoca hasta el mirador de PANACHI.</span>
           </li>
-          <li class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-start gap-2">
-            <span class="text-emerald-400 font-bold">3.</span>
+          <li class="themed-subcard p-3 rounded-xl border flex items-start gap-2">
+            <span class="text-emerald-500 font-bold">3.</span>
             <span><strong>Vía Aérea:</strong> Vuelo a Bucaramanga (Aeropuerto Internacional Palonegro - BGA) + vehículo de alquiler o transporte intermunicipal.</span>
           </li>
         </ul>
 
-        <div class="p-3 bg-amber-950/40 rounded-xl border border-amber-800/40 text-[11px] text-amber-200">
+        <div class="p-3 rounded-xl border text-[11px]" style="background: var(--guane-bg); border-color: var(--guane-border);">
           ⚠️ <strong>Consejo del Viajero:</strong> El descenso hacia el Río Chicamocha en Pescadero presenta curvas pronunciadas. Utiliza caja de cambios (freno de motor) y lleva agua para hidratarte.
         </div>
       </div>
@@ -811,23 +919,23 @@
   <!-- 9. SECCIÓN CÓDIGO QR INTELIGENTE & SEÑALÉTICA FÍSICA -->
   <!-- ======================================================== -->
   <section id="seccion-qr" class="max-w-7xl mx-auto px-4 sm:px-6 pt-16">
-    <div class="bg-gradient-to-r from-emerald-950 via-slate-900 to-slate-950 p-6 sm:p-10 rounded-3xl border border-emerald-600/40 shadow-2xl">
+    <div class="p-6 sm:p-10 rounded-3xl border shadow-2xl transition-colors duration-300" style="background: var(--qr-bg); border-color: var(--card-border);">
       <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         
         <!-- Left details -->
         <div class="md:col-span-7 space-y-4">
-          <span class="text-xs uppercase font-bold text-emerald-400 tracking-wider">Acceso Rápido en Campo</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-white tracking-tight" id="qr-sec-title">
+          <span class="text-xs uppercase font-bold text-emerald-500 tracking-wider">Acceso Rápido en Campo</span>
+          <h2 class="text-2xl sm:text-3xl font-black tracking-tight" style="color: var(--hero-title);" id="qr-sec-title">
             Código QR Oficial de Esta Ficha
           </h2>
-          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed" id="qr-sec-desc">
+          <p class="text-xs sm:text-sm leading-relaxed opacity-90" id="qr-sec-desc">
             Este código QR dinámico enlaza directamente a esta página individual. Al ser escaneado con la cámara de cualquier teléfono móvil, detecta el idioma del visitante (Español, Inglés o Francés) y presenta toda la experiencia multimedia.
           </p>
 
-          <div class="p-3.5 bg-slate-950 rounded-2xl border border-slate-800 flex items-center justify-between gap-3 text-xs">
+          <div class="p-3.5 rounded-2xl border flex items-center justify-between gap-3 text-xs" style="background: var(--card-bg); border-color: var(--card-border);">
             <div class="truncate">
-              <p class="text-[10px] text-slate-400">Enlace directo permanente:</p>
-              <p class="font-mono text-emerald-300 font-bold truncate" id="direct-url-text">https://santanderdigital.online/chicamocha</p>
+              <p class="text-[10px] opacity-70">Enlace directo permanente:</p>
+              <p class="font-mono text-emerald-500 font-bold truncate" id="direct-url-text">https://santanderdigital.online/chicamocha</p>
             </div>
             <button onclick="copyDirectUrl()" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex-shrink-0 transition">
               Copiar
@@ -838,7 +946,7 @@
             <a href="/api/qr/render/chicamocha?format=signage" target="_blank" download="placa-chicamocha.svg" class="px-4 py-2 rounded-xl text-xs font-bold bg-emerald-700 hover:bg-emerald-600 text-white flex items-center gap-1.5 transition">
               <span>📥</span> Descargar Placa Vectorial (SVG)
             </a>
-            <a href="/api/qr/render/chicamocha?format=png&width=1200" target="_blank" download="qr-300dpi-chicamocha.png" class="px-4 py-2 rounded-xl text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center gap-1.5 transition">
+            <a href="/api/qr/render/chicamocha?format=png&width=1200" target="_blank" download="qr-300dpi-chicamocha.png" class="px-4 py-2 rounded-xl text-xs font-semibold border flex items-center gap-1.5 transition" style="background: var(--btn-theme-bg); border-color: var(--btn-theme-border); color: var(--text-main);">
               <span>🖨️</span> Descargar PNG 300 DPI (Imprenta)
             </a>
           </div>
@@ -877,24 +985,24 @@
   <!-- ======================================================== -->
   <!-- 10. FOOTER INSTITUCIONAL -->
   <!-- ======================================================== -->
-  <footer class="mt-20 border-t border-slate-800 bg-slate-950 py-10">
+  <footer class="mt-20 border-t py-10 transition-colors duration-300" style="background: var(--card-bg); border-color: var(--card-border);">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3">
         <div class="w-8 h-8 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-xs">
           SD
         </div>
         <div>
-          <p class="text-xs font-bold text-white">Santander Digital • Red Oficial de Turismo Inteligente</p>
-          <p class="text-[10px] text-slate-400">Departamento de Santander, República de Colombia &bull; 2026</p>
+          <p class="text-xs font-bold" style="color: var(--text-main);">Santander Digital • Red Oficial de Turismo Inteligente</p>
+          <p class="text-[10px] opacity-70" style="color: var(--text-muted);">Departamento de Santander, República de Colombia &bull; 2026</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-4 text-xs text-slate-400">
-        <a href="/" class="hover:text-emerald-400 transition">Portal Principal</a>
+      <div class="flex items-center gap-4 text-xs opacity-80" style="color: var(--text-main);">
+        <a href="/" class="hover:text-emerald-500 transition">Portal Principal</a>
         <span>&bull;</span>
-        <a href="/panachi" class="hover:text-emerald-400 transition">PANACHI 360°</a>
+        <a href="/panachi" class="hover:text-emerald-500 transition">PANACHI 360°</a>
         <span>&bull;</span>
-        <a href="/barichara" class="hover:text-emerald-400 transition">Barichara Colonial</a>
+        <a href="/barichara" class="hover:text-emerald-500 transition">Barichara Colonial</a>
       </div>
     </div>
   </footer>
@@ -1152,6 +1260,32 @@
         prompt("Copia este enlace directo:", url);
       });
     }
+
+    // ==========================================
+    // SISTEMA DE CAMBIO DE TEMA (CLARO / OSCURO)
+    // ==========================================
+    let currentTheme = localStorage.getItem('santander_theme') || 'dark';
+
+    function applyTheme(theme) {
+      currentTheme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
+      localStorage.setItem('santander_theme', theme);
+      const icon = document.getElementById('theme-icon');
+      if (icon) {
+        icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+      }
+      const btn = document.getElementById('btn-theme-toggle');
+      if (btn) {
+        btn.title = theme === 'dark' ? 'Cambiar a Modo Claro' : 'Cambiar a Modo Oscuro';
+      }
+    }
+
+    function toggleTheme() {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    }
+
+    // Inicializar tema al cargar la página
+    applyTheme(currentTheme);
   </script>
 </body>
 </html>
